@@ -1,11 +1,16 @@
 .sidenav-container {
   height: 100%;
 }
-
-.sidenav {
-  width: 200px;
+.home {
+  color: blue;
 }
-
+.sidenav {
+  width: 12vw;
+  box-shadow: 3px 0 6px black;
+}
+.title {
+  padding-left: 5%;
+}
 .sidenav .mat-toolbar {
   background: inherit;
 }
