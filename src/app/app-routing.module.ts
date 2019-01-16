@@ -4,11 +4,16 @@ import { PlaylistIndexComponent } from './components/playlist-collection/pc-inde
 
 import { RegistrationComponent } from './components/register/register.component';
 import { LoginComponent } from './components/login/login.component'
+import { PlaylistCreateComponent } from './components/playlist-collection/pc-create/playlist-collection-create.component';
 
 const routes: Routes = [
   { path: 'register', component: RegistrationComponent },
   { path: 'login', component: LoginComponent },
-  {path: 'playlist/index', component: PlaylistIndexComponent}
+
+  {path: 'playlist', children: [
+    {path: 'index', component: PlaylistIndexComponent},
+    {path: 'assign', component: PlaylistCreateComponent}
+  ]},
 ];
 
 @NgModule({

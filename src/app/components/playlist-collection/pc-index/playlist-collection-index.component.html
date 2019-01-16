@@ -1,7 +1,11 @@
 <div class="test">
   <h1>Index Works!</h1>
 </div>
-<a mat-raised-button color="primary" href="playlistcollection/create">Create New Playlist</a>
+<div class="row">
+<a mat-raised-button color="primary" href="playlist/create">Create New Playlist</a>
+<a id="button1" mat-raised-button color="primary" href="playlist/assign">Assign Song to Playlist</a>
+
+</div>
 <hr />
 
 <div>
@@ -22,7 +26,7 @@
 
       <ng-container matColumnDef="OwnerId">
               <mat-header-cell *matHeaderCellDef>Playlist Owner</mat-header-cell>
-              <mat-cell *matCellDef="let playlist">{{playlist.ownerEntityId}}</mat-cell>
+              <mat-cell *matCellDef="let playlist">{{playlist.ownerId}}</mat-cell>
       </ng-container>
 
       <ng-container matColumnDef="DateCreated">
