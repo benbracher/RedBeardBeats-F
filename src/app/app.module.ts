@@ -2,36 +2,34 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { HttpClientModule} from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms'
+import { HttpClientModule } from '@angular/common/http';
 
+import { BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
-import { RegisterComponent } from './components/register/register.component';
+import { RegistrationComponent } from './components/register/register.component';
 import { SongComponent } from './components/song/song.component';
 import { PlaylistComponent } from './components/playlist/playlist.component';
 import { PlaylistIndexComponent } from './components/playlist-collection/pc-index/playlist-collection-index.component';
 import { AdminPortalComponent } from './components/admin-portal/admin-portal.component';
 import { PlayControlsComponent } from './components/play-controls/play-controls.component';
+import { PlaylistCollectionService } from './services/playlist-collection.service';
 import { SideNavComponent } from './components/side-nav/side-nav.component';
 import { LayoutModule } from '@angular/cdk/layout';
 import {
-  MatSidenavModule,
-  MatIconModule,
-  MatTableModule,
+  MatToolbarModule,
   MatButtonModule,
   MatFormFieldModule,
-  MatToolbarModule,
   MatInputModule,
-  MatListModule
-} from '@angular/material';
-import { FormsModule } from '@angular/forms';
-import { PlaylistCollectionService } from './services/playlist-collection.service';
-
-const routes = [
-  { path: 'sidenav', component: SideNavComponent}
-];
+  MatTableModule,
+  MatListModule,
+  MatIconModule,
+  MatSidenavModule
+}
+  from '@angular/material';
 
 @NgModule({
   declarations: [
@@ -39,12 +37,12 @@ const routes = [
     SideNavComponent,
     HomeComponent,
     LoginComponent,
-    RegisterComponent,
     SongComponent,
     PlaylistComponent,
     PlaylistIndexComponent,
     AdminPortalComponent,
     PlayControlsComponent,
+    RegistrationComponent
   ],
   imports: [
     BrowserModule,
@@ -61,7 +59,8 @@ const routes = [
     MatSidenavModule,
     MatIconModule,
     MatListModule,
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes),
+    ReactiveFormsModule
   ],
   providers: [PlaylistCollectionService],
   bootstrap: [AppComponent]
