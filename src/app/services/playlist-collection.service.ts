@@ -16,6 +16,10 @@ export class PlaylistCollectionService {
     });
   }
 
+  getPlaylist(id: string) {
+    return this._http.get(`${ApiUrl}/PlayCollection/${id}`, {headers: this.getHeaders() })
+  }
+
   createPlaylistCollection(playlist: PlaylistIndex) {
     return this._http.post(`${ApiUrl}/api/PlaylistCollection`, playlist, {
       headers: this.getHeaders()

@@ -11,6 +11,7 @@ import { LoginUser } from 'src/app/models/LoginUser';
 })
 export class PlaylistIndexComponent implements OnInit {
   columnNames = [
+    'details',
     'PlaylistEntityId',
     'SongEntityId',
     'OwnerId',
