@@ -14,3 +14,5 @@
   box-shadow: 3px 0 6px black;
   margin-left: -2vw;
 }
+
+.music-control,audio{background:#666; width: 88vw;}
