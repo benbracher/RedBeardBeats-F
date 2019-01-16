@@ -5,6 +5,7 @@ import { Token } from '../models/Token';
 import { LoginUser } from '../models/LoginUser';
 import { Router } from '@angular/router';
 import { Observable, Subject } from 'rxjs';
+import { environment } from '../../environments/environment';
 
 
 const Api_Url = 'https://localhost:44311';
@@ -22,7 +23,7 @@ export class AuthService {
 
   register(regUserData: RegisterUser){
     
-    return this._http.post(`${Api_Url}/api/Auth/Register`, regUserData);
+    return this._http.post(`${environment.serverUrl}/api/Auth/Register`, regUserData);
   }
 
   login(loginInfo: LoginUser){

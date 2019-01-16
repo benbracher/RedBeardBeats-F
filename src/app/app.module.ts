@@ -18,6 +18,7 @@ import { PlayControlsComponent } from './components/play-controls/play-controls.
 import { PlaylistCollectionService } from './services/playlist-collection.service';
 import { SideNavComponent } from './components/side-nav/side-nav.component';
 import { LayoutModule } from '@angular/cdk/layout';
+import { SongCreateComponent } from './components/song-create/song.create.component'
 import {
   MatToolbarModule,
   MatButtonModule,
@@ -41,7 +42,8 @@ import {
     PlaylistIndexComponent,
     AdminPortalComponent,
     PlayControlsComponent,
-    RegistrationComponent
+    RegistrationComponent,
+    SongCreateComponent
   ],
   imports: [
     BrowserModule,
@@ -58,7 +60,6 @@ import {
     MatSidenavModule,
     MatIconModule,
     MatListModule,
-    //RouterModule.forRoot(routes),
     ReactiveFormsModule
   ],
   providers: [PlaylistCollectionService],
