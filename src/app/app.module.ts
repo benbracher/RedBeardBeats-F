@@ -17,27 +17,16 @@ import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
 import { RegistrationComponent } from './components/register/register.component';
 import { SongComponent } from './components/song/song.component';
-import { PlaylistComponent } from './components/playlist/playlist.component';
 import { PlaylistCollectionIndexComponent } from './components/playlist-collection/pc-index/playlist-collection-index.component';
 import { PlaylistCollectionCreateComponent } from './components/playlist-collection/pc-create/playlist-collection-create.component'
 import { PlaylistDetailComponent } from './components/playlist-collection/pc-detail/pc-detail.component';
 import { AdminPortalComponent } from './components/admin-portal/admin-portal.component';
 import { PlayControlsComponent } from './components/play-controls/play-controls.component';
+import { PlaylistComponent } from './components/playlist/playlist.component';
 import { PlaylistIndexComponent } from './components/playlist/playlist-index/playlist-index.component';
 import { PlaylistCreateComponent } from './components/playlist/playlist-create/playlist-create.component';
 import { AuthService } from './services/auth.service';
 import { PlaylistService } from './services/playlist.service';
-
-const routes = [
-  {path: 'register', component: RegistrationComponent },
-  { path: 'login', component: LoginComponent },
-  {
-    path: 'playlists', children: [
-      { path: '', component: PlaylistIndexComponent },
-      { path: 'create', component: PlaylistCollectionCreateComponent }
-    ]
-  },
-];
 
 import { PlaylistCollectionService } from './services/playlist-collection.service';
 import { SideNavComponent } from './components/side-nav/side-nav.component';
