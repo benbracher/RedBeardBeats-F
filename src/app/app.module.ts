@@ -1,38 +1,45 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
+import { RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms'
 import { HttpClientModule } from '@angular/common/http';
 
 import { BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { SidenavComponent } from './components/sidenav/sidenav.component';
 import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
 import { RegistrationComponent } from './components/register/register.component';
 import { SongComponent } from './components/song/song.component';
 import { PlaylistComponent } from './components/playlist/playlist.component';
-import { PlaylistCollectionComponent } from './components/playlist-collection/playlist-collection.component';
+import { PlaylistIndexComponent } from './components/playlist-collection/pc-index/playlist-collection-index.component';
 import { AdminPortalComponent } from './components/admin-portal/admin-portal.component';
 import { PlayControlsComponent } from './components/play-controls/play-controls.component';
+import { PlaylistCollectionService } from './services/playlist-collection.service';
+import { SideNavComponent } from './components/side-nav/side-nav.component';
+import { LayoutModule } from '@angular/cdk/layout';
 import {
   MatToolbarModule,
   MatButtonModule,
   MatFormFieldModule,
   MatInputModule,
-  MatTableModule
+  MatTableModule,
+  MatListModule,
+  MatIconModule,
+  MatSidenavModule
 }
   from '@angular/material';
 
 @NgModule({
   declarations: [
     AppComponent,
-    SidenavComponent,
+    SideNavComponent,
     HomeComponent,
     LoginComponent,
     SongComponent,
     PlaylistComponent,
-    PlaylistCollectionComponent,
+    PlaylistIndexComponent,
     AdminPortalComponent,
     PlayControlsComponent,
     RegistrationComponent
@@ -40,17 +47,22 @@ import {
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule,
+    HttpClientModule,
+    AppRoutingModule,
+    LayoutModule,
+    MatInputModule,
+    MatFormFieldModule,
+    MatTableModule,
     MatToolbarModule,
     MatButtonModule,
-    MatFormFieldModule,
-    MatInputModule,
-    MatTableModule,
-    HttpClientModule
+    MatSidenavModule,
+    MatIconModule,
+    MatListModule,
+    RouterModule.forRoot(routes),
+    ReactiveFormsModule
   ],
-  providers: [],
+  providers: [PlaylistCollectionService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
