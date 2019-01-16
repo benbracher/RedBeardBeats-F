@@ -1,20 +1,20 @@
 import { Component, OnInit } from '@angular/core';
 import { PlaylistService } from '../../../services/playlist.service';
 import { Playlist } from '../../../models/Playlist';
-import { RegisterComponent } from '../../register/register.component';
+import { RegistrationComponent } from '../../register/register.component';
 import { MatTableDataSource } from '@angular/material';
 import { LoginComponent } from '../../login/login.component';
 import { PlaylistCreateComponent } from '../playlist-create/playlist-create.component';
 
 const routes = [
-  {path: 'register', component: RegisterComponent},
+  {path: 'register', component: RegistrationComponent},
   { path: 'login', component: LoginComponent },
   {
     path: 'playlists', children: [
       { path: 'create', component:PlaylistCreateComponent }
     ]
   },
-  { path: '**', component: RegisterComponent}
+  { path: '**', component: RegistrationComponent}
 ];
 
 @Component({

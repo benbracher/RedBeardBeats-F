@@ -9,7 +9,7 @@ import { LoginUser } from 'src/app/models/LoginUser';
   templateUrl: './playlist-collection-index.component.html',
   styleUrls: ['./playlist-collection-index.component.css']
 })
-export class PlaylistIndexComponent implements OnInit {
+export class PlaylistCollectionIndexComponent implements OnInit {
   columnNames = [
     'details',
     'PlaylistEntityId',

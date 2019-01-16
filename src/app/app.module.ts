@@ -18,8 +18,8 @@ import { LoginComponent } from './components/login/login.component';
 import { RegistrationComponent } from './components/register/register.component';
 import { SongComponent } from './components/song/song.component';
 import { PlaylistComponent } from './components/playlist/playlist.component';
-import { PlaylistIndexComponent } from './components/playlist-collection/pc-index/playlist-collection-index.component';
-import { PlaylistCreateComponent } from './components/playlist-collection/pc-create/playlist-collection-create.component'
+import { PlaylistCollectionIndexComponent } from './components/playlist-collection/pc-index/playlist-collection-index.component';
+import { PlaylistCollectionCreateComponent } from './components/playlist-collection/pc-create/playlist-collection-create.component'
 import { PlaylistDetailComponent } from './components/playlist-collection/pc-detail/pc-detail.component';
 import { AdminPortalComponent } from './components/admin-portal/admin-portal.component';
 import { PlayControlsComponent } from './components/play-controls/play-controls.component';
@@ -29,26 +29,21 @@ import { AuthService } from './services/auth.service';
 import { PlaylistService } from './services/playlist.service';
 
 const routes = [
-  {path: 'register', component: RegisterComponent },
+  {path: 'register', component: RegistrationComponent },
   { path: 'login', component: LoginComponent },
   {
     path: 'playlists', children: [
       { path: '', component: PlaylistIndexComponent },
-      { path: 'create', component: PlaylistCreateComponent }
+      { path: 'create', component: PlaylistCollectionCreateComponent }
     ]
   },
-  { path: '**', component: RegisterComponent}
 ];
 
 import { PlaylistCollectionService } from './services/playlist-collection.service';
 import { SideNavComponent } from './components/side-nav/side-nav.component';
 import { LayoutModule } from '@angular/cdk/layout';
 import {
-  MatToolbarModule,
-  MatButtonModule,
   MatFormFieldModule,
-  MatInputModule,
-  MatTableModule,
   MatListModule,
   MatIconModule,
   MatSidenavModule
@@ -63,8 +58,8 @@ import {
     LoginComponent,
     SongComponent,
     PlaylistComponent,
-    PlaylistIndexComponent,
-    PlaylistCreateComponent,
+    PlaylistCollectionIndexComponent,
+    PlaylistCollectionCreateComponent,
     PlaylistDetailComponent,
     AdminPortalComponent,
     PlayControlsComponent,
