@@ -11,13 +11,13 @@ export class PlaylistCollectionService {
   constructor(private _http: HttpClient) {}
 
   getPlaylists() {
-    return this._http.get(`/api/PlaylistCollection`, {
+    return this._http.get(`${ApiUrl}/api/PlaylistCollection`, {
       headers: this.getHeaders()
     });
   }
 
   createPlaylistCollection(playlist: PlaylistIndex) {
-    return this._http.post(`/api/PlaylistCollection`, playlist, {
+    return this._http.post(`${ApiUrl}/api/PlaylistCollection`, playlist, {
       headers: this.getHeaders()
     });
   }
