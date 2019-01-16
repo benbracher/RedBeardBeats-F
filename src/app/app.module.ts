@@ -1,8 +1,12 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
 import { 
   MatToolbarModule,
-  MatButtonModule
+  MatButtonModule,
+  MatTableModule,
+  MatInputModule
 } from '@angular/material';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -16,6 +20,23 @@ import { PlaylistComponent } from './components/playlist/playlist.component';
 import { PlaylistCollectionComponent } from './components/playlist-collection/playlist-collection.component';
 import { AdminPortalComponent } from './components/admin-portal/admin-portal.component';
 import { PlayControlsComponent } from './components/play-controls/play-controls.component';
+import { PlaylistIndexComponent } from './components/playlist/playlist-index/playlist-index.component';
+import { PlaylistCreateComponent } from './components/playlist/playlist-create/playlist-create.component';
+import { AuthService } from './services/auth.service';
+import { PlaylistService } from './services/playlist.service';
+
+const routes = [
+  {path: 'register', component: RegisterComponent },
+  { path: 'login', component: LoginComponent },
+  {
+    path: 'playlists', children: [
+      { path: '', component: PlaylistIndexComponent },
+      { path: 'create', component: PlaylistCreateComponent }
+    ]
+  },
+  { path: '**', component: RegisterComponent}
+];
+
 
 @NgModule({
   declarations: [
@@ -29,15 +50,25 @@ import { PlayControlsComponent } from './components/play-controls/play-controls.
     PlaylistCollectionComponent,
     AdminPortalComponent,
     PlayControlsComponent,
+    PlaylistIndexComponent,
+    PlaylistCreateComponent,
     
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     MatToolbarModule,
-    MatButtonModule
+    MatButtonModule, 
+    MatTableModule,
+    MatInputModule,
+    FormsModule,
+    RouterModule,
+    ReactiveFormsModule
   ],
-  providers: [],
+  providers: [
+    AuthService,
+    PlaylistService,
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
