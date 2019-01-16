@@ -4,9 +4,7 @@ import { PlaylistIndex } from '../models/pc-index';
 
 const ApiUrl = 'https://localhost:44311';
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class PlaylistCollectionService {
   constructor(private _http: HttpClient) {}
 
@@ -17,7 +15,8 @@ export class PlaylistCollectionService {
   }
 
   getPlaylist(id: string) {
-    return this._http.get(`${ApiUrl}/PlayCollection/${id}`, {headers: this.getHeaders() })
+    console.log(id)
+    return this._http.get(`${ApiUrl}/api/PlaylistCollection/${id}`, { headers: this.getHeaders() });
   }
 
   createPlaylistCollection(playlist: PlaylistIndex) {

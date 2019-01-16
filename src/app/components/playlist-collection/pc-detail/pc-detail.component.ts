@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { PlaylistIndex } from 'src/app/models/pc-index';
 import { PlaylistCollectionService } from 'src/app/services/playlist-collection.service';
+import { PlaylistDetail } from 'src/app/models/pc-detail';
 
 @Component({
   selector: 'app-pc-detail',
@@ -10,16 +10,18 @@ import { PlaylistCollectionService } from 'src/app/services/playlist-collection.
 })
 export class PlaylistDetailComponent implements OnInit {
 
-  playlist: PlaylistIndex;
+  playlist: PlaylistDetail;
 
   constructor(private _activatedRoute: ActivatedRoute, private _playlistService: PlaylistCollectionService) { }
 
   ngOnInit() {
-    this._activatedRoute.paramMap.subscribe(routeData => {
-      this._playlistService.getPlaylist(routeData.get('id')).subscribe((singlePlaylist: PlaylistIndex) => {
-        this.playlist = singlePlaylist;
-      })
-    })
+    
+    this._activatedRoute.paramMap.subscribe(routeData => {console.log(routeData.get('id'))
+    this._playlistService.getPlaylist(routeData.get('id')).subscribe((singlePlaylist: PlaylistDetail) => {
+      this.playlist = singlePlaylist;
+      console.log(this.playlist)
+      });
+    });
   }
 
 }
