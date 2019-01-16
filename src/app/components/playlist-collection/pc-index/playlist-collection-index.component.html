@@ -1,42 +1,45 @@
-<div class="test">
-  <h1>Index Works!</h1>
-</div>
-<a mat-raised-button color="primary" href="playlistcollection/create">Create New Playlist</a>
-<hr />
+<div class="mainContent">
 
-<div>
-  <mat-table #table [dataSource]="dataSource">
-      <mat-header-row *matHeaderRowDef="columnNames"></mat-header-row>
-      <mat-row *matRowDef="let row; columns: columnNames;"></mat-row>
+    <div class="test">
+        <h1>Index Works!</h1>
+    </div>
+    <a mat-raised-button color="primary" href="playlistcollection/create">Create New Playlist</a>
+    <hr />
+
+    <div>
+        <mat-table #table [dataSource]="dataSource">
+            <mat-header-row *matHeaderRowDef="columnNames"></mat-header-row>
+            <mat-row *matRowDef="let row; columns: columnNames;"></mat-row>
 
 
-      <ng-container matColumnDef="PlaylistEntityId">
-          <mat-header-cell *matHeaderCellDef>Playlist</mat-header-cell>
-          <mat-cell *matCellDef="let playlist">{{playlist.playlistEntityId}}</mat-cell>
-      </ng-container>
+            <ng-container matColumnDef="PlaylistEntityId">
+                <mat-header-cell *matHeaderCellDef>Playlist</mat-header-cell>
+                <mat-cell *matCellDef="let playlist">{{playlist.playlistEntityId}}</mat-cell>
+            </ng-container>
 
-      <ng-container matColumnDef="SongEntityId">
-          <mat-header-cell *matHeaderCellDef>Song</mat-header-cell>
-          <mat-cell *matCellDef="let playlist">{{playlist.songEntityId}}</mat-cell>
-      </ng-container>
+            <ng-container matColumnDef="SongEntityId">
+                <mat-header-cell *matHeaderCellDef>Song</mat-header-cell>
+                <mat-cell *matCellDef="let playlist">{{playlist.songEntityId}}</mat-cell>
+            </ng-container>
 
-      <ng-container matColumnDef="OwnerId">
-              <mat-header-cell *matHeaderCellDef>Playlist Owner</mat-header-cell>
-              <mat-cell *matCellDef="let playlist">{{playlist.ownerEntityId}}</mat-cell>
-      </ng-container>
+            <ng-container matColumnDef="OwnerId">
+                <mat-header-cell *matHeaderCellDef>Playlist Owner</mat-header-cell>
+                <mat-cell *matCellDef="let playlist">{{playlist.ownerEntityId}}</mat-cell>
+            </ng-container>
 
-      <ng-container matColumnDef="DateCreated">
-              <mat-header-cell *matHeaderCellDef>Date Created</mat-header-cell>
-              <mat-cell *matCellDef="let playlist">{{playlist.dateCreated}}</mat-cell>
-      </ng-container>
+            <ng-container matColumnDef="DateCreated">
+                <mat-header-cell *matHeaderCellDef>Date Created</mat-header-cell>
+                <mat-cell *matCellDef="let playlist">{{playlist.dateCreated}}</mat-cell>
+            </ng-container>
 
-      <ng-container matColumnDef="buttons">
-          <mat-header-cell *matHeaderCellDef></mat-header-cell>
-          <mat-cell *matCellDef="let playlist">
-              <i mat-icon class="material-icons">edit</i>
-              <i class="material-icons">delete</i>
-          </mat-cell>
-      </ng-container>
+            <ng-container matColumnDef="buttons">
+                <mat-header-cell *matHeaderCellDef></mat-header-cell>
+                <mat-cell *matCellDef="let playlist">
+                    <i mat-icon class="material-icons">edit</i>
+                    <i class="material-icons">delete</i>
+                </mat-cell>
+            </ng-container>
 
-  </mat-table>
+        </mat-table>
+    </div>
 </div>
