@@ -8,7 +8,7 @@ import { PlaylistDetail } from 'src/app/models/pc-detail';
   templateUrl: './pc-detail.component.html',
   styleUrls: ['./pc-detail.component.css']
 })
-export class PlaylistDetailComponent implements OnInit {
+export class PlaylistCollectionDetailComponent implements OnInit {
 
   playlist: PlaylistDetail;
 

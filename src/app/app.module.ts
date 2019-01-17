@@ -19,8 +19,8 @@ import { RegistrationComponent } from './components/register/register.component'
 import { SongComponent } from './components/song/song.component';
 import { PlaylistCollectionIndexComponent } from './components/playlist-collection/pc-index/playlist-collection-index.component';
 import { PlaylistCollectionCreateComponent } from './components/playlist-collection/pc-create/playlist-collection-create.component'
-import { PlaylistDetailComponent } from './components/playlist-collection/pc-detail/pc-detail.component';
-import { PlaylistDeleteComponent } from './components/playlist-collection/pc-delete/pc-delete.component';
+import { PlaylistCollectionDetailComponent } from './components/playlist-collection/pc-detail/pc-detail.component';
+import { PlaylistCollectionDeleteComponent } from './components/playlist-collection/pc-delete/pc-delete.component';
 import { AdminPortalComponent } from './components/admin-portal/admin-portal.component';
 import { PlayControlsComponent } from './components/play-controls/play-controls.component';
 import { PlaylistComponent } from './components/playlist/playlist.component';
@@ -50,8 +50,8 @@ import {
     PlaylistComponent,
     PlaylistCollectionIndexComponent,
     PlaylistCollectionCreateComponent,
-    PlaylistDetailComponent,
-    PlaylistDeleteComponent,
+    PlaylistCollectionDetailComponent,
+    PlaylistCollectionDeleteComponent,
     AdminPortalComponent,
     PlayControlsComponent,
     PlaylistIndexComponent,
