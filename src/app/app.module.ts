@@ -28,7 +28,7 @@ import { PlaylistIndexComponent } from './components/playlist/playlist-index/pla
 import { PlaylistCreateComponent } from './components/playlist/playlist-create/playlist-create.component';
 import { AuthService } from './services/auth.service';
 import { PlaylistService } from './services/playlist.service';
-
+import { PlayControlsService } from './services/play-controls.service';
 import { PlaylistCollectionService } from './services/playlist-collection.service';
 import { SideNavComponent } from './components/side-nav/side-nav.component';
 import { LayoutModule } from '@angular/cdk/layout';
@@ -85,6 +85,7 @@ import {
     AuthService,
     PlaylistService,
     PlaylistCollectionService,
+    PlayControlsService
   ],
   bootstrap: [AppComponent]
 })
