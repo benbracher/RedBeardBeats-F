@@ -7,7 +7,7 @@ import { Subject } from 'rxjs';
 export class PlayControlsService {
     constructor() { }
 
-    private playSongSource = new Subject<string>();
+    private playSongSource = new Subject();
     private pauseSongSource = new Subject();
     private songEndedSource = new Subject();
 
@@ -15,7 +15,7 @@ export class PlayControlsService {
     pauseSong$ = this.pauseSongSource.asObservable();
     songEnded$ = this.songEndedSource.asObservable();
 
-    playSong(uploadedLink: string) {
+    playSong(uploadedLink) {
       this.playSongSource.next(uploadedLink);
     }
   

@@ -29,7 +29,6 @@ export class PlaylistDetailComponent implements OnInit {
 
   playSong(song) {
     this._playControlsService.playSong(song.uploadedLink);
-    alert(song.uploadedLink);
   }
 
 }
