@@ -32,14 +32,6 @@ export class PlaylistCollectionCreateComponent implements OnInit {
     this._getplaylistService.getPlaylists().subscribe(res => this.playlistSelect = res as Playlist[])
 }
 
-  getPlaylistId(){
-  }
-
-  getSongId(){
-
-  }
-
-
   createForm() {
     this.playlistForm = this._form.group({
       PlaylistEntityId: Number,
