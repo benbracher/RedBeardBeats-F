@@ -85,3 +85,16 @@ footer{
   color: #373E47;
   font-family: 'Quicksand', sans-serif;
 }
+
+.column {
+  float: left;
+  width: 33.33%;
+  padding: 5px;
+}
+
+/* Clear floats after image containers */
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}

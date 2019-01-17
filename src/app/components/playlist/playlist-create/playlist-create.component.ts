@@ -22,7 +22,6 @@ export class PlaylistCreateComponent implements OnInit {
   createForm() {
     this.playlistForm = this._form.group({
       Title: new FormControl,
-      Content: new FormControl
     });
   }
 

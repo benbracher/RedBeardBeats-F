@@ -7,25 +7,15 @@
     <mat-header-row *matHeaderRowDef="columsNames"></mat-header-row>
     <mat-row *matRowDef="let row; columns: columsNames;"></mat-row>
 
-   <ng-container matColumnDef="pid",>
-    <mat-header-cell *matHeaderCellDeaf class="matColumnSize"></mat-header-cell>
-    <mat-cell *matCellDef="let playlist"> <i class="material-icons"></i></mat-cell>
-   </ng-container>
-
+    <ng-container matColumnDef="songs",>
+      <mat-header-cell *matHeaderCellDeaf class="matColumnSize"></mat-header-cell>
+      <mat-cell *matCellDef="let playlist">Songs <i class="material-icons"></i></mat-cell>
+     </ng-container>
+     
     <ng-container matColumnDef="playlistName",>
       <mat-header-cell *matHeaderCellDeaf class="matColumnSize"></mat-header-cell>
       <mat-cell *matCellDef="let playlist"> <i class="material-icons"></i></mat-cell>
     </ng-container>
-
-    <ng-container matColumnDef="sid",>
-        <mat-header-cell *matHeaderCellDeaf class="matColumnSize"></mat-header-cell>
-        <mat-cell *matCellDef="let playlist"> <i class="material-icons"></i></mat-cell>
-    </ng-container>
-
-        <ng-container matColumnDef="oid",>
-            <mat-header-cell *matHeaderCellDeaf class="matColumnSize"></mat-header-cell>
-            <mat-cell *matCellDef="let playlist"> <i class="material-icons"></i></mat-cell>
-          </ng-container>
 
           <ng-container matColumnDef="buttons">
             <mat-header-cell *matHeaderCellDef></mat-header-cell>

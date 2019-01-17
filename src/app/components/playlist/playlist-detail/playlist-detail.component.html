@@ -1,0 +1,17 @@
+<h1>Details</h1>
+
+<hr>
+<div *ngif="playlist">
+  <div>
+    <label for="">Playlist Id:</label>
+    <span>{{playlist.pid}}</span>
+  </div>
+  <div>
+    <label for="">Playlist Name:</label>
+    <span>{{playlist.playlistName}}</span>
+  </div>
+
+</div>
+
+<button mat-module color="accent">Edit</button>
+<button mat-button color="primary" routerLink="/playlists">Back to List</button>
