@@ -32,6 +32,7 @@ import { PlaylistService } from './services/playlist.service';
 import { PlaylistCollectionService } from './services/playlist-collection.service';
 import { SideNavComponent } from './components/side-nav/side-nav.component';
 import { LayoutModule } from '@angular/cdk/layout';
+import { SongCreateComponent } from './components/song-create/song.create.component'
 import {
   MatFormFieldModule,
   MatListModule,
@@ -54,6 +55,7 @@ import {
     PlaylistCollectionDeleteComponent,
     AdminPortalComponent,
     PlayControlsComponent,
+    SongCreateComponent
     PlaylistIndexComponent,
     PlaylistCreateComponent,
     RegistrationComponent,
@@ -78,7 +80,6 @@ import {
      MatSidenavModule,
     MatIconModule,
     MatListModule,
-    
   ],
   providers: [
     AuthService,

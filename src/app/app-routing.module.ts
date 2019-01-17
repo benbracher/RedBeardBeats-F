@@ -1,3 +1,4 @@
+import { SongCreateComponent } from './components/song-create/song.create.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { PlaylistCollectionIndexComponent } from './components/playlist-collection/pc-index/playlist-collection-index.component';
@@ -14,6 +15,7 @@ import { HomeComponent } from './components/home/home.component';
 const routes: Routes = [
   { path: 'register', component: RegistrationComponent },
   { path: 'login', component: LoginComponent },
+  {path: 'song/create', component: SongCreateComponent}
   { path: 'home', component:HomeComponent},
 
   {path: 'newplaylist', children: [
