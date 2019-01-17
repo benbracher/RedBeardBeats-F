@@ -1,0 +1,42 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #drawer class="sidenav" fixedInViewport="true"
+      [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+      [mode]="(isHandset$ | async) ? 'over' : 'side'"
+      [opened]="!(isHandset$ | async)">
+    <mat-toolbar><a class="home" href="home">Home</a></mat-toolbar>
+    <mat-nav-list>
+      <p class="title">Your Treasure</p>
+      <a mat-list-item href="playlist/index">Playlist</a>
+      <a mat-list-item href="#">Song</a>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <hr />
+      <a mat-list-item href="playlist-collection/create">Add New Playlist</a>
+      <a mat-list-item href="playlist-collection/create">Add New Song</a>
+      <a mat-list-item href="playlist-collection/create">Add Song to Playlist</a>
+      <br>
+      <a mat-list-item href="login">Login</a>
+      <a mat-list-item href="signup">Sign Up</a>
+      <br>
+      <br>
+    </mat-nav-list>
+  </mat-sidenav>
+  
+  <mat-sidenav-content>
+    <!-- Router Allows to show content of what page we try to navigate to -->
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>
