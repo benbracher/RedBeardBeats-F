@@ -8,7 +8,7 @@ import { Router } from '@angular/router';
   templateUrl: './playlist-collection-create.component.html',
   styleUrls: ['./playlist-collection-create.component.css']
 })
-export class PlaylistCreateComponent implements OnInit {
+export class PlaylistCollectionCreateComponent implements OnInit {
 
   playlistForm: FormGroup;
 
