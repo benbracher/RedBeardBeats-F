@@ -1,0 +1,27 @@
+<h1>Index</h1>
+<a mat-raised-button color="primary" routerLink="/playlist/create">Create New</a>
+<hr>
+
+<div>
+  <mat-table #table [dataSource]="dataSource">
+    <mat-header-row *matHeaderRowDef="columsNames"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: columsNames;"></mat-row>
+
+    <ng-container matColumnDef="songs",>
+      <mat-header-cell *matHeaderCellDeaf class="matColumnSize"></mat-header-cell>
+      <mat-cell *matCellDef="let playlist">Songs <i class="material-icons"></i></mat-cell>
+     </ng-container>
+     
+    <ng-container matColumnDef="playlistName",>
+      <mat-header-cell *matHeaderCellDeaf class="matColumnSize"></mat-header-cell>
+      <mat-cell *matCellDef="let playlist"> <i class="material-icons"></i></mat-cell>
+    </ng-container>
+
+          <ng-container matColumnDef="buttons">
+            <mat-header-cell *matHeaderCellDef></mat-header-cell>
+            <mat-cell *matCelldDef="let playlist">
+              <i mat-icon class="material-icons" routerLink="/playlists/edit/{{playlist.pid}}">edit</i>
+            </mat-cell>
+          </ng-container>
+  </mat-table>
+</div>

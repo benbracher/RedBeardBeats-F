@@ -1,0 +1,28 @@
+<h1>Edit a Note</h1>
+<hr>
+
+<div *ngIf="playlist">
+  <form #="ngform" (ngsubmit)="onSubmit(f)" [formGroup]="editPlaylistForm">
+    <div>
+      <div hidden>
+        <mat-form-field>
+          <input matiput placeholder="pid" formControlName="pid" type="pid" required [value]="playlist.pid" />
+        </mat-form-field>
+      </div>
+      <div hidden>
+        <mat-form-field>
+          <input matiput placeholder="sid" formControlName="sid" type="sid" required [value]="playlist.sid" />
+        </mat-form-field>
+      </div>
+
+      <div>
+        <mat-form-field>
+          <input matInput placeholder="playlistName" formControlName="playlistName" type="playlistName" required [value]="playlist.playlist" />
+        </mat-form-field>
+      </div>
+    </div>
+    <button mat-raised-button class="nav-btn" color="primary" type="submit">Save</button>
+  </form>
+</div>
+
+<a mat-button routerLink="/playlist">Back to List</a>

@@ -11,7 +11,7 @@ import { NgControlStatus } from '@angular/forms';
   styleUrls: ['./pc-detail.component.css']
 })
 
-export class PlaylistDetailComponent implements OnInit {
+export class PlaylistCollectionDetailComponent implements OnInit {
 
   playlist: PlaylistDetail;
 

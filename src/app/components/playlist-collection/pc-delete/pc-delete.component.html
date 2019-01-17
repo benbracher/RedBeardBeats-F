@@ -1,13 +1,13 @@
-<div class="detail"><h1>Playlist Content</h1></div>
+<div class="delete"><h1>Playlist Content</h1></div>
 <hr />
 
-<div class="detail" *ngIf="playlist">
+<!-- <div class="delete" *ngIf="playlist">
   <div>
     <label for="">Owner Id: </label>
     <span>{{playlist.ownerId}}</span>
   </div>
   <br/>
-  <div *ngFor="let song of playlist" (click)="playSong(song)">
+  <div *ngFor="let song of playlist">
     <div>
       <label for="">Song Id: </label>
       <span>{{song.songEntityId}}</span>
@@ -32,12 +32,12 @@
       <label for="">Song Genre: </label>
       <span>{{song.songGenre}}</span>
     </div>
-    <!-- <div>
+    <div>
       <label for="">Song File: </label>
       <span>{{song.uploadedLink}}</span>
-    </div> -->
+    </div>
     <br />
   </div>
-</div>
-<button mat-button color="accent">Edit</button>
+</div> -->
+<button mat-button color="warn" (click)="onDelete()">Delete</button>
 <button mat-button color="primary" routerLink="/playlist/index">Back to List</button>

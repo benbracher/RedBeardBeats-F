@@ -25,6 +25,15 @@ export class PlaylistCollectionService {
     });
   }
 
+  udpatePlaylistCollection(playlist: PlaylistIndex){
+    return this._http.put(`${ApiUrl}/api/Playlist`, playlist, { headers: this.getHeaders() });
+  }
+
+  deletePlaylistCollection(id: number) {
+    
+    return this._http.delete(`${ApiUrl}/api/PlaylistCollection/${id}`, { headers: this.getHeaders() });
+  }
+
   private getHeaders() {
     return new HttpHeaders().set(
       'Authorization',
