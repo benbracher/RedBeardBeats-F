@@ -14,18 +14,18 @@ export class SongService {
     return new HttpHeaders().set('Authorization', `Bearer ${localStorage.getItem('token_token')}`);
   }
   getSongs() {
-    return this._http.get(`${environment.serverUrl}/Song`, { headers: this.getHeaders() });
+    return this._http.get(`${environment.serverUrl}/api/Song`, { headers: this.getHeaders() });
   }
   getSongById(id:string){
-    return this._http.get(`${environment.serverUrl}/Song/${id}`, { headers: this.getHeaders() });
+    return this._http.get(`${environment.serverUrl}/api/Song/${id}`, { headers: this.getHeaders() });
   }
   createSong(song: FormData) {
-    return this._http.post(`${environment.serverUrl}/Song`, song, { headers: this.getHeaders()});
+    return this._http.post(`${environment.serverUrl}/api/Song`, song, { headers: this.getHeaders()});
   }
   updateSong(song: Song){
-    return this._http.put(`${environment.serverUrl}/Song`, song, { headers: this.getHeaders() });
+    return this._http.put(`${environment.serverUrl}/api/Song`, song, { headers: this.getHeaders() });
   }
   deleteSong(id: number) {
-    return this._http.delete(`${environment.serverUrl}/Song/${id}`, { headers: this.getHeaders() });
+    return this._http.delete(`${environment.serverUrl}/api/Song/${id}`, { headers: this.getHeaders() });
   }
 }

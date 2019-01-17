@@ -40,17 +40,17 @@ export class SongCreateComponent implements OnInit {
   onSubmit(){
 
     const formData = new FormData();
-    formData.append("Song", this.file[0], this.file.name);
-    formData.append("Artist", this.songForm.value["Artist"]);
-    formData.append("Title", this.songForm.value["Title"]);
-    formData.append("Genre", this.songForm.value["Genre"]);
-    formData.append("Length", this.songForm.value["Length"]);
-    formData.append("Album", this.songForm.value["Album"]);
+    formData.append("UploadedFile", this.file[0], this.file.name);
+    formData.append("SongArtist", this.songForm.value["Artist"]);
+    formData.append("SongTitle", this.songForm.value["Title"]);
+    formData.append("SongGenre", this.songForm.value["Genre"]);
+    formData.append("SongLength", this.songForm.value["Length"]);
+    formData.append("SongAlbum", this.songForm.value["Album"]);
 
     console.log(formData.get("Song"))
     this._songService.createSong(formData).subscribe(data => {
 
-      this._router.navigate(['/song']);
+      this._router.navigate(['/']);
     });
   }
 }
