@@ -1,20 +1,19 @@
-<h1>Create a Playlist</h1>
+<div class="create">
+  <h1>Create a Playlist</h1>
+</div>
 <hr>
 
+<div class="create">
 <form #f="ngForm" (ngSubmit)="onSubmit(f)" [formGroup]="playlistForm">
   <div>
     <div>
       <mat-form-field>
-        <input matInput placeholder="PlaylistName" formControlName="PlaylistName" type="PlaylistName" required />
-      </mat-form-field>
-    </div>
-    <div>
-      <mat-form-field>
-        <input matInput placeholder="pid" formControlName="pid" type="Content" required />
+        <input matInput placeholder="Playlist Name" formControlName="PlaylistName" type="PlaylistName" required />
       </mat-form-field>
     </div>
   </div>
   <button mat-raised-button class="nav-btn" color="primary" type="submit">Create Playlist</button>
 </form>
 
-<a mat-button routerLink="/Playlists">Back to List</a>
+<a mat-button routerLink="/playlist/index">Back to List</a>
+</div>

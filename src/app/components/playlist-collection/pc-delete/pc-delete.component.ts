@@ -9,7 +9,7 @@ import { PlaylistIndex } from 'src/app/models/pc-index';
   styleUrls: ['./pc-delete.component.css']
 })
 
-export class PlaylistDeleteComponent implements OnInit {
+export class PlaylistCollectionDeleteComponent implements OnInit {
 
   playlist: PlaylistIndex;
   playlistId: any;
