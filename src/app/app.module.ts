@@ -40,8 +40,7 @@ import {
   MatSidenavModule
 }
   from '@angular/material';
-import { PlaylistEditComponent } from './components/playlist/playlist-edit/playlist-edit.component';
-
+  
 @NgModule({
   declarations: [
     AppComponent,
@@ -56,11 +55,10 @@ import { PlaylistEditComponent } from './components/playlist/playlist-edit/playl
     PlaylistCollectionDeleteComponent,
     AdminPortalComponent,
     PlayControlsComponent,
-    SongCreateComponent
+    SongCreateComponent,
     PlaylistIndexComponent,
     PlaylistCreateComponent,
     RegistrationComponent,
-    PlaylistEditComponent,
   ],
   imports: [
     BrowserModule,

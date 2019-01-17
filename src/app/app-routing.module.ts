@@ -15,7 +15,7 @@ import { HomeComponent } from './components/home/home.component';
 const routes: Routes = [
   { path: 'register', component: RegistrationComponent },
   { path: 'login', component: LoginComponent },
-  {path: 'song/create', component: SongCreateComponent}
+  {path: 'song/create', component: SongCreateComponent},
   { path: 'home', component:HomeComponent},
 
   {path: 'newplaylist', children: [
