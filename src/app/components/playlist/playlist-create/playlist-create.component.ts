@@ -21,13 +21,13 @@ export class PlaylistCreateComponent implements OnInit {
 
   createForm() {
     this.playlistForm = this._form.group({
-      Title: new FormControl,
+      PlaylistName: new FormControl,
     });
   }
 
   onSubmit() {
     this._playlistService.createPlaylist(this.playlistForm.value).subscribe(data => {
-      this._router.navigate(['/playlist']);
+      this._router.navigate(['/playlist/index']);
     });
   }
 }

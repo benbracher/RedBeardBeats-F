@@ -19,7 +19,8 @@ import { RegistrationComponent } from './components/register/register.component'
 import { SongComponent } from './components/song/song.component';
 import { PlaylistCollectionIndexComponent } from './components/playlist-collection/pc-index/playlist-collection-index.component';
 import { PlaylistCollectionCreateComponent } from './components/playlist-collection/pc-create/playlist-collection-create.component'
-import { PlaylistDetailComponent } from './components/playlist-collection/pc-detail/pc-detail.component';
+import { PlaylistCollectionDetailComponent } from './components/playlist-collection/pc-detail/pc-detail.component';
+import { PlaylistCollectionDeleteComponent } from './components/playlist-collection/pc-delete/pc-delete.component';
 import { AdminPortalComponent } from './components/admin-portal/admin-portal.component';
 import { PlayControlsComponent } from './components/play-controls/play-controls.component';
 import { PlaylistComponent } from './components/playlist/playlist.component';
@@ -31,6 +32,7 @@ import { PlaylistService } from './services/playlist.service';
 import { PlaylistCollectionService } from './services/playlist-collection.service';
 import { SideNavComponent } from './components/side-nav/side-nav.component';
 import { LayoutModule } from '@angular/cdk/layout';
+import { SongCreateComponent } from './components/song-create/song.create.component'
 import {
   MatFormFieldModule,
   MatListModule,
@@ -50,9 +52,11 @@ import { PlaylistEditComponent } from './components/playlist/playlist-edit/playl
     PlaylistComponent,
     PlaylistCollectionIndexComponent,
     PlaylistCollectionCreateComponent,
-    PlaylistDetailComponent,
+    PlaylistCollectionDetailComponent,
+    PlaylistCollectionDeleteComponent,
     AdminPortalComponent,
     PlayControlsComponent,
+    SongCreateComponent
     PlaylistIndexComponent,
     PlaylistCreateComponent,
     RegistrationComponent,
@@ -78,7 +82,6 @@ import { PlaylistEditComponent } from './components/playlist/playlist-edit/playl
      MatSidenavModule,
     MatIconModule,
     MatListModule,
-    
   ],
   providers: [
     AuthService,
