@@ -7,7 +7,9 @@ import {
   MatToolbarModule,
   MatButtonModule,
   MatTableModule,
-  MatInputModule
+  MatInputModule,
+  MatOptionModule,
+  MatSelectModule
 } from '@angular/material';
 import { HttpClientModule } from '@angular/common/http';
 
@@ -74,6 +76,8 @@ import {
     MatButtonModule, 
     MatTableModule,
     MatInputModule,
+    MatOptionModule,
+    MatSelectModule,
     FormsModule,
     RouterModule,
     ReactiveFormsModule,

@@ -27,7 +27,7 @@ export class PlaylistCreateComponent implements OnInit {
 
   onSubmit() {
     this._playlistService.createPlaylist(this.playlistForm.value).subscribe(data => {
-      this._router.navigate(['/playlist/index']);
+      this._router.navigate(['/playlist/assign']);
     });
   }
 }
