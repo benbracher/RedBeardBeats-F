@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { PlaylistCollectionService } from 'src/app/services/playlist-collection.service';
 
 @Component({
   selector: 'app-play-controls',

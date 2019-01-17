@@ -1,7 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
-import { RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms'
 import { HttpClientModule } from '@angular/common/http';
 
@@ -13,8 +12,11 @@ import { RegistrationComponent } from './components/register/register.component'
 import { SongComponent } from './components/song/song.component';
 import { PlaylistComponent } from './components/playlist/playlist.component';
 import { PlaylistIndexComponent } from './components/playlist-collection/pc-index/playlist-collection-index.component';
+import { PlaylistCreateComponent } from './components/playlist-collection/pc-create/playlist-collection-create.component'
+import { PlaylistDetailComponent } from './components/playlist-collection/pc-detail/pc-detail.component';
 import { AdminPortalComponent } from './components/admin-portal/admin-portal.component';
 import { PlayControlsComponent } from './components/play-controls/play-controls.component';
+import { PlayControlsService } from './services/play-controls.service';
 import { PlaylistCollectionService } from './services/playlist-collection.service';
 import { SideNavComponent } from './components/side-nav/side-nav.component';
 import { LayoutModule } from '@angular/cdk/layout';
@@ -39,9 +41,11 @@ import {
     SongComponent,
     PlaylistComponent,
     PlaylistIndexComponent,
+    PlaylistCreateComponent,
+    PlaylistDetailComponent,
     AdminPortalComponent,
     PlayControlsComponent,
-    RegistrationComponent
+    RegistrationComponent,
   ],
   imports: [
     BrowserModule,
@@ -58,10 +62,9 @@ import {
     MatSidenavModule,
     MatIconModule,
     MatListModule,
-    //RouterModule.forRoot(routes),
     ReactiveFormsModule
   ],
-  providers: [PlaylistCollectionService],
+  providers: [PlaylistCollectionService, PlayControlsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
