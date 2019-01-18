@@ -1,7 +1,70 @@
 <div class="mainContent">
+  <h1>Index Works!</h1>
+</div>
+<div class="row">
+  <a mat-raised-button color="primary" routerLink="/song/create">Add New Song</a>
+  <a id="button1" mat-raised-button color="primary" routerLink="/playlist/assign">Assign Song to Playlist</a>
 
-  <p>
-    song works!
-  </p>
+</div>
+<hr />
 
+<div class="mainContent">
+  <mat-table #table [dataSource]="dataSource">
+    <mat-header-row *matHeaderRowDef="columnNames"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: columnNames;"></mat-row>
+
+    <ng-container matColumnDef="details">
+      <mat-header-cell *matHeaderCellDef class="matColumnSize"></mat-header-cell>
+      <mat-cell *matCellDef="let song" routerLink="/song/detail/{{song.songEntityId}}">
+        <i mat-icon class="material-icons">library_books</i>
+      </mat-cell>
+    </ng-container>
+
+    <!-- <ng-container matColumnDef="SongEntityId">
+      <mat-header-cell *matHeaderCellDef>Song Id</mat-header-cell>
+      <mat-cell *matCellDef="let song">{{song.SongEntityId}}</mat-cell>
+    </ng-container> -->
+
+    <ng-container matColumnDef="SongTitle">
+      <mat-header-cell *matHeaderCellDef>Song Title</mat-header-cell>
+      <mat-cell *matCellDef="let song">{{song.songTitle}}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="SongArtist">
+      <mat-header-cell *matHeaderCellDef>Artist</mat-header-cell>
+      <mat-cell *matCellDef="let song">{{song.songArtist}}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="OwnerId">
+      <mat-header-cell *matHeaderCellDef>Song Owner</mat-header-cell>
+      <mat-cell *matCellDef="let song">{{song.ownerId}}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="SongAlbum">
+      <mat-header-cell *matHeaderCellDef>Album</mat-header-cell>
+      <mat-cell *matCellDef="let song">{{song.songAlbum}}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="SongGenre">
+      <mat-header-cell *matHeaderCellDef>Genre</mat-header-cell>
+      <mat-cell *matCellDef="let song">{{song.songGenre}}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="SongLength">
+      <mat-header-cell *matHeaderCellDef>Length</mat-header-cell>
+      <mat-cell *matCellDef="let song">{{song.songLength}}</mat-cell>
+    </ng-container>
+
+
+
+    <ng-container matColumnDef="buttons">
+      <mat-header-cell *matHeaderCellDef></mat-header-cell>
+      <mat-cell *matCellDef="let song">
+        <a id="detail" routerLink="/song/detail/{{song.songEntityId}}">detail</a>
+        <i mat-icon class="material-icons"routerLink="/playlist/edit">edit</i>
+        <i class="material-icons" routerLink="/song/delete/{{song.songEntityId}}">delete</i>
+      </mat-cell>
+    </ng-container>
+
+  </mat-table>
 </div>
