@@ -43,6 +43,7 @@ import { PlaylistService } from './services/playlist.service';
 import { PlayControlsService } from './services/play-controls.service';
 import { PlaylistCollectionService } from './services/playlist-collection.service';
 import { SongService } from './services/song.service';
+import { PlaylistEditComponent } from './components/playlist/playlist-edit/playlist-edit.component';
   
 @NgModule({
   declarations: [
@@ -52,6 +53,7 @@ import { SongService } from './services/song.service';
     LoginComponent,
     SongIndexComponent,
     PlaylistComponent,
+    PlaylistEditComponent,
     PlaylistCollectionIndexComponent,
     PlaylistCollectionCreateComponent,
     PlaylistCollectionDetailComponent,
