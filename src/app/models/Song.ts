@@ -2,7 +2,7 @@ export interface Song {
     SongArtist: string;
     SongTitle: string;
     SongGenre: string;
-    SongLength: number;
+    SongLength: string;
     SongAlbum: string;
     DateAdded?: Date;
     oid: number;

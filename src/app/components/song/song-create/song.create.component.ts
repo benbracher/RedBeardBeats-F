@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { SongService } from '../../services/song.service';
+import { SongService } from '../../../services/song.service';
 import { FormBuilder, FormGroup, FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
 
@@ -24,11 +24,11 @@ export class SongCreateComponent implements OnInit {
 
   createForm() {
     this.songForm = this._form.group({
-      Artist: new FormControl,
-      Title: new FormControl,
-      Size: new FormControl,
-      Color: new FormControl,
-      Price: new FormControl
+      SongArtist: new FormControl,
+      SongTitle: new FormControl,
+      SongGenre: new FormControl,
+      SongLength: new FormControl,
+      SongAlbum: new FormControl
     });
   }
 

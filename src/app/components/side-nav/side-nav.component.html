@@ -3,11 +3,11 @@
       [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
       [mode]="(isHandset$ | async) ? 'over' : 'side'"
       [opened]="!(isHandset$ | async)">
-    <mat-toolbar><a class="home" href="home">Home</a></mat-toolbar>
+    <mat-toolbar><a class="home" routerLink="home">Home</a></mat-toolbar>
     <mat-nav-list>
       <p class="title">Your Treasure</p>
-      <a mat-list-item href="playlist/index">Playlist</a>
-      <a mat-list-item href="#">Song</a>
+      <a mat-list-item routerLink="playlist/index">Playlist</a>
+      <a mat-list-item routerLink="song/index">Song</a>
       <br>
       <br>
       <br>
@@ -24,12 +24,12 @@
       <br>
       <br>
       <hr />
-      <a mat-list-item href="newplaylist/create">Add New Playlist</a>
-      <a mat-list-item href="playlist-collection/create">Add New Song</a>
-      <a mat-list-item href="playlist/assign">Add Song to Playlist</a>
+      <a mat-list-item routerLink="newplaylist/create">Add New Playlist</a>
+      <a mat-list-item routerLink="song/create">Add New Song</a>
+      <a mat-list-item routerLink="playlist/assign">Add Song to Playlist</a>
       <br>
-      <a mat-list-item href="login">Login</a>
-      <a mat-list-item href="register">Sign Up</a>
+      <a mat-list-item routerLink="login">Login</a>
+      <a mat-list-item routerLink="register">Sign Up</a>
       <br>
       <br>
     </mat-nav-list>
