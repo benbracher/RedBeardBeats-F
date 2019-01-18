@@ -44,14 +44,12 @@
 
 <div class="mainContent">
   <h1>Details Works!</h1>
-</div>
-<div class="row">
-  <a id="button1" mat-raised-button color="primary" routerLink="/playlist/assign"><i mat-icon class="material-icons">add_circle</i></a>
 
-</div>
-<hr />
+  <div class="row">
+    <a id="button1" mat-raised-button color="primary" routerLink="/playlist/assign"><i mat-icon class="material-icons">add_circle</i></a>
+  </div>
+  <hr />
 
-<div class="mainContent">
   <mat-table #table [dataSource]="dataSource">
     <mat-header-row *matHeaderRowDef="columnNames"></mat-header-row>
     <mat-row *matRowDef="let row; columns: columnNames;" (click)="playSong(row)"></mat-row>

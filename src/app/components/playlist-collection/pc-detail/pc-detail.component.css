@@ -3,6 +3,7 @@
 }
 h1 {
     text-align: center;
+    opacity: 1;
 }
 
 .row {
@@ -11,4 +12,20 @@ h1 {
 
 .mainContent {
     margin-right: 2vw;
+    text-align: center;
+}
+
+mat-table {
+    width: 75vw;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+mat-header-cell {
+    text-align: center;
+}
+
+mat-cell {
+    text-align: center;
 }
