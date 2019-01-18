@@ -20,8 +20,10 @@ const routes: Routes = [
 
   {path: 'newplaylist', children: [
     {path: 'index', component: PlaylistIndexComponent},
+    {path: 'create', component: PlaylistCreateComponent},
+    {path: 'detail/:id', component: PlaylistCollectionDetailComponent} 
+    ]},
     {path: 'assign', component: PlaylistCreateComponent},
-    // {path: 'detail/:id', component: PlaylistDetailComponent},
     {path: 'create', component: PlaylistCreateComponent},    
   ]},
 
