@@ -12,6 +12,8 @@ import { PlaylistIndexComponent } from './components/playlist/playlist-index/pla
 import { PlaylistCreateComponent } from './components/playlist/playlist-create/playlist-create.component';
 import { SongIndexComponent } from './components/song/song-index/song.index.component';
 import { SongCreateComponent } from './components/song/song-create/song.create.component';
+import { SongDetailComponent } from './components/song/song-detail/song-detail.component';
+import { SongUpdateComponent } from './components/song/song-update/song-update.component';
 
 const routes: Routes = [
   { path: 'register', component: RegistrationComponent },
@@ -19,8 +21,10 @@ const routes: Routes = [
   { path: 'home', component:HomeComponent},
 
   {path: 'song', children: [
+    {path: 'index', component: SongIndexComponent}, 
     {path: 'create', component: SongCreateComponent},
-    {path: 'index', component: SongIndexComponent},   
+    {path: 'detail/:id', component: SongDetailComponent},
+    {path: 'edit/:id', component: SongUpdateComponent}  
   ]},
   {path: 'newplaylist', children: [
     {path: 'index', component: PlaylistIndexComponent},
