@@ -28,7 +28,7 @@ import { PlaylistCreateComponent } from './components/playlist/playlist-create/p
 import { AuthService } from './services/auth.service';
 import { PlaylistService } from './services/playlist.service';
 
-import { AlertModule } from 'ngx-bootstrap';
+
 import { PlaylistCollectionService } from './services/playlist-collection.service';
 import { SideNavComponent } from './components/side-nav/side-nav.component';
 import { LayoutModule } from '@angular/cdk/layout';
@@ -79,7 +79,6 @@ import { PlaylistEditComponent } from './components/playlist/playlist-edit/playl
      MatSidenavModule,
     MatIconModule,
     MatListModule,
-    AlertModule.forRoot(),
   ],
   providers: [
     AuthService,
