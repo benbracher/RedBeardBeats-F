@@ -19,7 +19,7 @@ import { RegistrationComponent } from './components/register/register.component'
 import { SongComponent } from './components/song/song.component';
 import { PlaylistCollectionIndexComponent } from './components/playlist-collection/pc-index/playlist-collection-index.component';
 import { PlaylistCollectionCreateComponent } from './components/playlist-collection/pc-create/playlist-collection-create.component'
-import { PlaylistDetailComponent } from './components/playlist-collection/pc-detail/pc-detail.component';
+import { PlaylistCollectionDetailComponent } from './components/playlist-collection/pc-detail/pc-detail.component';
 import { AdminPortalComponent } from './components/admin-portal/admin-portal.component';
 import { PlayControlsComponent } from './components/play-controls/play-controls.component';
 import { PlaylistComponent } from './components/playlist/playlist.component';
@@ -28,6 +28,7 @@ import { PlaylistCreateComponent } from './components/playlist/playlist-create/p
 import { AuthService } from './services/auth.service';
 import { PlaylistService } from './services/playlist.service';
 
+import { AlertModule } from 'ngx-bootstrap';
 import { PlaylistCollectionService } from './services/playlist-collection.service';
 import { SideNavComponent } from './components/side-nav/side-nav.component';
 import { LayoutModule } from '@angular/cdk/layout';
@@ -50,7 +51,7 @@ import { PlaylistEditComponent } from './components/playlist/playlist-edit/playl
     PlaylistComponent,
     PlaylistCollectionIndexComponent,
     PlaylistCollectionCreateComponent,
-    PlaylistDetailComponent,
+    PlaylistCollectionDetailComponent,
     AdminPortalComponent,
     PlayControlsComponent,
     PlaylistIndexComponent,
@@ -78,7 +79,7 @@ import { PlaylistEditComponent } from './components/playlist/playlist-edit/playl
      MatSidenavModule,
     MatIconModule,
     MatListModule,
-    
+    AlertModule.forRoot(),
   ],
   providers: [
     AuthService,
