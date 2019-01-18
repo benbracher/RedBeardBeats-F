@@ -1,23 +1,32 @@
 <div class="playlistcollection">
-<h1>Assign Song to Playlist</h1>
+  <h1>Assign Song to Playlist</h1>
 </div>
 <hr>
 <div class="playlistcollection">
-<form #f="ngForm" (ngSubmit)="onSubmit(f)" [formGroup]="playlistForm">
-  <div>
+  <form #f="ngForm" (ngSubmit)="onSubmit(f)" [formGroup]="playlistForm">
     <div>
-      <mat-form-field>
-        <input matInput placeholder="Playlist Id" formControlName="PlaylistEntityId" type="PlaylistEntityId" required/>
-      </mat-form-field>
+      <div>
+        <mat-form-field>
+          <mat-select placeholder="Playlist" formControlName="PlaylistEntityId" type="PlaylistEntityId" required>
+            <mat-option *ngFor="let playlist of playlistSelect" value="{{playlist.PlaylistEntityId}}">
+              {{playlist.playlistName}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field>
+            <mat-select placeholder="Song" formControlName="SongEntityId" type="SongEntityId" required>
+                <mat-option *ngFor="let song of songSelect">
+                  {{song.songName}}
+                </mat-option>
+              </mat-select>
+          <!-- <input matInput placeholder="Song Id" formControlName="SongEntityId" type="SongEntityId" required /> -->
+        </mat-form-field>
+      </div>
     </div>
-    <div>
-      <mat-form-field>
-        <input matInput placeholder="Song Id" formControlName="SongEntityId" type="SongEntityId" required/>
-      </mat-form-field>
-    </div>
-  </div>
-  <button mat-raised-button class="nav-btn" color="primary" type="submit">Add Song to Playlist</button>
-</form>
+    <button mat-raised-button class="nav-btn" color="primary" type="submit">Add Song to Playlist</button>
+  </form>
 
-<a mat-button routerLink="/playlist/index">Back to List</a>
+  <a mat-button routerLink="/playlist/index">Back to List</a>
 </div>

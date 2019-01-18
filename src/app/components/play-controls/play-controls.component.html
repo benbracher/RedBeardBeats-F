@@ -1,3 +1,8 @@
-<p>
-  play-controls works!
-</p>
+<div class="mainContent">
+
+    <mat-toolbar role="footer" class="mat-elevation-z3 music-control">
+        <!-- <audio #player controls src={song.uploadLink}></audio> -->
+        <audio controls #playControls="" (ended)="playControlsEnded()"></audio>
+    </mat-toolbar>
+
+</div>
