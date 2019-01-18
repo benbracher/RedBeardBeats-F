@@ -59,10 +59,10 @@
 
     <ng-container matColumnDef="buttons">
       <mat-header-cell *matHeaderCellDef></mat-header-cell>
-      <mat-cell *matCellDef="let playlist">
-        <a id="detail" routerLink="/playlist/detail/{{playlist.playlistEntityId}}">detail</a>
+      <mat-cell *matCellDef="let song">
+        <a id="detail" routerLink="/song/detail/{{song.songEntityId}}">detail</a>
         <i mat-icon class="material-icons"routerLink="/playlist/edit">edit</i>
-        <i class="material-icons" routerLink="/playlist/delete/{{playlist.playlistEntityId}}">delete</i>
+        <i class="material-icons" routerLink="/song/delete/{{song.songEntityId}}">delete</i>
       </mat-cell>
     </ng-container>
 

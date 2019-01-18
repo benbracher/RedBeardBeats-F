@@ -14,6 +14,7 @@ import { SongIndexComponent } from './components/song/song-index/song.index.comp
 import { SongCreateComponent } from './components/song/song-create/song.create.component';
 import { SongDetailComponent } from './components/song/song-detail/song-detail.component';
 import { SongUpdateComponent } from './components/song/song-update/song-update.component';
+import { SongDeleteComponent } from './components/song/song-delete/song-delete.component';
 
 const routes: Routes = [
   { path: 'register', component: RegistrationComponent },
@@ -24,6 +25,7 @@ const routes: Routes = [
     {path: 'index', component: SongIndexComponent}, 
     {path: 'create', component: SongCreateComponent},
     {path: 'detail/:id', component: SongDetailComponent},
+    {path: 'delete/:id', component:SongDeleteComponent},
     {path: 'edit/:id', component: SongUpdateComponent}  
   ]},
   {path: 'newplaylist', children: [
