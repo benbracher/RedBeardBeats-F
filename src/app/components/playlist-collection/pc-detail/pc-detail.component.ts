@@ -15,14 +15,12 @@ import { Playlist } from 'src/app/models/Playlist';
 
 export class PlaylistCollectionDetailComponent implements OnInit {
   columnNames = [
-    'details',
     'SongTitle',
     'SongArtist',
     'OwnerId',
     'SongAlbum',
     'SongGenre',
-    'SongLength',
-    'buttons'
+    'SongLength'
   ]
   dataSource: MatTableDataSource<Playlist>;
   playlistSelect: Playlist[];

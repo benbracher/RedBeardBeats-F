@@ -46,8 +46,7 @@
   <h1>Details Works!</h1>
 </div>
 <div class="row">
-  <a mat-raised-button color="primary" routerLink="/song/create">Add New Song</a>
-  <a id="button1" mat-raised-button color="primary" routerLink="/playlist/assign">Assign Song to Playlist</a>
+  <a id="button1" mat-raised-button color="primary" routerLink="/playlist/assign"><i mat-icon class="material-icons">add_circle</i></a>
 
 </div>
 <hr />
@@ -57,12 +56,7 @@
     <mat-header-row *matHeaderRowDef="columnNames"></mat-header-row>
     <mat-row *matRowDef="let row; columns: columnNames;" (click)="playSong(row)"></mat-row>
 
-    <ng-container matColumnDef="details">
-      <mat-header-cell *matHeaderCellDef class="matColumnSize"></mat-header-cell>
-      <mat-cell *matCellDef="let playlist" routerLink="/playlist/detail/{{playlist.PlaylistEntityId}}">
-        <!-- <i mat-icon class="material-icons">library_books</i> -->
-      </mat-cell>
-    </ng-container>
+    <!--  -->
 
     <!-- <ng-container matColumnDef="SongEntityId">
       <mat-header-cell *matHeaderCellDef>Song Id</mat-header-cell>
@@ -99,16 +93,16 @@
       <mat-cell *matCellDef="let song">{{song.songLength}}</mat-cell>
     </ng-container>
 
-    <ng-container matColumnDef="buttons">
+    <!-- <ng-container matColumnDef="buttons">
       <mat-header-cell *matHeaderCellDef></mat-header-cell>
       <mat-cell *matCellDef="let playlist">
-        <!-- <a routerLink="/playlist/edit">edit</a>
+        <a routerLink="/playlist/edit">edit</a>
         <a id="delete" routerLink="/playlist/delete/{{playlist.playlistEntityId}}">delete</a>
-        <a id="detail" routerLink="/playlist/detail/{{playlist.playlistEntityId}}">detail</a> -->
-        <!-- <i mat-icon class="material-icons">edit</i>
-                    <i class="material-icons">delete</i> -->
+        <a id="detail" routerLink="/playlist/detail/{{playlist.playlistEntityId}}">detail</a>
+        <i mat-icon class="material-icons">edit</i>
+                    <i class="material-icons">delete</i>
       </mat-cell>
-    </ng-container>
+    </ng-container> -->
 
   </mat-table>
 </div>
