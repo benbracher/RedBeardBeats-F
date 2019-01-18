@@ -1,13 +1,13 @@
-<div class="detail"><h1>Playlist Details</h1></div>
+<div class="detail"><h1>Playlist Content</h1></div>
 <hr />
 
 <div class="detail" *ngIf="playlist">
   <div>
     <label for="">Owner Id: </label>
-    <span>{{song.ownerId}}</span>
+    <span>{{playlist.ownerId}}</span>
   </div>
   <br/>
-  <div *ngFor="let song of playlist">
+  <div *ngFor="let song of playlist" (click)="playSong(song)">
     <div>
       <label for="">Song Id: </label>
       <span>{{song.songEntityId}}</span>
@@ -32,10 +32,10 @@
       <label for="">Song Genre: </label>
       <span>{{song.songGenre}}</span>
     </div>
-    <div>
+    <!-- <div>
       <label for="">Song File: </label>
       <span>{{song.uploadedLink}}</span>
-    </div>
+    </div> -->
     <br />
   </div>
 </div>

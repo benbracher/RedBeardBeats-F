@@ -22,13 +22,11 @@
     "@angular/platform-browser-dynamic": "~7.1.0",
     "@angular/router": "~7.1.0",
     "bootstrap": "^4.2.1",
+    "angular-audio": "^1.7.3",
     "core-js": "^2.5.4",
-<<<<<<< Updated upstream
-=======
-    "ngx-bootstrap": "^3.1.4",
     "ngx-soundmanager2": "^0.2.3",
->>>>>>> Stashed changes
     "rxjs": "~6.3.3",
+    "soundmanager2": "^2.97.20170602",
     "tslib": "^1.9.0",
     "zone.js": "~0.8.26"
   },
