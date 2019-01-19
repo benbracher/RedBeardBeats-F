@@ -30,7 +30,7 @@ const routes: Routes = [
     {path: 'edit/:id', component: SongUpdateComponent}  
   ]},
   {path: 'newplaylist', children: [
-    {path: 'index', component: PlaylistIndexComponent},
+    {path: 'index', component: PlaylistCollectionIndexComponent},
     {path: 'assign', component: PlaylistCreateComponent},
     // {path: 'detail/:id', component: PlaylistDetailComponent},
     {path: 'create', component: PlaylistCreateComponent},    
@@ -38,7 +38,7 @@ const routes: Routes = [
   ]},
 
   {path: 'playlist', children: [
-    {path: 'index', component: PlaylistCollectionIndexComponent},
+    {path: 'index', component: PlaylistIndexComponent},
     {path: 'assign', component: PlaylistCollectionCreateComponent},
     {path: 'detail/:id', component: PlaylistCollectionDetailComponent}, 
     {path: 'delete/:id', component: PlaylistCollectionDeleteComponent}
