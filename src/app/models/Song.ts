@@ -6,5 +6,5 @@ export interface Song {
     SongLength: string;
     SongAlbum: string;
     DateAdded?: Date;
-    oid: number;
+    UploadedFile?: FormData;
 }
