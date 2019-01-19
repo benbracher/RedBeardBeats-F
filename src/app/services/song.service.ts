@@ -15,7 +15,7 @@ export class SongService {
   constructor(private _http: HttpClient) { }
 
   private getHeaders() {
-    return new HttpHeaders().set('Authorization', `Bearer ${localStorage.getItem('id_token')}`);
+    return new HttpHeaders().set('Authorization', `Bearer ${localStorage.getItem('pirate_ship')}`);
   }
   getSongs() {
     return this._http.get(`${ApiUrl}/Song`, { headers: this.getHeaders() });
