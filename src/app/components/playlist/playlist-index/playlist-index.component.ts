@@ -10,12 +10,14 @@ import { MatTableDataSource } from '@angular/material';
 })
 export class PlaylistIndexComponent implements OnInit {
 
+  columnNames = [ 'details','OwnerId','PlaylistEntityId','PlaylistName', 'buttons'];
+  dataSource: MatTableDataSource<Playlist>
+  
   constructor(private _playlistService: PlaylistService) { }
 
   ngOnInit() {
     this._playlistService.getPlaylists().subscribe((playlists: Playlist[]) => {
+      this.dataSource = new MatTableDataSource<Playlist>(playlists);
     });
   }
-  columnNames = ['playlistName', 'pid','sid', 'oid'];
-  dataSource: MatTableDataSource<Playlist>
 }
