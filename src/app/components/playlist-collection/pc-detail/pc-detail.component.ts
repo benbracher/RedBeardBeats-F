@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { PlaylistCollectionService } from 'src/app/services/playlist-collection.service';
+import { PlayControlsService } from 'src/app/services/play-controls.service';
 import { PlaylistDetail } from 'src/app/models/pc-detail';
+import { NgControlStatus } from '@angular/forms';
 
 @Component({
   selector: 'app-pc-detail',
@@ -12,7 +14,7 @@ export class PlaylistCollectionDetailComponent implements OnInit {
 
   playlist: PlaylistDetail;
 
-  constructor(private _activatedRoute: ActivatedRoute, private _playlistService: PlaylistCollectionService) { }
+  constructor(private _activatedRoute: ActivatedRoute, private _playlistService: PlaylistCollectionService, private _playControlsService: PlayControlsService) { }
 
   ngOnInit() {
     
@@ -22,6 +24,10 @@ export class PlaylistCollectionDetailComponent implements OnInit {
       console.log(this.playlist)
       });
     });
+  }
+
+  playSong(song) {
+    this._playControlsService.playSong(song.uploadedLink);
   }
 
 }

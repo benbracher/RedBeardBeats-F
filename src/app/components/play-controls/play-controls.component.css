@@ -1,0 +1,18 @@
+.mainContent {
+    width: 100%;
+    bottom: 0;
+    position: fixed;
+}
+
+.music-control {
+    position: fixed;
+    bottom: 0;
+    height: 100px;
+}
+
+.mat-toolbar {
+  box-shadow: 3px 0 6px black;
+  margin-left: -2vw;
+}
+
+.music-control,audio{background:#666; width: 88vw;}
