@@ -39,6 +39,7 @@ export class SongUpdateComponent implements OnInit {
       SongAlbum: new FormControl(this.song.SongAlbum),
       SongGenre: new FormControl(this.song.SongEntityId),
       SongLength: new FormControl(this.song.SongEntityId),
+      UploadedFile: new FormControl(this.song.UploadedFile)
 
     })
   }
@@ -60,7 +61,7 @@ export class SongUpdateComponent implements OnInit {
       SongAlbum: form.value.SongAlbum,
       SongGenre: form.value.SongGenre,
       SongLength: form.value.SongLength,
-      // UploadedFile: formData.append("UploadedFile", this.file[0], this.file.name)
+      UploadedFile: form.value.UploadedFile
     };
     this._songService.updateSong(updateSong).subscribe(data => {
       this._router.navigate(['/song/index']);

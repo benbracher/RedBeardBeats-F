@@ -1,17 +1,22 @@
 .deck{
-    display: inline-grid;
+    text-align:center;
 }
-
 .card{
     box-shadow: 0 0.5em 1em rgba(0,0,0,0.2);
     transition: 0.3s;
-    width: 30vw;
+    width: 25vw;
     text-align: center;
+    font-size: 100%;
+    display: inline-block;
+    background-color: lightslategrey;
+    border: 2px solid black;
+    border-radius: 3px;
+    margin: 0 1vw 1vw 1vw;
 }
 
 .card:hover{
     box-shadow: 0.5 0.5em 1em rgba(0,0,0,0.2);
-    background-color: red;
+    background-color: lightgrey;
 }
 
 .cardContainer {
@@ -24,4 +29,6 @@
 
 .head{
     text-align: center;
+    background-color: turquoise;
+    padding: 0.5vw 0 1vw 0;
 }

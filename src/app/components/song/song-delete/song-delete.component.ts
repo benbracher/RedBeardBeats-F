@@ -12,6 +12,7 @@ import { Song } from 'src/app/models/Song';
 export class SongDeleteComponent implements OnInit {
 
   song: Song;
+  songId: any;
 
   constructor(
     private _songService: SongService,
@@ -19,7 +20,8 @@ export class SongDeleteComponent implements OnInit {
     private _router: Router) 
     { 
       this._ar.paramMap.subscribe(p => {
-        this._songService.getSongById(p.get('id')).subscribe((singleSong: Song)=> {
+        this.songId = p.get('id')
+        this._songService.getSongById(p.get('id')).subscribe((singleSong: Song) => {
           this.song = singleSong;
         });
       });
@@ -29,7 +31,7 @@ export class SongDeleteComponent implements OnInit {
   }
 
   onDelete() {
-    this._songService.deleteSong(this.song.SongEntityId).subscribe(() => {
+    this._songService.deleteSong(this.songId).subscribe(() => {
       this._router.navigate(['/song/index']);
     })
   }

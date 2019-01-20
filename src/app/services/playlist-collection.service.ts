@@ -30,7 +30,6 @@ export class PlaylistCollectionService {
   }
 
   deletePlaylistCollection(id: number) {
-    
     return this._http.delete(`${ApiUrl}/api/PlaylistCollection/${id}`, { headers: this.getHeaders() });
   }
 
