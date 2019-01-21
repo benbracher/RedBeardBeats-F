@@ -97,7 +97,7 @@ import { PlaylistDetailComponent } from './components/playlist/playlist-detail/p
     MatSidenavModule,
     MatIconModule,
     MatListModule,
-    MatProgressBarModule
+    MatProgressBarModule,
     MatDialogModule
   ],
   providers: [
