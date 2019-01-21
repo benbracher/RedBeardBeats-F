@@ -16,7 +16,7 @@ export class SongService {
     return new HttpHeaders().set('Authorization', `Bearer ${sessionStorage.getItem('pirate_ship')}`);
   }
   getSongs() {
-    return this._http.get(`${environment.serverUrl}/Song`, { headers: this.getHeaders() });
+    return this._http.get(`${environment.serverUrl}/api/Song`, { headers: this.getHeaders() });
   }
   getSongById(id:string){
     return this._http.get(`${environment.serverUrl}/api/Song/${id}`, { headers: this.getHeaders() });
