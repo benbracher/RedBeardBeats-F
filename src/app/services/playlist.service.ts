@@ -1,8 +1,7 @@
+import { environment } from './../../environments/environment';
 import { Injectable } from '@angular/core';
 import { Playlist } from '../models/Playlist';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-
-const ApiUrl = 'https://localhost:44311/api';
 
 @Injectable({
   providedIn: 'root'
@@ -17,23 +16,23 @@ export class PlaylistService {
   }
 
   getPlaylists() {
-    return this._http.get(`${ApiUrl}/Playlist`, { headers: this.getHeaders()});
+    return this._http.get(`${environment.serverUrl}/Playlist`, { headers: this.getHeaders()});
   }
 
   createPlaylist(playlist: Playlist) {
-    return this._http.post(`${ApiUrl}/Playlist`, playlist, { headers: this.getHeaders()});
+    return this._http.post(`${environment.serverUrl}/Playlist`, playlist, { headers: this.getHeaders()});
   }
 
   getPlaylistById(id: string) {
-    return this._http.get(`${ApiUrl}/Playlist/${id}`, {headers: this.getHeaders()});
+    return this._http.get(`${environment.serverUrl}/Playlist/${id}`, {headers: this.getHeaders()});
   }
 
   updatePlaylist(playlist: Playlist) {
-    return this._http.put(`${ApiUrl}/Playlist`, playlist, { headers: this.getHeaders()});
+    return this._http.put(`${environment.serverUrl}/Playlist`, playlist, { headers: this.getHeaders()});
   }
 
   deletePlaylist(id: number) {
-    return this._http.delete(`${ApiUrl}/Playlist/${id}`, { headers: this.getHeaders()});
+    return this._http.delete(`${environment.serverUrl}/Playlist/${id}`, { headers: this.getHeaders()});
   }
 
 }

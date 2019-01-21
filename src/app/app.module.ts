@@ -15,7 +15,7 @@ import {
   MatIconModule,
   MatSidenavModule,
   MatProgressBarModule,
-  
+  MatDialogModule
 } from '@angular/material';
 import { HttpClientModule } from '@angular/common/http';
 
@@ -98,6 +98,7 @@ import { PlaylistDetailComponent } from './components/playlist/playlist-detail/p
     MatIconModule,
     MatListModule,
     MatProgressBarModule
+    MatDialogModule
   ],
   providers: [
     AuthService,

@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  serverUrl: 'https://localhost:44311'  
+  serverUrl: 'https://rbbeatsapi.azurewebsites.net'  
 };
 
 /*
