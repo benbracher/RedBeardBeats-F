@@ -3,7 +3,8 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-   serverUrl: 'https://rbbeatsapi.azurewebsites.net'  
+  production: false,
+  serverUrl: 'https://rbbeatsapi.azurewebsites.net'
 };
 
 /*
