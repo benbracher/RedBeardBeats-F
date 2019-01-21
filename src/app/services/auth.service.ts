@@ -1,3 +1,6 @@
+import { ReloadService } from './reload.service';
+import { environment } from './../../environments/environment';
+import { SideNavComponent } from './../components/side-nav/side-nav.component';
 import { Injectable } from '@angular/core';
 import { RegisterUser } from '../models/RegisterUser';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
@@ -5,10 +8,6 @@ import { Token } from '../models/Token';
 import { LoginUser } from '../models/LoginUser';
 import { Router } from '@angular/router';
 import { Observable, Subject } from 'rxjs';
-import { environment } from '../../environments/environment';
-
-
-const Api_Url = 'https://localhost:44311';
 
 @Injectable({
   providedIn: 'root'
@@ -18,7 +17,7 @@ export class AuthService {
   userInfo: Token;
   isLoggedIn = new Subject<boolean>();
 
-  constructor(private _http: HttpClient, private _router: Router) { }
+  constructor(private _http: HttpClient, private _router: Router, private _reload: ReloadService) { }
 
   register(regUserData: RegisterUser){
     
@@ -26,9 +25,9 @@ export class AuthService {
   }
 
   login(loginInfo: LoginUser){
-    return this._http.post(`${Api_Url}/api/Auth/Login`, loginInfo).subscribe( (token: any) => {
+    return this._http.post(`${environment.serverUrl}/api/Auth/Login`, loginInfo).subscribe( (token: any) => {
       sessionStorage.setItem('pirate_ship', token.token);
-      this.isLoggedIn.next(true);
+      this._reload.updateStatus(true);
       this._router.navigate(['/']);
     });
   }
@@ -36,14 +35,7 @@ export class AuthService {
 currentUser(): Observable<Object> {
   if (!sessionStorage.getItem('pirate_ship')) { return new Observable(observer => observer.next(false)); }
 
-  return this._http.get(`${Api_Url}/api/Account/UserInfo`, { headers: this.setHeader() });
-}
-
-logout(): Observable<Object> {
-  sessionStorage.clear();
-  this.isLoggedIn.next(false);
-
-  return this._http.post(`${Api_Url}/api/Account/Logout`, { headers: this.setHeader() } );
+  return this._http.get(`${environment.serverUrl}/api/Account/UserInfo`, { headers: this.setHeader() });
 }
 
 private setHeader(): HttpHeaders {

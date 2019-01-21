@@ -7,7 +7,7 @@
 </div>
 <hr />
 
-<div class="mainContent">
+<div class="mainContentBody">
   <mat-table #table [dataSource]="dataSource">
     <mat-header-row *matHeaderRowDef="columnNames"></mat-header-row>
     <mat-row *matRowDef="let row; columns: columnNames;" (click)="playSong(row)"></mat-row>
@@ -27,9 +27,9 @@
       <mat-cell *matCellDef="let song">{{song.songArtist}}</mat-cell>
     </ng-container>
 
-    <ng-container matColumnDef="OwnerId">
+    <ng-container matColumnDef="OwnerId" id="owner">
       <mat-header-cell *matHeaderCellDef>Song Owner</mat-header-cell>
-      <mat-cell *matCellDef="let song">{{song.ownerId}}</mat-cell>
+      <mat-cell *matCellDef="let song" id="owner">{{song.ownerId}}</mat-cell>
     </ng-container>
 
     <ng-container matColumnDef="SongAlbum">

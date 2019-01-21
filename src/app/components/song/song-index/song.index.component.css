@@ -20,3 +20,15 @@ mat-table {
     margin-right: auto;
     display: block;
 }
+.mainContentBody, mat-header-row {
+    font-family: 'Lustria', serif;
+    margin-left: 2vw;
+}
+
+.mainContentBody, mat-cell{
+    font-family: 'Lustria', serif;
+}
+
+#owner mat-cell{
+    text-align:center;
+}

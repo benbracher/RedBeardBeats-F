@@ -13,6 +13,7 @@ export class PlaylistEditComponent implements OnInit {
 
   playlist: Playlist;
   editPlaylistForm: FormGroup;
+  playlistId: number;
 
   constructor(private _form: FormBuilder,
     private _playlistService: PlaylistService,
@@ -20,6 +21,7 @@ export class PlaylistEditComponent implements OnInit {
     private _router: Router) {
 
     this._ar.paramMap.subscribe(p => {
+      this.playlistId = +p.get('id')
       this._playlistService.getPlaylistById(p.get('id')).subscribe((singlePlaylist: Playlist) => {
         this.playlist = singlePlaylist;
         this.createForm();
@@ -32,17 +34,15 @@ export class PlaylistEditComponent implements OnInit {
 
   createForm() {
     this.editPlaylistForm = this._form.group({
-      PlaylistEntityId: new FormControl(this.playlist.PlaylistEntityId),
-      OwnerId: new FormControl(this.playlist.OwnerId),
-      PlaylistName: new FormControl(this.playlist.PlaylistName)
+      PlaylistEntityId: new FormControl(this.playlist.playlistEntityId),
+      PlaylistName: new FormControl(this.playlist.playlistName)
     });
   }
 
   onSubmit(form) {
     const updatePlaylist: Playlist = {
-      PlaylistEntityId: form.value.PlaylistEntityId,
-      PlaylistName: form.value.PlaylistName,
-      OwnerId: form.value.OwnerId
+      playlistEntityId: this.playlistId,
+      playlistName: form.value.PlaylistName
     };
     console.log(updatePlaylist)
     this._playlistService.updatePlaylist(updatePlaylist).subscribe(d => {

@@ -17,6 +17,7 @@ export class SongUpdateComponent implements OnInit {
   editSongForm: FormGroup;
   file: any;
   songId: string;
+  progressBar: boolean;
 
   constructor(
     private _form: FormBuilder,
@@ -37,13 +38,13 @@ export class SongUpdateComponent implements OnInit {
   createForm(song: any){
 
     this.editSongForm = this._form.group({
-      SongEntityId: new FormControl(this.song.SongEntityId),
-      SongTitle: new FormControl(this.song.SongTitle),
-      SongArtist: new FormControl(this.song.SongArtist),
-      SongAlbum: new FormControl(this.song.SongAlbum),
-      SongGenre: new FormControl(this.song.SongEntityId),
-      SongLength: new FormControl(this.song.SongEntityId),
-      UploadedFile: new FormControl(this.song.UploadedFile)
+      SongEntityId: new FormControl(this.song.songEntityId),
+      SongTitle: new FormControl(this.song.songTitle),
+      SongArtist: new FormControl(this.song.songArtist),
+      SongAlbum: new FormControl(this.song.songAlbum),
+      SongGenre: new FormControl(this.song.songEntityId),
+      SongLength: new FormControl(this.song.songEntityId),
+      UploadedFile: new FormControl(this.song.uploadedFile)
 
     })
   }
@@ -58,6 +59,7 @@ export class SongUpdateComponent implements OnInit {
   
   onSubmit(songForm){
     console.log(songForm.value["SongEntityId"])
+    this.progressBar = true;
     const formData = new FormData();
     formData.append("UploadedFile", this.file[0], this.file.name);
     formData.append("SongArtist", songForm.value["SongArtist"]);
@@ -67,15 +69,6 @@ export class SongUpdateComponent implements OnInit {
     formData.append("SongAlbum", songForm.value["SongAlbum"]);
     formData.append("SongEntityId", this.songId);
 
-    const updateSong: Song = {
-      SongEntityId: songForm.value.SongEntityId,
-      SongTitle: songForm.value.SongTitle,
-      SongArtist: songForm.value.SongArtist,
-      SongAlbum: songForm.value.SongAlbum,
-      SongGenre: songForm.value.SongGenre,
-      SongLength: songForm.value.SongLength,
-      UploadedFile: songForm.value.UploadedFile
-    };
     this._songService.updateSong(formData).subscribe(data => {
       this._router.navigate(['/song/index']);
     });
