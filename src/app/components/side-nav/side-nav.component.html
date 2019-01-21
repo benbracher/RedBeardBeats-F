@@ -3,7 +3,7 @@
       [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
       [mode]="(isHandset$ | async) ? 'over' : 'side'"
       [opened]="!(isHandset$ | async)">
-    <mat-toolbar><a class="home" routerLink="home">Home</a></mat-toolbar>
+    <mat-toolbar><p class="home" routerLink="home">Home</p></mat-toolbar>
      <mat-nav-list>
       <div *ngIf="authed; else pleaseAuth">
       <p class="title">Your Treasure</p>

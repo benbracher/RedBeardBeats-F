@@ -36,6 +36,10 @@
 
     </div>
     <button mat-raised-button class="nav-btn" color="accent" type="submit">Done</button>
-</form>
+    <div *ngIf = "progressBar">
+      <p>Uploading... Please Wait</p>
+      <mat-progress-bar mode="indeterminate" value="100"></mat-progress-bar>
+    </div>
+  </form>
 <a mat-button routerLink="/song/index">Back to list</a>
 </div>
