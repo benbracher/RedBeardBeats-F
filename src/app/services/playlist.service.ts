@@ -16,23 +16,23 @@ export class PlaylistService {
   }
 
   getPlaylists() {
-    return this._http.get(`${environment.serverUrl}/Playlist`, { headers: this.getHeaders()});
+    return this._http.get(`${environment.serverUrl}/api/Playlist`, { headers: this.getHeaders()});
   }
 
   createPlaylist(playlist: Playlist) {
-    return this._http.post(`${environment.serverUrl}/Playlist`, playlist, { headers: this.getHeaders()});
+    return this._http.post(`${environment.serverUrl}/api/Playlist`, playlist, { headers: this.getHeaders()});
   }
 
   getPlaylistById(id: string) {
-    return this._http.get(`${environment.serverUrl}/Playlist/${id}`, {headers: this.getHeaders()});
+    return this._http.get(`${environment.serverUrl}/api/Playlist/${id}`, {headers: this.getHeaders()});
   }
 
   updatePlaylist(playlist: Playlist) {
-    return this._http.put(`${environment.serverUrl}/Playlist`, playlist, { headers: this.getHeaders()});
+    return this._http.put(`${environment.serverUrl}/api/Playlist`, playlist, { headers: this.getHeaders()});
   }
 
   deletePlaylist(id: number) {
-    return this._http.delete(`${environment.serverUrl}/Playlist/${id}`, { headers: this.getHeaders()});
+    return this._http.delete(`${environment.serverUrl}/api/Playlist/${id}`, { headers: this.getHeaders()});
   }
 
 }
