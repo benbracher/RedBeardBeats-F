@@ -14,7 +14,7 @@ import {
   MatListModule,
   MatIconModule,
   MatSidenavModule,
-  MatGridListModule,
+  MatProgressBarModule,
   MatDialogModule
 } from '@angular/material';
 import { HttpClientModule } from '@angular/common/http';
@@ -95,10 +95,10 @@ import { PlaylistDetailComponent } from './components/playlist/playlist-detail/p
     FormsModule,
     RouterModule,
     ReactiveFormsModule,
-     MatSidenavModule,
+    MatSidenavModule,
     MatIconModule,
     MatListModule,
-    MatGridListModule,
+    MatProgressBarModule,
     MatDialogModule
   ],
   providers: [
@@ -107,6 +107,9 @@ import { PlaylistDetailComponent } from './components/playlist/playlist-detail/p
     PlaylistCollectionService,
     PlayControlsService,
     SongService
+  ],
+  entryComponents: [
+    SongDetailComponent
   ],
   bootstrap: [AppComponent]
 })

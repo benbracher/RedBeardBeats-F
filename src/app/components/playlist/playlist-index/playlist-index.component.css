@@ -12,6 +12,7 @@
     border: 2px solid black;
     border-radius: 3px;
     margin: 0 1vw 1vw 1vw;
+    font-family: 'Lustria', serif;
 }
 
 .card:hover{

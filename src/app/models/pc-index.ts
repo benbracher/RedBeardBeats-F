@@ -1,9 +1,9 @@
 export interface PlaylistIndex {
-    PlaylistCollectionEntityId: number;
-    PlaylistEntityId: number;
-    SongEntityId: number;
-    OwnerId: number;
-    CreatedUtc: Date;
-    ModifiedUtc: Date;
+    playlistCollectionEntityId: number;
+    playlistEntityId: number;
+    songEntityId: number;
+    ownerId: number;
+    createdUtc: Date;
+    modifiedUtc: Date;
   }
   

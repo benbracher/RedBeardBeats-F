@@ -11,6 +11,7 @@ import { Router } from '@angular/router';
 })
 export class SongCreateComponent implements OnInit {
 
+  progressBar: boolean;
   songForm: FormGroup;
   file: any;
 
@@ -38,6 +39,7 @@ export class SongCreateComponent implements OnInit {
   }
 
   onSubmit(){
+    this.progressBar = true;
     const formData = new FormData();
     formData.append("UploadedFile", this.file[0], this.file.name);
     formData.append("SongArtist", this.songForm.value["SongArtist"]);
