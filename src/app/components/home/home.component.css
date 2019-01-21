@@ -1,5 +1,7 @@
 .head{
   background-color: red;
+  font-family: 'Pirata One', cursive;
+  font-size: 3vw;
 }
 .example-fill-remaining-space {
     flex: 1 1 auto;
