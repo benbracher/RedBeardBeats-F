@@ -13,3 +13,10 @@
 #button1{
     margin-left: 1%;
 }
+
+mat-table {
+    width: 75vw;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
