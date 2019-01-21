@@ -13,7 +13,7 @@ export class PlaylistService {
   constructor(private _http: HttpClient) { }
 
   getHeaders() {
-    return new HttpHeaders().set('Authorization', `Bearer ${localStorage.getItem('pirate_ship')}`);
+    return new HttpHeaders().set('Authorization', `Bearer ${sessionStorage.getItem('pirate_ship')}`);
   }
 
   getPlaylists() {

@@ -35,12 +35,9 @@
         <input matInput placeholder="Length" formControlName="SongLength" type="SongLength" required [value]="song.songLength" />
       </mat-form-field>
     </div>
-    <div hidden>
-      <mat-form-field>
-        <input matInput placeholder="File" formControlName="UploadedFile" type="UploadedFile" required [value]="song.uploadedFile" />
-      </mat-form-field>
-      <!-- <button type="button" md-button (click)="mp3FileInput.click()">Upload MP3</button>
-      <input hidden type="file" #mp3FileInput (change)="onFileChanged($event)"> -->
+    <div>
+      <button type="button" md-button (click)="mp3FileInput.click()">Upload MP3</button>
+      <input hidden type="file" #mp3FileInput (change)="onFileChanged($event)">
     </div>
     <button mat-raised-button class="nav-btn" color="accent" type="submit">Done</button>
   </form>

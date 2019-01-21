@@ -36,7 +36,7 @@ export class PlaylistCollectionService {
   private getHeaders() {
     return new HttpHeaders().set(
       'Authorization',
-      `Bearer ${localStorage.getItem('pirate_ship')}`
+      `Bearer ${sessionStorage.getItem('pirate_ship')}`
     );
   }
 }

@@ -22,7 +22,7 @@ export class PlaylistEditComponent implements OnInit {
     this._ar.paramMap.subscribe(p => {
       this._playlistService.getPlaylistById(p.get('id')).subscribe((singlePlaylist: Playlist) => {
         this.playlist = singlePlaylist;
-        this.createForm(this.playlist);
+        this.createForm();
       });
     });
   }
@@ -30,21 +30,21 @@ export class PlaylistEditComponent implements OnInit {
   ngOnInit() {
   }
 
-  createForm(playlist: any) {
+  createForm() {
     this.editPlaylistForm = this._form.group({
-      PlaylistEntityId: new FormControl(playlist.PlaylistEntityId),
-      OwnerId: new FormControl(playlist.OwnerId),
-      PlaylistName: new FormControl(playlist.PlaylistName)
+      PlaylistEntityId: new FormControl(this.playlist.PlaylistEntityId),
+      OwnerId: new FormControl(this.playlist.OwnerId),
+      PlaylistName: new FormControl(this.playlist.PlaylistName)
     });
   }
 
   onSubmit(form) {
-    console.log(this.playlist)
     const updatePlaylist: Playlist = {
       PlaylistEntityId: form.value.PlaylistEntityId,
       PlaylistName: form.value.PlaylistName,
       OwnerId: form.value.OwnerId
     };
+    console.log(updatePlaylist)
     this._playlistService.updatePlaylist(updatePlaylist).subscribe(d => {
       this._router.navigate(['/playlist/index'])
     });

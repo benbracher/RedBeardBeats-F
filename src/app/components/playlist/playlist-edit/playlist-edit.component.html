@@ -1,4 +1,6 @@
-<h1>Edit Playlist</h1>
+<div class="mainContent">
+  <h1>Edit Playlist</h1>
+</div>
 <hr>
 
 <div *ngIf="playlist" class="mainContent">
@@ -6,7 +8,8 @@
     <div>
       <div hidden>
         <mat-form-field>
-          <input matInput placeholder="PlaylistEntityId" formControlName="PlaylistEntityId" type="PlaylistEntityId" required [value]="playlist.playlistEntityId" />
+          <input matInput placeholder="PlaylistEntityId" formControlName="PlaylistEntityId" type="PlaylistEntityId"
+            required [value]="playlist.playlistEntityId" />
         </mat-form-field>
       </div>
       <div hidden>

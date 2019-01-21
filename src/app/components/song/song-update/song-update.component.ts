@@ -15,6 +15,7 @@ export class SongUpdateComponent implements OnInit {
   song: Song;
   editSongForm: FormGroup;
   file: any;
+  songId: string;
 
   constructor(
     private _form: FormBuilder,
@@ -23,6 +24,7 @@ export class SongUpdateComponent implements OnInit {
     private _router: Router
   ) { 
     this._ar.paramMap.subscribe(p => {
+      this.songId = p.get('id')
       this._songService.getSongById(p.get('id')).subscribe((singleSong: Song) => {
         this.song = singleSong;
         this.createForm(this.song);
@@ -52,18 +54,27 @@ export class SongUpdateComponent implements OnInit {
     console.log(this.file)
   }
   
-  onSubmit(form){
+  onSubmit(songForm){
+    console.log(songForm.value["SongEntityId"])
     const formData = new FormData();
+    formData.append("UploadedFile", this.file[0], this.file.name);
+    formData.append("SongArtist", songForm.value["SongArtist"]);
+    formData.append("SongTitle", songForm.value["SongTitle"]);
+    formData.append("SongGenre", songForm.value["SongGenre"]);
+    formData.append("SongLength", songForm.value["SongLength"]);
+    formData.append("SongAlbum", songForm.value["SongAlbum"]);
+    formData.append("SongEntityId", this.songId);
+
     const updateSong: Song = {
-      SongEntityId: form.value.SongEntityId,
-      SongTitle: form.value.SongTitle,
-      SongArtist: form.value.SongArtist,
-      SongAlbum: form.value.SongAlbum,
-      SongGenre: form.value.SongGenre,
-      SongLength: form.value.SongLength,
-      UploadedFile: form.value.UploadedFile
+      SongEntityId: songForm.value.SongEntityId,
+      SongTitle: songForm.value.SongTitle,
+      SongArtist: songForm.value.SongArtist,
+      SongAlbum: songForm.value.SongAlbum,
+      SongGenre: songForm.value.SongGenre,
+      SongLength: songForm.value.SongLength,
+      UploadedFile: songForm.value.UploadedFile
     };
-    this._songService.updateSong(updateSong).subscribe(data => {
+    this._songService.updateSong(formData).subscribe(data => {
       this._router.navigate(['/song/index']);
     });
   }
