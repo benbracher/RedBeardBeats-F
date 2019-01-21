@@ -13,7 +13,8 @@ import {
   MatFormFieldModule,
   MatListModule,
   MatIconModule,
-  MatSidenavModule
+  MatSidenavModule,
+  MatDialogModule
 } from '@angular/material';
 import { HttpClientModule } from '@angular/common/http';
 
@@ -95,6 +96,7 @@ import { PlaylistDetailComponent } from './components/playlist/playlist-detail/p
      MatSidenavModule,
     MatIconModule,
     MatListModule,
+    MatDialogModule
   ],
   providers: [
     AuthService,
