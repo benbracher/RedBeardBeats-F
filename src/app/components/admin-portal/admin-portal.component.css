@@ -1,0 +1,10 @@
+.mainContent h1{
+    font-size: 4vw;
+    text-align:center
+}
+
+.adminToolbar{
+    background-color:slategray;
+    padding-bottom:1vw;
+    border: 1px solid black;
+}
