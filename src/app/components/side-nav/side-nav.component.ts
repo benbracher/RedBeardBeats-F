@@ -1,7 +1,10 @@
+import { LoginComponent } from './../login/login.component';
+import { ReloadService } from './../../services/reload.service';
 import { Component } from '@angular/core';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
+import { MatDialog } from '@angular/material';
 
 @Component({
   selector: 'app-side-nav',
@@ -9,6 +12,10 @@ import { map } from 'rxjs/operators';
   styleUrls: ['./side-nav.component.css']
 })
 export class SideNavComponent {
+  logout() {
+    sessionStorage.clear();
+    this.authed = false;
+  }
 
   isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset)
     .pipe(
@@ -16,7 +23,7 @@ export class SideNavComponent {
     );
     authed: any;
 
-  constructor(private breakpointObserver: BreakpointObserver) {
+  constructor(private breakpointObserver: BreakpointObserver, private _reload: ReloadService, private dialog: MatDialog) {
     if (sessionStorage.getItem('pirate_ship') !== null) {
       this.authed = true;
     }
@@ -24,6 +31,14 @@ export class SideNavComponent {
       this.authed = false;
     }
     console.log(this.authed);
+  }
+  openDialog(){
+    const dialogRef = this.dialog.open(LoginComponent)
+    dialogRef.afterClosed().subscribe(result => {
+      if(result == 1){
+        this.authed = true;
+      }
+    })
   }
 
 }

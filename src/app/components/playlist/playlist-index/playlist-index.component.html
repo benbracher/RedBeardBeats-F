@@ -1,27 +1,20 @@
-<h1>Index</h1>
-<a mat-raised-button color="primary" routerLink="/playlist/create">Create New</a>
+<div class="head">
+  <h1>Playlist Index</h1>
+  <div class="row">
+    <a mat-raised-button color="primary" routerLink="/newplaylist/create">Create New Playlist</a>
+    <a id="button1" mat-raised-button color="primary" routerLink="/playlist/assign">Assign Song to Playlist</a>
+  </div>
+</div>
 <hr>
-
-<div>
-  <mat-table #table [dataSource]="dataSource">
-    <mat-header-row *matHeaderRowDef="columsNames"></mat-header-row>
-    <mat-row *matRowDef="let row; columns: columsNames;"></mat-row>
-
-    <ng-container matColumnDef="songs",>
-      <mat-header-cell *matHeaderCellDeaf class="matColumnSize"></mat-header-cell>
-      <mat-cell *matCellDef="let playlist">Songs <i class="material-icons"></i></mat-cell>
-     </ng-container>
-     
-    <ng-container matColumnDef="playlistName",>
-      <mat-header-cell *matHeaderCellDeaf class="matColumnSize"></mat-header-cell>
-      <mat-cell *matCellDef="let playlist"> <i class="material-icons"></i></mat-cell>
-    </ng-container>
-
-          <ng-container matColumnDef="buttons">
-            <mat-header-cell *matHeaderCellDef></mat-header-cell>
-            <mat-cell *matCelldDef="let playlist">
-              <i mat-icon class="material-icons" routerLink="/playlists/edit/{{playlist.pid}}">edit</i>
-            </mat-cell>
-          </ng-container>
-  </mat-table>
+<div class="deck">
+  <div class="card" *ngFor="let playlist of playlists">
+    <div class="cardContainer" routerLink="/playlist/detail/{{playlist.playlistEntityId}}">
+      <h1>{{playlist.playlistName}}</h1>
+      <h3>Playlist Id: {{playlist.playlistEntityId}}</h3>
+      <h3>Owner Id: {{playlist.ownerId}}</h3>
+      <i class="material-icons" routerLink="/newplaylist/delete/{{playlist.playlistEntityId}}">delete</i>
+      <i mat-icon class="material-icons" routerLink="/newplaylist/edit/{{playlist.playlistEntityId}}">edit</i>
+      <i class="material-icons" routerLink="/playlist/delete/{{playlist.playlistEntityId}}">delete</i>
+    </div>
+  </div>
 </div>

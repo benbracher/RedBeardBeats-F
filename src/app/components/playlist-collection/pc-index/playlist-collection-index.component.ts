@@ -20,10 +20,8 @@ export class PlaylistCollectionIndexComponent implements OnInit {
     'buttons'
   ];
   dataSource: MatTableDataSource<PlaylistIndex>;
-  playlistSelect: Playlist[];
 
-  constructor(private _playlistcollectionService: PlaylistCollectionService,
-    private _getplaylistService: PlaylistService) {}
+  constructor(private _playlistcollectionService: PlaylistCollectionService) {}
 
   ngOnInit() {
     this._playlistcollectionService
@@ -31,6 +29,5 @@ export class PlaylistCollectionIndexComponent implements OnInit {
       .subscribe((playlists: PlaylistIndex[]) => {
         this.dataSource = new MatTableDataSource<PlaylistIndex>(playlists);
       });
-     this._getplaylistService.getPlaylists().subscribe(res => this.playlistSelect = res as Playlist[])
   }
 }

@@ -11,13 +11,12 @@ import { Playlist } from 'src/app/models/Playlist';
 export class PlaylistDetailComponent implements OnInit {
 
   playlist : Playlist; 
-  _playlistService: any;
 
-  constructor(private _activatedRoute: ActivatedRoute, private _playlist: PlaylistService) { }
+  constructor(private _activatedRoute: ActivatedRoute, private _playlistService: PlaylistService) { }
 
   ngOnInit() {
     this._activatedRoute.paramMap.subscribe(routeData => {
-      this._playlistService.getPlaylist(routeData.get('id')).subscribe((singlePlaylist: Playlist) => {
+      this._playlistService.getPlaylistById(routeData.get('id')).subscribe((singlePlaylist: Playlist) => {
         this.playlist = singlePlaylist;
       });
     });

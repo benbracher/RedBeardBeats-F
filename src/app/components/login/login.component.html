@@ -1,33 +1,16 @@
 <div class="mainContent">
-  <div class="login">
-    <form (ngSubmit)="onSubmit()" [formGroup]="_loginForm">
-      <div>
-        <mat-form-field>
-          <input matInput placeholder="Username" formControlName="username" required />
-        </mat-form-field>
-      </div>
-      <div>
-        <mat-form-field>
-          <input matInput placeholder="Password" formControlName="password" type="password" required />
-        </mat-form-field>
-      </div>
-      <button mat-raised-button class="nav-btn" color="accent" type="submit">Login</button>
-      <p>New here?</p><button mat-raised-button routerLink="/register">Register</button>
-    </form>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-
-  </div>
+  <form (ngSubmit)="onSubmit()" [formGroup]="_loginForm">
+    <div>
+      <mat-form-field>
+        <input matInput placeholder="Username" formControlName="username" required />
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field>
+        <input matInput placeholder="Password" formControlName="password" type="password" required />
+      </mat-form-field>
+    </div>
+    <button mat-raised-button [mat-dialog-close]="1" class="nav-btn" color="accent" type="submit">Login</button>
+    <p>New here?</p><button mat-raised-button routerLink="/register">Register</button>
+  </form>
 </div>
