@@ -8,7 +8,7 @@
       <div>
         <mat-form-field>
           <mat-select placeholder="Playlist" formControlName="PlaylistEntityId" type="PlaylistEntityId" required>
-            <mat-option *ngFor="let playlist of playlistSelect" value="{{playlist.PlaylistEntityId}}">
+            <mat-option *ngFor="let playlist of playlistSelect" [value]="playlist.playlistEntityId">
               {{playlist.playlistName}}
             </mat-option>
           </mat-select>
@@ -17,8 +17,8 @@
       <div>
         <mat-form-field>
             <mat-select placeholder="Song" formControlName="SongEntityId" type="SongEntityId" required>
-                <mat-option *ngFor="let song of songSelect">
-                  {{song.songName}}
+                <mat-option *ngFor="let song of songSelect" [value]="song.songEntityId">
+                  {{song.songTitle}}
                 </mat-option>
               </mat-select>
           <!-- <input matInput placeholder="Song Id" formControlName="SongEntityId" type="SongEntityId" required /> -->

@@ -1,15 +1,16 @@
-<div class="test">
-  <h1>Index Works!</h1>
-</div>
-<div class="row">
-<a mat-raised-button color="primary" routerLink="/newplaylist/create">Create New Playlist</a>
-<a id="button1" mat-raised-button color="primary" routerLink="/playlist/assign">Assign Song to Playlist</a>
+<div class="mainContent">
+  <div class="test">
+    <h1>Index Works!</h1>
+  </div>
+  <div class="row">
+    <a mat-raised-button color="primary" routerLink="/newplaylist/create">Create New Playlist</a>
+    <a id="button1" mat-raised-button color="primary" routerLink="/playlist/assign">Assign Song to Playlist</a>
 
-</div>
-<hr />
+  </div>
+  <hr />
 
-<div>
-  <mat-table #table [dataSource]="dataSource">
+  <div>
+    <mat-table #table [dataSource]="dataSource">
       <mat-header-row *matHeaderRowDef="columnNames"></mat-header-row>
       <mat-row *matRowDef="let row; columns: columnNames;"></mat-row>
 
@@ -21,35 +22,36 @@
       </ng-container>
 
       <ng-container matColumnDef="PlaylistEntityId">
-          <mat-header-cell *matHeaderCellDef>Playlist</mat-header-cell>
-          <mat-cell *matCellDef="let playlist">{{playlist.playlistEntityId}}</mat-cell>
+        <mat-header-cell *matHeaderCellDef>Playlist</mat-header-cell>
+        <mat-cell *matCellDef="let playlist">{{playlist.playlistEntityId}}</mat-cell>
       </ng-container>
 
       <ng-container matColumnDef="SongEntityId">
-          <mat-header-cell *matHeaderCellDef>Song</mat-header-cell>
-          <mat-cell *matCellDef="let playlist">{{playlist.songEntityId}}</mat-cell>
+        <mat-header-cell *matHeaderCellDef>Song</mat-header-cell>
+        <mat-cell *matCellDef="let playlist">{{playlist.songEntityId}}</mat-cell>
       </ng-container>
 
       <ng-container matColumnDef="OwnerId">
-              <mat-header-cell *matHeaderCellDef>Playlist Owner</mat-header-cell>
-              <mat-cell *matCellDef="let playlist">{{playlist.ownerId}}</mat-cell>
+        <mat-header-cell *matHeaderCellDef>Playlist Owner</mat-header-cell>
+        <mat-cell *matCellDef="let playlist">{{playlist.ownerId}}</mat-cell>
       </ng-container>
 
       <ng-container matColumnDef="DateCreated">
-              <mat-header-cell *matHeaderCellDef>Date Created</mat-header-cell>
-              <mat-cell *matCellDef="let playlist">{{playlist.dateCreated}}</mat-cell>
+        <mat-header-cell *matHeaderCellDef>Date Created</mat-header-cell>
+        <mat-cell *matCellDef="let playlist">{{playlist.dateCreated}}</mat-cell>
       </ng-container>
 
       <ng-container matColumnDef="buttons">
-          <mat-header-cell *matHeaderCellDef></mat-header-cell>
-          <mat-cell *matCellDef="let playlist">
-            <a href="playlist/edit">edit</a>
-            <a id="delete" routerLink="/playlist/delete/{{playlist.playlistEntityId}}">delete</a>
-            <a id="detail" routerLink="/playlist/detail/{{playlist.playlistEntityId}}">detail</a>
-              <!-- <i mat-icon class="material-icons">edit</i>
+        <mat-header-cell *matHeaderCellDef></mat-header-cell>
+        <mat-cell *matCellDef="let playlist">
+          <a routerLink="playlist/edit">edit</a>
+          <a id="delete" routerLink="/playlist/delete/{{playlist.playlistEntityId}}">delete</a>
+          <a id="detail" routerLink="/playlist/detail/{{playlist.playlistEntityId}}">detail</a>
+          <!-- <i mat-icon class="material-icons">edit</i>
               <i class="material-icons">delete</i> -->
-          </mat-cell>
+        </mat-cell>
       </ng-container>
 
-  </mat-table>
+    </mat-table>
+  </div>
 </div>

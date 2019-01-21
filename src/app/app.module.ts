@@ -9,12 +9,18 @@ import {
   MatTableModule,
   MatInputModule,
   MatOptionModule,
-  MatSelectModule
+  MatSelectModule,  
+  MatFormFieldModule,
+  MatListModule,
+  MatIconModule,
+  MatSidenavModule
 } from '@angular/material';
 import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { SideNavComponent } from './components/side-nav/side-nav.component';
+import { LayoutModule } from '@angular/cdk/layout';
 import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
 import { RegistrationComponent } from './components/register/register.component';
@@ -28,20 +34,15 @@ import { PlayControlsComponent } from './components/play-controls/play-controls.
 import { PlaylistComponent } from './components/playlist/playlist.component';
 import { PlaylistIndexComponent } from './components/playlist/playlist-index/playlist-index.component';
 import { PlaylistCreateComponent } from './components/playlist/playlist-create/playlist-create.component';
+import { SongCreateComponent } from './components/song/song-create/song.create.component'
+import { SongDetailComponent } from './components/song/song-detail/song-detail.component';
+import { SongDeleteComponent } from './components/song/song-delete/song-delete.component';
+import { SongUpdateComponent } from './components/song/song-update/song-update.component';
 import { AuthService } from './services/auth.service';
 import { PlaylistService } from './services/playlist.service';
 import { PlayControlsService } from './services/play-controls.service';
 import { PlaylistCollectionService } from './services/playlist-collection.service';
-import { SideNavComponent } from './components/side-nav/side-nav.component';
-import { LayoutModule } from '@angular/cdk/layout';
-import { SongCreateComponent } from './components/song/song-create/song.create.component'
-import {
-  MatFormFieldModule,
-  MatListModule,
-  MatIconModule,
-  MatSidenavModule
-}
-  from '@angular/material';
+import { SongService } from './services/song.service';
   
 @NgModule({
   declarations: [
@@ -61,6 +62,9 @@ import {
     PlaylistIndexComponent,
     PlaylistCreateComponent,
     RegistrationComponent,
+    SongDetailComponent,
+    SongDeleteComponent,
+    SongUpdateComponent,
   ],
   imports: [
     BrowserModule,
@@ -89,7 +93,8 @@ import {
     AuthService,
     PlaylistService,
     PlaylistCollectionService,
-    PlayControlsService
+    PlayControlsService,
+    SongService
   ],
   bootstrap: [AppComponent]
 })

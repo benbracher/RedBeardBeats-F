@@ -1,11 +1,11 @@
 <div class="mainContent">
   <h1>Index Works!</h1>
+  <div class="row">
+    <a mat-raised-button color="primary" routerLink="/song/create">Add New Song</a>
+    <a id="button1" mat-raised-button color="primary" routerLink="/playlist/assign">Assign Song to Playlist</a>
+  </div>
 </div>
-<div class="row">
-  <a mat-raised-button color="primary" routerLink="/song/create">Add New Song</a>
-  <a id="button1" mat-raised-button color="primary" routerLink="/playlist/assign">Assign Song to Playlist</a>
 
-</div>
 <hr />
 
 <div class="mainContent">
@@ -55,14 +55,14 @@
       <mat-cell *matCellDef="let song">{{song.songLength}}</mat-cell>
     </ng-container>
 
+
+
     <ng-container matColumnDef="buttons">
       <mat-header-cell *matHeaderCellDef></mat-header-cell>
-      <mat-cell *matCellDef="let playlist">
-        <a routerLink="/playlist/edit">edit</a>
-        <a id="delete" routerLink="/playlist/delete/{{playlist.playlistEntityId}}">delete</a>
-        <a id="detail" routerLink="/playlist/detail/{{playlist.playlistEntityId}}">detail</a>
-        <!-- <i mat-icon class="material-icons">edit</i>
-                    <i class="material-icons">delete</i> -->
+      <mat-cell *matCellDef="let song">
+        <a id="detail" routerLink="/song/detail/{{song.songEntityId}}">detail</a>
+        <i mat-icon class="material-icons"routerLink="/playlist/edit">edit</i>
+        <i class="material-icons" routerLink="/song/delete/{{song.songEntityId}}">delete</i>
       </mat-cell>
     </ng-container>
 
