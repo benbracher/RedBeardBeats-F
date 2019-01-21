@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Playlist } from 'src/app/models/Playlist';
+import { Playlist } from '../../../models/Playlist';
 import { FormGroup, FormBuilder, FormControl } from '@angular/forms';
 import { PlaylistService } from 'src/app/services/playlist.service';
 import { ActivatedRoute, Router } from '@angular/router';

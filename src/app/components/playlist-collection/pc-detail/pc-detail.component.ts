@@ -5,7 +5,7 @@ import { PlayControlsService } from 'src/app/services/play-controls.service';
 import { PlaylistDetail } from 'src/app/models/pc-detail';
 import { NgControlStatus } from '@angular/forms';
 import { MatTableDataSource } from '@angular/material';
-import { Playlist } from 'src/app/models/Playlist';
+import { Playlist } from '../../../models/Playlist';
 import { PlaylistIndex } from 'src/app/models/pc-index';
 
 @Component({

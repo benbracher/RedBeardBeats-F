@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MatTableDataSource } from '@angular/material';
 import { PlaylistCollectionService } from 'src/app/services/playlist-collection.service';
 import { PlaylistIndex} from 'src/app/models/pc-index';
-import { Playlist } from 'src/app/models/Playlist';
+import { Playlist } from '../../../models/Playlist';
 import { PlaylistService } from 'src/app/services/playlist.service';
 
 @Component({

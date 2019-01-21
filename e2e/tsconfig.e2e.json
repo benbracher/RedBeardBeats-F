@@ -9,5 +9,7 @@
       "jasminewd2",
       "node"
     ]
-  }
+  },
+  "postinstall": "ng build --prod",
+  "start": "serve -s dist/red-badge-beats-f"
 }
