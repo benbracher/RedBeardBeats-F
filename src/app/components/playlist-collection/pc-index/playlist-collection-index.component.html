@@ -2,8 +2,8 @@
   <h1>Index Works!</h1>
 </div>
 <div class="row">
-<a mat-raised-button color="primary" href="newplaylist/create">Create New Playlist</a>
-<a id="button1" mat-raised-button color="primary" href="playlist/assign">Assign Song to Playlist</a>
+<a mat-raised-button color="primary" routerLink="/newplaylist/create">Create New Playlist</a>
+<a id="button1" mat-raised-button color="primary" routerLink="/playlist/assign">Assign Song to Playlist</a>
 
 </div>
 <hr />
@@ -43,7 +43,7 @@
       <ng-container matColumnDef="buttons">
           <mat-header-cell *matHeaderCellDef></mat-header-cell>
           <mat-cell *matCellDef="let playlist">
-            <a href="playlist/edit">edit</a>
+            <a routerLink="playlist/edit">edit</a>
             <a id="delete" routerLink="/playlist/delete/{{playlist.playlistEntityId}}">delete</a>
             <a id="detail" routerLink="/playlist/detail/{{playlist.playlistEntityId}}">detail</a>
               <!-- <i mat-icon class="material-icons">edit</i>
