@@ -78,6 +78,4 @@ export class SongUpdateComponent implements OnInit {
       this._router.navigate(['/song/index']);
     });
   }
-  
-
 }

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MatTableDataSource } from '@angular/material';
 import { Song } from 'src/app/models/Song';
 import { SongService } from 'src/app/services/song.service';
+import { PlayControlsService } from 'src/app/services/play-controls.service';
 
 @Component({
   selector: 'app-song',
@@ -22,7 +23,7 @@ export class SongIndexComponent implements OnInit {
   dataSource: MatTableDataSource<Song>;
   songSelect: Song[];
 
-  constructor(private _songService: SongService,) { }
+  constructor(private _songService: SongService, private _playControlsService: PlayControlsService) { }
 
   ngOnInit() {
     this._songService
@@ -30,6 +31,10 @@ export class SongIndexComponent implements OnInit {
     .subscribe((songs: Song[]) => {
       this.dataSource = new MatTableDataSource<Song>(songs);
     });
+  }
+
+  playSong(song) {
+    this._playControlsService.playSong(song.uploadedLink);
   }
 
 }
