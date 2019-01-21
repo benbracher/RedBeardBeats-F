@@ -13,7 +13,9 @@ import {
   MatFormFieldModule,
   MatListModule,
   MatIconModule,
-  MatSidenavModule
+  MatSidenavModule,
+  MatProgressBarModule,
+  
 } from '@angular/material';
 import { HttpClientModule } from '@angular/common/http';
 
@@ -92,9 +94,10 @@ import { PlaylistDetailComponent } from './components/playlist/playlist-detail/p
     FormsModule,
     RouterModule,
     ReactiveFormsModule,
-     MatSidenavModule,
+    MatSidenavModule,
     MatIconModule,
     MatListModule,
+    MatProgressBarModule
   ],
   providers: [
     AuthService,

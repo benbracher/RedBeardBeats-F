@@ -1,5 +1,9 @@
+.head{
+  background-color: red;
+}
 .example-fill-remaining-space {
     flex: 1 1 auto;
+    text-align: right;
 }
 
 .nav-btn {

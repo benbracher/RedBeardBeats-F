@@ -40,6 +40,10 @@
       <input hidden type="file" #mp3FileInput (change)="onFileChanged($event)">
     </div>
     <button mat-raised-button class="nav-btn" color="accent" type="submit">Done</button>
+    <div *ngIf="progressBar">
+      <p>Uploading... Please Wait</p>
+      <mat-progress-bar mode="indeterminate" value="100"></mat-progress-bar>
+    </div>
   </form>
 </div>
 <a mat-button routerLink="/song/index">Back to List</a>
