@@ -28,14 +28,14 @@ export class AuthService {
 
   login(loginInfo: LoginUser){
     return this._http.post(`${Api_Url}/api/Auth/Login`, loginInfo).subscribe( (token: any) => {
-      localStorage.setItem('id_token', token.token);
+      localStorage.setItem('pirate_ship', token.token);
       this.isLoggedIn.next(true);
       this._router.navigate(['/']);
     });
   }
 
 currentUser(): Observable<Object> {
-  if (!localStorage.getItem('id_token')) { return new Observable(observer => observer.next(false)); }
+  if (!localStorage.getItem('pirate_ship')) { return new Observable(observer => observer.next(false)); }
 
   return this._http.get(`${Api_Url}/api/Account/UserInfo`, { headers: this.setHeader() });
 }
@@ -48,6 +48,6 @@ logout(): Observable<Object> {
 }
 
 private setHeader(): HttpHeaders {
-  return new HttpHeaders().set('Authorization', `Bearer ${localStorage.getItem('id_token')}`);
+  return new HttpHeaders().set('Authorization', `Bearer ${localStorage.getItem('pirate_ship')}`);
 }
 }
