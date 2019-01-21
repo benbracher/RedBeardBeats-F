@@ -1,3 +1,45 @@
-<p>
-  song-update works!
-</p>
+<div class="mainContent">
+  <h1>Edit Song</h1>
+</div>
+<hr>
+<div *ngIf="song" class="mainContent">
+  <form #f="ngForm" (ngSubmit)="onSubmit(f)" [formGroup]="editSongForm">
+    <div hidden>
+      <mat-form-field>
+        <input matInput placeholder="SongEntityId" formControlName="SongEntityId" type="SongEntityId" required [value]="song.SongEntityId" />
+      </mat-form-field>
+    </div>
+
+    <div>
+      <mat-form-field>
+        <input matInput placeholder="Artist" formControlName="SongArtist" type="SongArtist" required [value]="song.songArtist" />
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field>
+        <input matInput placeholder="Title" formControlName="SongTitle" type="SongTitle" required [value]="song.songTitle" />
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field>
+        <input matInput placeholder="Album" formControlName="SongAlbum" type="SongAlbum" required [value]="song.songAlbum" />
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field>
+        <input matInput placeholder="Genre" formControlName="SongGenre" type="SongGenre" required [value]="song.songGenre" />
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field>
+        <input matInput placeholder="Length" formControlName="SongLength" type="SongLength" required [value]="song.songLength" />
+      </mat-form-field>
+    </div>
+    <div>
+      <button type="button" md-button (click)="mp3FileInput.click()">Upload MP3</button>
+      <input hidden type="file" #mp3FileInput (change)="onFileChanged($event)">
+    </div>
+    <button mat-raised-button class="nav-btn" color="accent" type="submit">Done</button>
+  </form>
+</div>
+<a mat-button routerLink="/song/index">Back to List</a>

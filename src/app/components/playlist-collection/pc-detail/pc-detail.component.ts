@@ -6,6 +6,7 @@ import { PlaylistDetail } from 'src/app/models/pc-detail';
 import { NgControlStatus } from '@angular/forms';
 import { MatTableDataSource } from '@angular/material';
 import { Playlist } from 'src/app/models/Playlist';
+import { PlaylistIndex } from 'src/app/models/pc-index';
 
 @Component({
   selector: 'app-pc-detail',
@@ -26,6 +27,7 @@ export class PlaylistCollectionDetailComponent implements OnInit {
   playlistSelect: Playlist[];
 
   playlist: PlaylistDetail;
+  playlistName: PlaylistIndex;
 
   constructor(private _activatedRoute: ActivatedRoute, private _playlistService: PlaylistCollectionService, private _playControlsService: PlayControlsService) { }
 

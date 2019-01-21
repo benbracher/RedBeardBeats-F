@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { PlaylistService } from '../../../services/playlist.service';
 import { Playlist } from '../../../models/Playlist';
 import { MatTableDataSource } from '@angular/material';
@@ -10,12 +10,12 @@ import { MatTableDataSource } from '@angular/material';
 })
 export class PlaylistIndexComponent implements OnInit {
 
-  constructor(private _playlistService: PlaylistService) { }
+  playlists: Object;
 
-  ngOnInit() {
-    this._playlistService.getPlaylists().subscribe((playlists: Playlist[]) => {
-    });
+  constructor(private _playlistService: PlaylistService){}
+
+  ngOnInit(){
+    this._playlistService.getPlaylists().subscribe(p => this.playlists = p)
   }
-  columnNames = ['playlistName', 'pid','sid', 'oid'];
-  dataSource: MatTableDataSource<Playlist>
+
 }

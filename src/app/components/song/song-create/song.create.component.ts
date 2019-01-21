@@ -38,7 +38,6 @@ export class SongCreateComponent implements OnInit {
   }
 
   onSubmit(){
-
     const formData = new FormData();
     formData.append("UploadedFile", this.file[0], this.file.name);
     formData.append("SongArtist", this.songForm.value["SongArtist"]);

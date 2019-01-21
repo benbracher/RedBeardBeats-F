@@ -42,12 +42,12 @@
       </ng-container>
 
       <ng-container matColumnDef="buttons">
-        <mat-header-cell *matHeaderCellDef></mat-header-cell>
-        <mat-cell *matCellDef="let playlist">
-          <a routerLink="playlist/edit">edit</a>
-          <a id="delete" routerLink="/playlist/delete/{{playlist.playlistEntityId}}">delete</a>
-          <a id="detail" routerLink="/playlist/detail/{{playlist.playlistEntityId}}">detail</a>
-          <!-- <i mat-icon class="material-icons">edit</i>
+          <mat-header-cell *matHeaderCellDef></mat-header-cell>
+          <mat-cell *matCellDef="let playlist">
+            <i mat-icon class="material-icons"routerLink="/newplaylist/edit/{{playlist.playlistEntityId}}">edit</i>
+            <a id="delete" routerLink="/playlist/delete/{{playlist.playlistEntityId}}">delete</a>
+            <a id="detail" routerLink="/playlist/detail/{{playlist.playlistEntityId}}">detail</a>
+              <!-- <i mat-icon class="material-icons">edit</i>
               <i class="material-icons">delete</i> -->
         </mat-cell>
       </ng-container>

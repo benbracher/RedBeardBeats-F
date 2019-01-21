@@ -1,23 +1,26 @@
-<h1>Edit a Note</h1>
+<div class="mainContent">
+  <h1>Edit Playlist</h1>
+</div>
 <hr>
 
-<div *ngIf="playlist">
-  <form #="ngform" (ngsubmit)="onSubmit(f)" [formGroup]="editPlaylistForm">
+<div *ngIf="playlist" class="mainContent">
+  <form #f="ngForm" (ngSubmit)="onSubmit(f)" [formGroup]="editPlaylistForm">
     <div>
       <div hidden>
         <mat-form-field>
-          <input matiput placeholder="pid" formControlName="pid" type="pid" required [value]="playlist.pid" />
+          <input matInput placeholder="PlaylistEntityId" formControlName="PlaylistEntityId" type="PlaylistEntityId"
+            required [value]="playlist.playlistEntityId" />
         </mat-form-field>
       </div>
       <div hidden>
         <mat-form-field>
-          <input matiput placeholder="sid" formControlName="sid" type="sid" required [value]="playlist.sid" />
+          <input matInput placeholder="OwnerId" formControlName="OwnerId" type="OwnerId" required [value]="playlist.ownerId" />
         </mat-form-field>
       </div>
-
       <div>
         <mat-form-field>
-          <input matInput placeholder="playlistName" formControlName="playlistName" type="playlistName" required [value]="playlist.playlist" />
+          <input matInput placeholder="Playlist Name" formControlName="PlaylistName" type="PlaylistName" required
+            [value]="playlist.playlistName" />
         </mat-form-field>
       </div>
     </div>
@@ -25,4 +28,4 @@
   </form>
 </div>
 
-<a mat-button routerLink="/playlist">Back to List</a>
+<a mat-button routerLink="/playlist/index">Back to List</a>

@@ -1,8 +1,5 @@
 export interface Playlist {
-    pid?: number;
-    oid?: number;
-    sid?:number;
-    playlistName: string;
-    
-
+    PlaylistEntityId: number;
+    OwnerId: number;
+    PlaylistName: string;
 }

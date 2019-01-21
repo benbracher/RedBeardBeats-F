@@ -17,7 +17,6 @@ const Api_Url = 'https://localhost:44311';
 export class AuthService {
   userInfo: Token;
   isLoggedIn = new Subject<boolean>();
-  
 
   constructor(private _http: HttpClient, private _router: Router) { }
 
@@ -28,26 +27,26 @@ export class AuthService {
 
   login(loginInfo: LoginUser){
     return this._http.post(`${Api_Url}/api/Auth/Login`, loginInfo).subscribe( (token: any) => {
-      localStorage.setItem('id_token', token.token);
+      sessionStorage.setItem('pirate_ship', token.token);
       this.isLoggedIn.next(true);
       this._router.navigate(['/']);
     });
   }
 
 currentUser(): Observable<Object> {
-  if (!localStorage.getItem('id_token')) { return new Observable(observer => observer.next(false)); }
+  if (!sessionStorage.getItem('pirate_ship')) { return new Observable(observer => observer.next(false)); }
 
   return this._http.get(`${Api_Url}/api/Account/UserInfo`, { headers: this.setHeader() });
 }
 
 logout(): Observable<Object> {
-  localStorage.clear();
+  sessionStorage.clear();
   this.isLoggedIn.next(false);
 
   return this._http.post(`${Api_Url}/api/Account/Logout`, { headers: this.setHeader() } );
 }
 
 private setHeader(): HttpHeaders {
-  return new HttpHeaders().set('Authorization', `Bearer ${localStorage.getItem('id_token')}`);
+  return new HttpHeaders().set('Authorization', `Bearer ${sessionStorage.getItem('pirate_ship')}`);
 }
 }

@@ -10,6 +10,9 @@ import { PlaylistCollectionDetailComponent } from './components/playlist-collect
 import { PlaylistCollectionDeleteComponent } from './components/playlist-collection/pc-delete/pc-delete.component';
 import { PlaylistIndexComponent } from './components/playlist/playlist-index/playlist-index.component';
 import { PlaylistCreateComponent } from './components/playlist/playlist-create/playlist-create.component';
+import { PlaylistEditComponent } from './components/playlist/playlist-edit/playlist-edit.component';
+import { PlaylistDetailComponent } from './components/playlist/playlist-detail/playlist-detail.component';
+import { PlaylistDeleteComponent } from './components/playlist/playlist-delete/playlist-delete.component';
 import { SongIndexComponent } from './components/song/song-index/song.index.component';
 import { SongCreateComponent } from './components/song/song-create/song.create.component';
 import { SongDetailComponent } from './components/song/song-detail/song-detail.component';
@@ -29,14 +32,16 @@ const routes: Routes = [
     {path: 'edit/:id', component: SongUpdateComponent}  
   ]},
   {path: 'newplaylist', children: [
-    {path: 'index', component: PlaylistIndexComponent},
+    {path: 'index', component: PlaylistCollectionIndexComponent},
     {path: 'assign', component: PlaylistCreateComponent},
-    // {path: 'detail/:id', component: PlaylistDetailComponent},
+    {path: 'detail/:id', component: PlaylistDetailComponent},    
+    {path: 'delete/:id', component: PlaylistDeleteComponent},
     {path: 'create', component: PlaylistCreateComponent},    
+    {path: 'edit/:id', component: PlaylistEditComponent}
   ]},
 
   {path: 'playlist', children: [
-    {path: 'index', component: PlaylistCollectionIndexComponent},
+    {path: 'index', component: PlaylistIndexComponent},
     {path: 'assign', component: PlaylistCollectionCreateComponent},
     {path: 'detail/:id', component: PlaylistCollectionDetailComponent}, 
     {path: 'delete/:id', component: PlaylistCollectionDeleteComponent}

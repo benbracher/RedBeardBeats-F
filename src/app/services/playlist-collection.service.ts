@@ -30,14 +30,13 @@ export class PlaylistCollectionService {
   }
 
   deletePlaylistCollection(id: number) {
-    
     return this._http.delete(`${ApiUrl}/api/PlaylistCollection/${id}`, { headers: this.getHeaders() });
   }
 
   private getHeaders() {
     return new HttpHeaders().set(
       'Authorization',
-      `Bearer ${localStorage.getItem('id_token')}`
+      `Bearer ${sessionStorage.getItem('pirate_ship')}`
     );
   }
 }

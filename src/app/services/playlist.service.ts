@@ -13,7 +13,7 @@ export class PlaylistService {
   constructor(private _http: HttpClient) { }
 
   getHeaders() {
-    return new HttpHeaders().set('Authorization', `Bearer ${localStorage.getItem('id_token')}`);
+    return new HttpHeaders().set('Authorization', `Bearer ${sessionStorage.getItem('pirate_ship')}`);
   }
 
   getPlaylists() {
@@ -24,17 +24,16 @@ export class PlaylistService {
     return this._http.post(`${ApiUrl}/Playlist`, playlist, { headers: this.getHeaders()});
   }
 
-  getPlaylist(id: string) {
+  getPlaylistById(id: string) {
     return this._http.get(`${ApiUrl}/Playlist/${id}`, {headers: this.getHeaders()});
   }
 
   updatePlaylist(playlist: Playlist) {
     return this._http.put(`${ApiUrl}/Playlist`, playlist, { headers: this.getHeaders()});
   }
+
   deletePlaylist(id: number) {
-    return this._http.delete(`${ApiUrl}/Playlist/${id}`, { headers: this.getHeaders()});  }
-
-  
-
+    return this._http.delete(`${ApiUrl}/Playlist/${id}`, { headers: this.getHeaders()});
+  }
 
 }
