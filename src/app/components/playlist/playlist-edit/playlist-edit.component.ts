@@ -34,15 +34,15 @@ export class PlaylistEditComponent implements OnInit {
 
   createForm() {
     this.editPlaylistForm = this._form.group({
-      PlaylistEntityId: new FormControl(this.playlist.PlaylistEntityId),
-      PlaylistName: new FormControl(this.playlist.PlaylistName)
+      PlaylistEntityId: new FormControl(this.playlist.playlistEntityId),
+      PlaylistName: new FormControl(this.playlist.playlistName)
     });
   }
 
   onSubmit(form) {
     const updatePlaylist: Playlist = {
-      PlaylistEntityId: this.playlistId,
-      PlaylistName: form.value.PlaylistName
+      playlistEntityId: this.playlistId,
+      playlistName: form.value.PlaylistName
     };
     console.log(updatePlaylist)
     this._playlistService.updatePlaylist(updatePlaylist).subscribe(d => {

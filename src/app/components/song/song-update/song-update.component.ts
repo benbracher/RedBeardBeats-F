@@ -36,13 +36,13 @@ export class SongUpdateComponent implements OnInit {
   createForm(song: any){
 
     this.editSongForm = this._form.group({
-      SongEntityId: new FormControl(this.song.SongEntityId),
-      SongTitle: new FormControl(this.song.SongTitle),
-      SongArtist: new FormControl(this.song.SongArtist),
-      SongAlbum: new FormControl(this.song.SongAlbum),
-      SongGenre: new FormControl(this.song.SongEntityId),
-      SongLength: new FormControl(this.song.SongEntityId),
-      UploadedFile: new FormControl(this.song.UploadedFile)
+      SongEntityId: new FormControl(this.song.songEntityId),
+      SongTitle: new FormControl(this.song.songTitle),
+      SongArtist: new FormControl(this.song.songArtist),
+      SongAlbum: new FormControl(this.song.songAlbum),
+      SongGenre: new FormControl(this.song.songEntityId),
+      SongLength: new FormControl(this.song.songEntityId),
+      UploadedFile: new FormControl(this.song.uploadedFile)
 
     })
   }

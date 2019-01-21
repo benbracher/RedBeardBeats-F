@@ -1,4 +1,4 @@
 export interface Playlist {
-    PlaylistEntityId: number;
-    PlaylistName: string;
+    playlistEntityId: number;
+    playlistName: string;
 }

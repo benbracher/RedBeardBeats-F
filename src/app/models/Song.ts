@@ -1,10 +1,10 @@
 export interface Song {
-    SongEntityId: number;
-    SongArtist: string;
-    SongTitle: string;
-    SongGenre: string;
-    SongLength: string;
-    SongAlbum: string;
-    DateAdded?: Date;
-    UploadedFile?: FormData;
+    songEntityId: number;
+    songArtist: string;
+    songTitle: string;
+    songGenre: string;
+    songLength: string;
+    songAlbum: string;
+    dateAdded?: Date;
+    uploadedFile?: FormData;
 }

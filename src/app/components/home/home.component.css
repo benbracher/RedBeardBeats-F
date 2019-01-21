@@ -3,6 +3,12 @@
   font-family: 'Pirata One', cursive;
   font-size: 3vw;
 }
+
+.homeBody{
+  text-align: center;
+  font-size: 5vw;
+  color: black;
+}
 .example-fill-remaining-space {
     flex: 1 1 auto;
     text-align: right;
