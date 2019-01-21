@@ -44,6 +44,8 @@ import { PlayControlsService } from './services/play-controls.service';
 import { PlaylistCollectionService } from './services/playlist-collection.service';
 import { SongService } from './services/song.service';
 import { PlaylistEditComponent } from './components/playlist/playlist-edit/playlist-edit.component';
+import { PlaylistDeleteComponent } from './components/playlist/playlist-delete/playlist-delete.component';
+import { PlaylistDetailComponent } from './components/playlist/playlist-detail/playlist-detail.component';
   
 @NgModule({
   declarations: [
@@ -67,6 +69,8 @@ import { PlaylistEditComponent } from './components/playlist/playlist-edit/playl
     SongDetailComponent,
     SongDeleteComponent,
     SongUpdateComponent,
+    PlaylistDeleteComponent,
+    PlaylistDetailComponent
   ],
   imports: [
     BrowserModule,

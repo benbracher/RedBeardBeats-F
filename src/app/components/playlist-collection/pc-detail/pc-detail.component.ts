@@ -3,7 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { PlaylistCollectionService } from 'src/app/services/playlist-collection.service';
 import { PlayControlsService } from 'src/app/services/play-controls.service';
 import { PlaylistDetail } from 'src/app/models/pc-detail';
-import { NgControlStatus } from '@angular/forms';
+import { PlaylistIndex } from 'src/app/models/pc-index';
 
 @Component({
   selector: 'app-pc-detail',
@@ -14,6 +14,7 @@ import { NgControlStatus } from '@angular/forms';
 export class PlaylistCollectionDetailComponent implements OnInit {
 
   playlist: PlaylistDetail;
+  playlistName: PlaylistIndex;
 
   constructor(private _activatedRoute: ActivatedRoute, private _playlistService: PlaylistCollectionService, private _playControlsService: PlayControlsService) { }
 

@@ -1,12 +1,15 @@
-<div class="detail"><h1>Playlist Content</h1></div>
+<div class="detail">
+  <h1>Playlist Content</h1>
+  <button mat-raised-button color="primary" routerLink="/playlist/assign">Assign song to Playlist</button>
+</div>
 <hr />
 
-<div class="detail" *ngIf="playlist">
-  <div>
+<div class="detail">
+  <div *ngIf="playlist">
     <label for="">Owner Id: </label>
     <span>{{playlist.ownerId}}</span>
   </div>
-  <br/>
+  <br />
   <div *ngFor="let song of playlist" (click)="playSong(song)">
     <div>
       <label for="">Song Id: </label>

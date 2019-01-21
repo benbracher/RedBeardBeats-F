@@ -1,10 +1,10 @@
 <h1>Details</h1>
 
 <hr>
-<div *ngif="playlist">
+<div *ngIf="playlist">
   <div>
     <label for="">Playlist Id:</label>
-    <span>{{playlist.pid}}</span>
+    <span>{{playlist.playlistEntityId}}</span>
   </div>
   <div>
     <label for="">Playlist Name:</label>
@@ -13,5 +13,5 @@
 
 </div>
 
-<button mat-module color="accent">Edit</button>
-<button mat-button color="primary" routerLink="/playlists">Back to List</button>
+<button mat-button color="accent">Edit</button>
+<button mat-button color="primary" routerLink="/playlist/index">Back to List</button>

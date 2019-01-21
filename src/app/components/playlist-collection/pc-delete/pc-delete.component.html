@@ -1,7 +1,10 @@
-<div class="delete"><h1>Playlist Content</h1></div>
+<div class="mainContent">
+  <h1>Clear Playlist Content</h1>
+  <h4>Are you sure you want to delete all songs from this playlist?</h4>
+</div>
 <hr />
 
-<div class="delete" *ngIf="playlist">
+<div class="mainContent" *ngIf="playlist">
   <div>
     <label for="">Owner Id: </label>
     <span>{{playlist.ownerId}}</span>
@@ -32,7 +35,7 @@
       <label for="">Song Genre: </label>
       <span>{{song.songGenre}}</span>
     </div>
-    <div>
+    <div hidden>
       <label for="">Song File: </label>
       <span>{{song.uploadedLink}}</span>
     </div>
