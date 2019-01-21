@@ -107,6 +107,9 @@ import { PlaylistDetailComponent } from './components/playlist/playlist-detail/p
     PlayControlsService,
     SongService
   ],
+  entryComponents: [
+    SongDetailComponent
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -14,6 +14,12 @@
     margin-left: 1%;
 }
 
+mat-table {
+    width: 75vw;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
 .mainContentBody, mat-header-row {
     font-family: 'Lustria', serif;
     margin-left: 2vw;
