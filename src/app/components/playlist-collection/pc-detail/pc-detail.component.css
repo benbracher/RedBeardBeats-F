@@ -20,6 +20,10 @@ mat-table {
     margin-left: auto;
     margin-right: auto;
     display: block;
+    background-color: lightslategrey;
+    opacity: .75;
+    color: black;
+    font-weight: bold;
 }
 
 mat-header-cell {
