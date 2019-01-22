@@ -14,12 +14,16 @@
     margin-left: 1%;
 }
 
+mat-header-cell {
+    font-weight: bold;
+}
+
 mat-table {
     width: 75vw;
     margin-left: auto;
     margin-right: auto;
     display: block;
-    background-color: slategrey;
+    background-color: #50473D;
     opacity: .9;
     font-weight: bold;
     color: black;
@@ -30,7 +34,7 @@ mat-row:hover {
 }
 
 mat-row:focus {
-    background: black;
+    background: white;
 }
 
 .mainContentBody, mat-header-row {

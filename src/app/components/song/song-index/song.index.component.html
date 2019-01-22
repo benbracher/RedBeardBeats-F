@@ -1,8 +1,8 @@
 <div class="mainContent">
   <h1>Song Library</h1>
   <div class="row">
-    <a class="buttons" mat-raised-button routerLink="/song/create">Add New Song</a>
-    <a class="buttons" id="button1" mat-raised-button routerLink="/playlist/assign">Assign Song to Playlist</a>
+    <a class="buttons" mat-raised-button (click)="openSongCreate()">Add New Song</a>
+    <a class="buttons" id="button1" mat-raised-button (click)="openSongToPlaylistAssignment()">Assign Song to Playlist</a>
   </div>
 </div>
 <hr />
@@ -10,12 +10,14 @@
 <div class="mainContentBody">
   <mat-table #table [dataSource]="dataSource">
     <mat-header-row *matHeaderRowDef="columnNames"></mat-header-row>
-    <mat-row *matRowDef="let row; columns: columnNames;" (click)="playSong(row)"></mat-row>
+    <mat-row *matRowDef="let row; columns: columnNames;"></mat-row>
 
-    <!-- <ng-container matColumnDef="SongEntityId">
-      <mat-header-cell *matHeaderCellDef>Song Id</mat-header-cell>
-      <mat-cell *matCellDef="let song">{{song.SongEntityId}}</mat-cell>
-    </ng-container> -->
+    <ng-container matColumnDef="PlaySong">
+      <mat-header-cell *matHeaderCellDef></mat-header-cell>
+      <mat-cell *matCellDef="let song">
+        <i mat-icon class="material-icons" (click)="playSong(song)">play_circle_filled</i>
+      </mat-cell>
+    </ng-container>
 
     <ng-container matColumnDef="SongTitle">
       <mat-header-cell *matHeaderCellDef>Song Title</mat-header-cell>
@@ -54,7 +56,7 @@
       <mat-cell *matCellDef="let song">
         <i mat-icon class="material-icons" (click)="openSongDetail(song.songEntityId)">launch</i>
         <i mat-icon class="material-icons" (click)="openSongUpdate(song.songEntityId)">edit</i>
-        <i class="material-icons" routerLink="/song/delete/{{song.songEntityId}}">delete</i>
+        <i class="material-icons" (click)="openSongDelete(song.songEntityId)">delete</i>
       </mat-cell>
     </ng-container>
 
