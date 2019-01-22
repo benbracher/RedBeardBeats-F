@@ -1,0 +1,751 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>red-badge-beats-f documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	      <link rel="stylesheet" href="../styles/style.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">red-badge-beats-f documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li>Components</li>
+  <li>SongCreateComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li >
+            <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li >
+            <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/components/song/song-create/song.create.component.ts</code>
+</p>
+
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                <code><a href="https://angular.io/api/core/OnInit" target="_blank" >OnInit</a></code>
+    </p>
+
+
+<section>
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-song-create</code></td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./song.create.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#file">file</a>
+                            </li>
+                            <li>
+                                <a href="#progressBar">progressBar</a>
+                            </li>
+                            <li>
+                                <a href="#songForm">songForm</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#createForm">createForm</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnInit">ngOnInit</a>
+                            </li>
+                            <li>
+                                <a href="#onFileChanged">onFileChanged</a>
+                            </li>
+                            <li>
+                                <a href="#onSubmit">onSubmit</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(_songService: <a href="../injectables/SongService.html">SongService</a>, _form: <a href="https://angular.io/api/forms/FormBuilder" target="_blank">FormBuilder</a>, _router: <a href="https://angular.io/api/router/Router" target="_blank">Router</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">src/app/components/song/song-create/song.create.component.ts:16</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>_songService</td>
+                                                  
+                                                        <td>
+                                                                    <code><a href="../injectables/SongService.html" target="_self" >SongService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>_form</td>
+                                                  
+                                                        <td>
+                                                                    <code><a href="https://angular.io/api/forms/FormBuilder" target="_blank" >FormBuilder</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>_router</td>
+                                                  
+                                                        <td>
+                                                                    <code><a href="https://angular.io/api/router/Router" target="_blank" >Router</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+
+
+    <section>
+    
+        <h3 id="methods">
+            Methods
+        </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="createForm"></a>
+                        <span class="name">
+                            <b>
+                            createForm
+                            </b>
+                            <a href="#createForm"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>createForm()</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="26" class="link-to-prism">src/app/components/song/song-create/song.create.component.ts:26</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="ngOnInit"></a>
+                        <span class="name">
+                            <b>
+                            ngOnInit
+                            </b>
+                            <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>ngOnInit()</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="23" class="link-to-prism">src/app/components/song/song-create/song.create.component.ts:23</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="onFileChanged"></a>
+                        <span class="name">
+                            <b>
+                            onFileChanged
+                            </b>
+                            <a href="#onFileChanged"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>onFileChanged(event: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="36" class="link-to-prism">src/app/components/song/song-create/song.create.component.ts:36</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>event</td>
+                                                        <td>
+                                                                    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                                        </td>
+                                                    
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                            <div>
+                            </div>
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                            </div>
+                                <div class="io-description">
+                                    
+                                </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="onSubmit"></a>
+                        <span class="name">
+                            <b>
+                            onSubmit
+                            </b>
+                            <a href="#onSubmit"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>onSubmit()</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="41" class="link-to-prism">src/app/components/song/song-create/song.create.component.ts:41</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+    <section>
+    
+        <h3 id="inputs">
+            Properties
+        </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="file"></a>
+                        <span class="name">
+                            <b>
+                            file
+                            </b>
+                            <a href="#file"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <code>file:     <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">src/app/components/song/song-create/song.create.component.ts:16</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="progressBar"></a>
+                        <span class="name">
+                            <b>
+                            progressBar
+                            </b>
+                            <a href="#progressBar"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <code>progressBar:     <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="14" class="link-to-prism">src/app/components/song/song-create/song.create.component.ts:14</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="songForm"></a>
+                        <span class="name">
+                            <b>
+                            songForm
+                            </b>
+                            <a href="#songForm"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <code>songForm:     <code><a href="https://angular.io/api/forms/FormGroup" target="_blank" >FormGroup</a></code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code><a href="https://angular.io/api/forms/FormGroup" target="_blank" >FormGroup</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">src/app/components/song/song-create/song.create.component.ts:15</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit } from &#x27;@angular/core&#x27;;
+import { SongService } from &#x27;../../../services/song.service&#x27;;
+import { FormBuilder, FormGroup, FormControl } from &#x27;@angular/forms&#x27;;
+import { Router } from &#x27;@angular/router&#x27;;
+
+
+@Component({
+  selector: &#x27;app-song-create&#x27;,
+  templateUrl: &#x27;./song.create.component.html&#x27;
+  //styleUrls: [&#x27;./song-create.component.css&#x27;]
+})
+export class SongCreateComponent implements OnInit {
+
+  progressBar: boolean;
+  songForm: FormGroup;
+  file: any;
+
+  constructor(private _songService: SongService, private _form: FormBuilder, private _router: Router) {
+    this.createForm();
+    this.file &#x3D; [];
+   }
+
+  ngOnInit() {
+  }
+
+  createForm() {
+    this.songForm &#x3D; this._form.group({
+      SongArtist: new FormControl,
+      SongTitle: new FormControl,
+      SongGenre: new FormControl,
+      SongLength: new FormControl,
+      SongAlbum: new FormControl
+    });
+  }
+
+  onFileChanged(event: any) {
+    this.file &#x3D; event.target.files;
+    console.log(this.file)
+  }
+
+  onSubmit(){
+    this.progressBar &#x3D; true;
+    const formData &#x3D; new FormData();
+    formData.append(&quot;UploadedFile&quot;, this.file[0], this.file.name);
+    formData.append(&quot;SongArtist&quot;, this.songForm.value[&quot;SongArtist&quot;]);
+    formData.append(&quot;SongTitle&quot;, this.songForm.value[&quot;SongTitle&quot;]);
+    formData.append(&quot;SongGenre&quot;, this.songForm.value[&quot;SongGenre&quot;]);
+    formData.append(&quot;SongLength&quot;, this.songForm.value[&quot;SongLength&quot;]);
+    formData.append(&quot;SongAlbum&quot;, this.songForm.value[&quot;SongAlbum&quot;]);
+
+    console.log(formData.get(&quot;Song&quot;))
+    this._songService.createSong(formData).subscribe(data &#x3D;&gt; {
+
+      this._router.navigate([&#x27;/song/index&#x27;]);
+    });
+  }
+}</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;mainContent&quot;&gt;
+  &lt;h1&gt;Song Upload&lt;/h1&gt;
+&lt;/div&gt;
+&lt;hr&gt;
+&lt;div class&#x3D;&quot;mainContent&quot;&gt;
+&lt;form #f&#x3D;&quot;ngForm&quot; (ngSubmit)&#x3D;&quot;onSubmit()&quot; [formGroup]&#x3D;&quot;songForm&quot;&gt;
+  &lt;div&gt;
+      &lt;div&gt;
+          &lt;mat-form-field&gt;
+            &lt;input matInput placeholder&#x3D;&quot;Artist&quot; formControlName&#x3D;&quot;SongArtist&quot; type&#x3D;&quot;SongArtist&quot; required/&gt;
+          &lt;/mat-form-field&gt;
+      &lt;/div&gt;
+    &lt;div&gt;
+      &lt;mat-form-field&gt;
+        &lt;input matInput placeholder&#x3D;&quot;Title&quot; formControlName&#x3D;&quot;SongTitle&quot; type&#x3D;&quot;SongTitle&quot; required/&gt;
+      &lt;/mat-form-field&gt;
+    &lt;/div&gt;
+    &lt;div&gt;
+      &lt;mat-form-field&gt;
+        &lt;input matInput placeholder&#x3D;&quot;Genre&quot; formControlName&#x3D;&quot;SongGenre&quot; type&#x3D;&quot;SongGenre&quot; required/&gt;
+      &lt;/mat-form-field&gt;
+    &lt;/div&gt;
+    &lt;div&gt;
+        &lt;mat-form-field&gt;
+          &lt;input matInput placeholder&#x3D;&quot;Length&quot; formControlName&#x3D;&quot;SongLength&quot; type&#x3D;&quot;SongLength&quot; required/&gt;
+        &lt;/mat-form-field&gt;
+    &lt;/div&gt;
+    &lt;div&gt;
+        &lt;mat-form-field&gt;
+          &lt;input matInput placeholder&#x3D;&quot;Album&quot; formControlName&#x3D;&quot;SongAlbum&quot; type&#x3D;&quot;SongAlbum&quot; required/&gt;
+        &lt;/mat-form-field&gt;
+    &lt;/div&gt;
+
+    &lt;button type&#x3D;&quot;button&quot; md-button (click)&#x3D;&quot;mp3FileInput.click()&quot;&gt;Upload MP3&lt;/button&gt;
+    &lt;input hidden type&#x3D;&quot;file&quot; #mp3FileInput (change)&#x3D;&quot;onFileChanged($event)&quot;&gt;
+
+    &lt;/div&gt;
+    &lt;button mat-raised-button class&#x3D;&quot;nav-btn&quot; color&#x3D;&quot;accent&quot; type&#x3D;&quot;submit&quot;&gt;Done&lt;/button&gt;
+    &lt;div *ngIf &#x3D; &quot;progressBar&quot;&gt;
+      &lt;p&gt;Uploading... Please Wait&lt;/p&gt;
+      &lt;mat-progress-bar mode&#x3D;&quot;indeterminate&quot; value&#x3D;&quot;100&quot;&gt;&lt;/mat-progress-bar&gt;
+    &lt;/div&gt;
+  &lt;/form&gt;
+&lt;a mat-button routerLink&#x3D;&quot;/song/index&quot;&gt;Back to list&lt;/a&gt;
+&lt;/div&gt;</code></pre>
+    </div>
+
+
+    <div class="tab-pane fade " id="c-tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><div class="mainContent">  <h1>Song Upload</h1></div><hr><div class="mainContent"><form #f="ngForm" (ngSubmit)="onSubmit()" [formGroup]="songForm">  <div>      <div>          <mat-form-field>            <input matInput placeholder="Artist" formControlName="SongArtist" type="SongArtist" required/>          </mat-form-field>      </div>    <div>      <mat-form-field>        <input matInput placeholder="Title" formControlName="SongTitle" type="SongTitle" required/>      </mat-form-field>    </div>    <div>      <mat-form-field>        <input matInput placeholder="Genre" formControlName="SongGenre" type="SongGenre" required/>      </mat-form-field>    </div>    <div>        <mat-form-field>          <input matInput placeholder="Length" formControlName="SongLength" type="SongLength" required/>        </mat-form-field>    </div>    <div>        <mat-form-field>          <input matInput placeholder="Album" formControlName="SongAlbum" type="SongAlbum" required/>        </mat-form-field>    </div>    <button type="button" md-button (click)="mp3FileInput.click()">Upload MP3</button>    <input hidden type="file" #mp3FileInput (change)="onFileChanged($event)">    </div>    <button mat-raised-button class="nav-btn" color="accent" type="submit">Done</button>    <div *ngIf = "progressBar">      <p>Uploading... Please Wait</p>      <mat-progress-bar mode="indeterminate" value="100"></mat-progress-bar>    </div>  </form><a mat-button routerLink="/song/index">Back to list</a></div></div>'
+    var COMPONENTS = [{'name': 'AdminPortalComponent', 'selector': 'app-admin-portal'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'PlayControlsComponent', 'selector': 'app-play-controls'},{'name': 'PlaylistCollectionCreateComponent', 'selector': 'app-playlist-collection-create'},{'name': 'PlaylistCollectionDeleteComponent', 'selector': 'app-pc-delete'},{'name': 'PlaylistCollectionDetailComponent', 'selector': 'app-pc-detail'},{'name': 'PlaylistCollectionIndexComponent', 'selector': 'app-playlist-collection'},{'name': 'PlaylistComponent', 'selector': 'app-playlist'},{'name': 'PlaylistCreateComponent', 'selector': 'app-playlist-create'},{'name': 'PlaylistDeleteComponent', 'selector': 'app-playlist-delete'},{'name': 'PlaylistDetailComponent', 'selector': 'app-playlist-detail'},{'name': 'PlaylistEditComponent', 'selector': 'app-playlist-edit'},{'name': 'PlaylistIndexComponent', 'selector': 'app-playlist-index'},{'name': 'RegistrationComponent', 'selector': 'app-registration'},{'name': 'SideNavComponent', 'selector': 'app-side-nav'},{'name': 'SongCreateComponent', 'selector': 'app-song-create'},{'name': 'SongDeleteComponent', 'selector': 'app-song-delete'},{'name': 'SongDetailComponent', 'selector': 'app-song-detail'},{'name': 'SongIndexComponent', 'selector': 'app-song'},{'name': 'SongUpdateComponent', 'selector': 'app-song-update'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'SongCreateComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'SongCreateComponent.html';
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
+       <script src="../js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
+       <script src="../js/menu-wc.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

@@ -1,6 +1,5 @@
 import { SideNavComponent } from './../side-nav/side-nav.component';
-import { MatDialogRef } from '@angular/material';
-import { ReloadService } from './../../services/reload.service';
+import { MatDialogRef } from '@angular/material/dialog';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, FormControl } from '@angular/forms';
 import { AuthService } from 'src/app/services/auth.service';
@@ -28,10 +27,7 @@ export class LoginComponent implements OnInit {
   }
 
   onSubmit(){
-
-    console.log(this._loginForm.value);
     this._authService.login(this._loginForm.value);
-    this.dialogRef.close();
-
+    console.log(this._loginForm.value);
   }
 }

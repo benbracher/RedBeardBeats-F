@@ -1,3 +1,4 @@
+import { MatDialogRef } from '@angular/material/dialog';
 import { LoginComponent } from './../login/login.component';
 import { ReloadService } from './../../services/reload.service';
 import { Component } from '@angular/core';
@@ -23,7 +24,7 @@ export class SideNavComponent {
     );
     authed: any;
 
-  constructor(private breakpointObserver: BreakpointObserver, private _reload: ReloadService, private dialog: MatDialog) {
+  constructor(private breakpointObserver: BreakpointObserver, private _reload: ReloadService, private dialog: MatDialog, private dialogRef: MatDialogRef<SideNavComponent>) {
     if (sessionStorage.getItem('pirate_ship') !== null) {
       this.authed = true;
     }
@@ -45,6 +46,9 @@ export class SideNavComponent {
         }
       }
     })
+  }
+  onLogin(){
+    this.dialogRef.close();
   }
 
 }

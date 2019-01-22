@@ -1,22 +1,23 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
-import { 
+import {
   MatToolbarModule,
   MatButtonModule,
   MatTableModule,
   MatInputModule,
   MatOptionModule,
-  MatSelectModule,  
+  MatSelectModule,
   MatFormFieldModule,
   MatListModule,
   MatIconModule,
   MatSidenavModule,
   MatProgressBarModule,
-  MatDialogModule
 } from '@angular/material';
+
+import { MatDialogModule, MatDialog, MatDialogRef } from '@angular/material/dialog'
 import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -49,7 +50,7 @@ import { PlaylistEditComponent } from './components/playlist/playlist-edit/playl
 import { PlaylistDeleteComponent } from './components/playlist/playlist-delete/playlist-delete.component';
 import { PlaylistDetailComponent } from './components/playlist/playlist-detail/playlist-detail.component';
 
-  
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -86,7 +87,7 @@ import { PlaylistDetailComponent } from './components/playlist/playlist-detail/p
     MatFormFieldModule,
     MatTableModule,
     MatToolbarModule,
-    MatButtonModule, 
+    MatButtonModule,
     MatTableModule,
     MatInputModule,
     MatOptionModule,
@@ -105,7 +106,14 @@ import { PlaylistDetailComponent } from './components/playlist/playlist-detail/p
     PlaylistService,
     PlaylistCollectionService,
     PlayControlsService,
-    SongService
+    SongService,
+    MatDialog,
+    {
+      provide: MatDialogRef,
+      useValue: {
+        close: (dialogResult: any) => { }
+      }
+    }
   ],
   entryComponents: [
     SongDetailComponent

@@ -1,3 +1,4 @@
+import { MatDialogRef } from '@angular/material/dialog';
 import { ReloadService } from './reload.service';
 import { environment } from '../../environments/environment.prod';
 import { SideNavComponent } from './../components/side-nav/side-nav.component';
@@ -17,7 +18,7 @@ export class AuthService {
   userInfo: Token;
   isLoggedIn = new Subject<boolean>();
 
-  constructor(private _http: HttpClient, private _router: Router, private _reload: ReloadService) { }
+  constructor(private _http: HttpClient, private _router: Router, private SideNav: SideNavComponent) { }
 
   register(regUserData: RegisterUser){
     
@@ -25,9 +26,11 @@ export class AuthService {
   }
 
   login(loginInfo: LoginUser){
+    console.log('Hell yeah!')
     return this._http.post(`${environment.serverUrl}/api/Auth/Login`, loginInfo).subscribe( (token: any) => {
+      console.log('What?')
       sessionStorage.setItem('pirate_ship', token.token);
-      this._reload.updateStatus(true);
+      this.SideNav.onLogin();
       this._router.navigate(['/']);
     });
   }
