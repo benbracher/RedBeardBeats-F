@@ -1,14 +1,24 @@
+body {
+  background: url('../../../assets/images/redBeardBeatsWallpaper.jpg');
+  background-repeat: no-repeat;
+  background-size: 100vw 100vh;
+  margin-bottom: 0;
+}
 .head{
-  background-color: slategray;
+  background: #50473D;
+  color: white;
   font-family: 'Pirata One', cursive;
   font-size: 3vw;
+}
+.red{
+  color: red;
 }
 .homeBody{
   text-align: center;
   font-size: 3vw;
   color: black;
   font-family: 'Pirata One', cursive;
-
+  padding: 1vw;
 }
 .example-fill-remaining-space {
     flex: 1 1 auto;
@@ -48,6 +58,7 @@ p{
 .carousel-inner > .carousel-item > img {
           border: 50px solid rgba(237, 237, 245, 0.692);
           width: 80%;
+          height: 80%;
           margin: auto;
       }
 

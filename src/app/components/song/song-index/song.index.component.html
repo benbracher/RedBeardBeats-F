@@ -1,13 +1,12 @@
-<div class="mainContent">
+<div class="header">
   <h1>Song Library</h1>
-  <div class="row">
+  <div class="row1">
     <a class="buttons" mat-raised-button (click)="openSongCreate()">Add New Song</a>
     <a class="buttons" id="button1" mat-raised-button (click)="openSongToPlaylistAssignment()">Assign Song to Playlist</a>
   </div>
 </div>
 <hr />
-
-<div class="mainContentBody">
+<div>
   <mat-table #table [dataSource]="dataSource">
     <mat-header-row *matHeaderRowDef="columnNames"></mat-header-row>
     <mat-row *matRowDef="let row; columns: columnNames;"></mat-row>
