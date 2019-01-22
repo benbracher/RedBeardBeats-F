@@ -42,3 +42,14 @@
   position: fixed;
   bottom: 0;
 }
+
+.topNavBar {
+  margin-top: 8vw;
+  text-align: center;
+}
+
+img {
+  height: 10vw;
+  width: 10vw;
+  margin-top: 10vw;
+}
