@@ -1,3 +1,4 @@
+import { RegistrationComponent } from './../register/register.component';
 import { LoginComponent } from './../login/login.component';
 import { ReloadService } from './../../services/reload.service';
 import { Component } from '@angular/core';
@@ -32,9 +33,23 @@ export class SideNavComponent {
     }
     console.log(this.authed);
   }
-  openDialog(){
-    const dialogRef = this.dialog.open(LoginComponent)
-    dialogRef.afterClosed().subscribe(result => {
+  openLoginDialog(){
+    const loginDialog = this.dialog.open(LoginComponent)
+    loginDialog.afterClosed().subscribe(result => {
+      if(result == 1){
+        console.log(result)
+        if (sessionStorage.getItem('pirate_ship') !== null) {
+          this.authed = true;
+        }
+        else {
+          this.authed = false;
+        }
+      }
+    })
+  }
+  openRegisterDialog(){
+    const registerDialog = this.dialog.open(RegistrationComponent)
+    registerDialog.afterClosed().subscribe(result => {
       if(result == 1){
         console.log(result)
         if (sessionStorage.getItem('pirate_ship') !== null) {

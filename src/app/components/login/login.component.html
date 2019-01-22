@@ -1,4 +1,6 @@
 <div class="mainContent">
+    <h1>Log In</h1>
+    <hr>
   <form (ngSubmit)="onSubmit()" [formGroup]="_loginForm">
     <div>
       <mat-form-field>
@@ -10,8 +12,7 @@
         <input matInput placeholder="Password" formControlName="password" type="password" required />
       </mat-form-field>
     </div>   
-    <!-- [mat-dialog-close]="1" -->
     <button mat-raised-button  class="nav-btn" color="accent" type="submit">Login</button>
-    <p>New here?</p><button mat-raised-button routerLink="/register">Register</button>
+    <button mat-raised-button [mat-dialog-close]="true">Cancel</button>
   </form>
 </div>
