@@ -4,7 +4,7 @@ import { FormBuilder, FormGroup, FormControl } from '@angular/forms';
 import { Router, ActivatedRoute } from '@angular/router';
 import { Playlist } from '../../../models/Playlist';
 import { PlaylistService } from 'src/app/services/playlist.service';
-import { MatTableDataSource } from '@angular/material';
+import { MatTableDataSource, MatDialogRef } from '@angular/material';
 import { Song } from 'src/app/models/Song';
 import { SongService } from 'src/app/services/song.service';
 
@@ -25,7 +25,8 @@ export class PlaylistCollectionCreateComponent implements OnInit {
     private _getsongService: SongService,
     private _form: FormBuilder, 
     private _router: Router, 
-    private _activatedRoute: ActivatedRoute)
+    private _activatedRoute: ActivatedRoute,
+    private dialogRef: MatDialogRef<PlaylistCollectionCreateComponent>)
   {
     this.createForm();
   }
@@ -45,6 +46,7 @@ export class PlaylistCollectionCreateComponent implements OnInit {
   onSubmit() {
     console.log(this.playlistForm.value)
     this._playlistService.createPlaylistCollection(this.playlistForm.value).subscribe(data => {
+      this.dialogRef.close();
       this._router.navigate(['/playlist/detail/' + this.playlistForm.value.PlaylistEntityId])
     })
   }

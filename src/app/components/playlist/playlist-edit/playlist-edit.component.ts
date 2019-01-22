@@ -3,7 +3,7 @@ import { Component, OnInit, Inject } from '@angular/core';
 import { FormGroup, FormBuilder, FormControl } from '@angular/forms';
 import { PlaylistService } from 'src/app/services/playlist.service';
 import { ActivatedRoute, Router } from '@angular/router';
-import { MAT_DIALOG_DATA } from '@angular/material';
+import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material';
 
 @Component({
   selector: 'app-playlist-edit',
@@ -20,7 +20,8 @@ export class PlaylistEditComponent implements OnInit {
     private _playlistService: PlaylistService,
     private _ar: ActivatedRoute,
     private _router: Router,
-    @Inject(MAT_DIALOG_DATA) public data: any) {
+    @Inject(MAT_DIALOG_DATA) public data: any,
+    private dialogRef: MatDialogRef<PlaylistEditComponent>) {
 
     this._ar.paramMap.subscribe(p => {
       this.playlistId = this.data.id
@@ -48,6 +49,7 @@ export class PlaylistEditComponent implements OnInit {
     };
     console.log(updatePlaylist)
     this._playlistService.updatePlaylist(updatePlaylist).subscribe(d => {
+      this.dialogRef.close();
       this._router.navigate(['/playlist/index'])
     });
   }
