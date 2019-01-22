@@ -1,5 +1,10 @@
+body {
+  background: url('../../../assets/images/redBeardBeatsWallpaper.jpg');
+  background-repeat: no-repeat;
+  background-size: 100vw 100vh;
+}
 .head{
-  background-color: slategray;
+  /* background-color: slategray; */
   font-family: 'Pirata One', cursive;
   font-size: 3vw;
 }
@@ -21,10 +26,10 @@
 }
 /* Three image containers (use 25% for four, and 50% for two, etc) */
 *{
-  background-color:none;
+  /* background-color:none; */
 }
 .mainsection{
-  background-color: none;
+  /* background-color: none; */
 }
 
 
