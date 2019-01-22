@@ -3,8 +3,8 @@
 </div>
 <hr>
 <div class="mainContent">
-  <form #f="ngForm" (ngSubmit)="onSubmit(f)" [formGroup]="songForm">
-    <div>
+<form #f="ngForm" (ngSubmit)="onSubmit()" [formGroup]="songForm">
+  <div>
       <div>
         <mat-form-field>
           <input matInput placeholder="Artist" formControlName="SongArtist" type="SongArtist" required />

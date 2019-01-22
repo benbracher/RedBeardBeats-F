@@ -8,7 +8,7 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "postinstall": "ng build --prod",
-    "start": "serve -s dist/red-badge-beats-f"
+    "start": "serve -s dist/RedBadgeBeats-F"
   },
   "private": true,
   "dependencies": {
