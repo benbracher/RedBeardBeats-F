@@ -4,9 +4,10 @@ import { PlaylistCollectionService } from 'src/app/services/playlist-collection.
 import { PlayControlsService } from 'src/app/services/play-controls.service';
 import { PlaylistDetail } from 'src/app/models/pc-detail';
 import { NgControlStatus } from '@angular/forms';
-import { MatTableDataSource } from '@angular/material';
+import { MatTableDataSource, MatDialog } from '@angular/material';
 import { Playlist } from 'src/app/models/Playlist';
 import { PlaylistIndex } from 'src/app/models/pc-index';
+import { PlaylistCollectionCreateComponent } from '../pc-create/playlist-collection-create.component';
 
 @Component({
   selector: 'app-pc-detail',
@@ -16,6 +17,7 @@ import { PlaylistIndex } from 'src/app/models/pc-index';
 
 export class PlaylistCollectionDetailComponent implements OnInit {
   columnNames = [
+    'PlaySong',
     'SongTitle',
     'SongArtist',
     'OwnerId',
@@ -29,7 +31,7 @@ export class PlaylistCollectionDetailComponent implements OnInit {
   playlist: PlaylistDetail;
   playlistName: PlaylistIndex;
 
-  constructor(private _activatedRoute: ActivatedRoute, private _playlistService: PlaylistCollectionService, private _playControlsService: PlayControlsService) { }
+  constructor(private _activatedRoute: ActivatedRoute, private _playlistService: PlaylistCollectionService, private _playControlsService: PlayControlsService, private dialog: MatDialog) { }
 
   ngOnInit() {
 
@@ -53,6 +55,10 @@ export class PlaylistCollectionDetailComponent implements OnInit {
 
   playSong(song) {
     this._playControlsService.playSong(song.uploadedLink);
+  }
+
+  openSongToPlaylistAssignment(){
+    const dialogRef = this.dialog.open(PlaylistCollectionCreateComponent)
   }
 
 }
