@@ -13,6 +13,7 @@
     border-radius: 3px;
     margin: 0 1vw 1vw 1vw;
     font-family: 'Lustria', serif;
+    opacity: .9;
 }
 
 .card:hover{
@@ -30,6 +31,6 @@
 
 .head{
     text-align: center;
-    background-color: turquoise;
-    padding: 0.5vw 0 1vw 0;
+    padding: 0.5vw 0 0 0;
+    font-size: 1.2vw;
 }

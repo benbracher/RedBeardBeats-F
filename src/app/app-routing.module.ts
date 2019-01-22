@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { PlaylistCollectionIndexComponent } from './components/playlist-collection/pc-index/playlist-collection-index.component';
 
+import { AdminPortalComponent } from './components/admin-portal/admin-portal.component';
 import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component'
 import { RegistrationComponent } from './components/register/register.component';
@@ -23,6 +24,7 @@ const routes: Routes = [
   { path: 'register', component: RegistrationComponent },
   { path: 'login', component: LoginComponent },
   { path: 'home', component:HomeComponent},
+  { path: 'admin', component: AdminPortalComponent},
 
   {path: 'song', children: [
     {path: 'index', component: SongIndexComponent}, 
