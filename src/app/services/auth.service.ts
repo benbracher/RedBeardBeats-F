@@ -1,6 +1,4 @@
-import { ReloadService } from './reload.service';
 import { environment } from '../../environments/environment.prod';
-import { SideNavComponent } from './../components/side-nav/side-nav.component';
 import { Injectable } from '@angular/core';
 import { RegisterUser } from '../models/RegisterUser';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
@@ -8,6 +6,7 @@ import { Token } from '../models/Token';
 import { LoginUser } from '../models/LoginUser';
 import { Router } from '@angular/router';
 import { Observable, Subject } from 'rxjs';
+import { CdkAccordion } from '@angular/cdk/accordion';
 
 @Injectable({
   providedIn: 'root'
@@ -17,18 +16,22 @@ export class AuthService {
   userInfo: Token;
   isLoggedIn = new Subject<boolean>();
 
-  constructor(private _http: HttpClient, private _router: Router, private _reload: ReloadService) { }
+  constructor(private _http: HttpClient, private _router: Router) { }
 
-  register(regUserData: RegisterUser){
+  register(regUserData: RegisterUser, cb: Function){
     
-    return this._http.post(`${environment.serverUrl}/api/Auth/Register`, regUserData);
+    return this._http.post(`${environment.serverUrl}/api/Auth/Register`, regUserData).subscribe((token: any) => {
+      sessionStorage.setItem('pirate_ship', token.token);
+      cb();
+      this._router.navigate(['home']);
+    });
   }
 
-  login(loginInfo: LoginUser){
+  login(loginInfo: LoginUser, cb: Function){
     return this._http.post(`${environment.serverUrl}/api/Auth/Login`, loginInfo).subscribe( (token: any) => {
       sessionStorage.setItem('pirate_ship', token.token);
-      this._reload.updateStatus(true);
-      this._router.navigate(['/']);
+      cb();
+      this._router.navigate(['home']);
     });
   }
 

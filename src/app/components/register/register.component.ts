@@ -1,3 +1,5 @@
+import { SideNavComponent } from './../side-nav/side-nav.component';
+import { MatDialogRef } from '@angular/material';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, FormControl } from '@angular/forms';
 import { AuthService } from 'src/app/services/auth.service';
@@ -11,7 +13,7 @@ export class RegistrationComponent implements OnInit {
 
   _registerForm: FormGroup;
 
-  constructor(private _form: FormBuilder, private _authService: AuthService) { 
+  constructor(private _form: FormBuilder, private _authService: AuthService, private registerDialog: MatDialogRef<SideNavComponent>) { 
     this.createForm();
   }
 
@@ -29,9 +31,10 @@ export class RegistrationComponent implements OnInit {
 
   onSubmit(){
     console.log(this._registerForm.value);
-    this._authService
-    .register(this._registerForm.value)
-    .subscribe( ( ) => console.log('you did it!'));
+    this._authService.register(this._registerForm.value, () => {
+      this.registerDialog.close();
+      console.log("HIT THE CALLBACK");
+    })
   }
 
 }
