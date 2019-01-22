@@ -1,21 +1,21 @@
 <mat-sidenav-container class="sidenav-container">
-  <mat-sidenav #drawer class="sidenav" fixedInViewport="true"
-      [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
-      [mode]="(isHandset$ | async) ? 'over' : 'side'"
-      [opened]="!(isHandset$ | async)">
-    <mat-toolbar><p class="home" routerLink="home">Home</p></mat-toolbar>
-     <mat-nav-list>
+  <mat-sidenav #drawer class="sidenav" fixedInViewport="true" [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+    [mode]="(isHandset$ | async) ? 'over' : 'side'" [opened]="!(isHandset$ | async)">
+    <mat-nav-list>
       <div *ngIf="authed; else pleaseAuth">
-      <p class="title">Your Treasure</p>
-      <a mat-list-item routerLink="playlist/index">Playlist</a>
-      <a mat-list-item routerLink="song/index">Song</a>
-    </div>
-    <ng-template #pleaseAuth>
-      <h1>Ahoy Matey!</h1>
-      <p>Welcome to Red Beard Beats!</p>
-      <p>Seems like ye new round here, or perhaps ye ain't logged in.</p>
-      <p>How bout ya go on down an register or sign on in!</p>
-    </ng-template>
+        <mat-toolbar>
+          <p class="home" routerLink="home">Home</p>
+        </mat-toolbar>
+        <p class="title">Your Treasure</p>
+        <a mat-list-item routerLink="playlist/index">Playlist</a>
+        <a mat-list-item routerLink="song/index">Song</a>
+      </div>
+      <ng-template #pleaseAuth>
+        <h1>Ahoy Matey!</h1>
+        <p>Welcome to Red Beard Beats!</p>
+        <p>Seems like ye new round here, or perhaps ye ain't logged in.</p>
+        <p>How bout ya go on down an register or sign on in!</p>
+      </ng-template>
       <br>
       <br>
       <br>
