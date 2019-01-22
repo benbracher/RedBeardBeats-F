@@ -5,6 +5,10 @@
 
 .adminToolbar{
     background-color:slategray;
-    padding-bottom:1vw;
+    padding:1vw;
     border: 1px solid black;
+}
+
+.nav-btn1{
+    margin-left: 1vw;
 }
