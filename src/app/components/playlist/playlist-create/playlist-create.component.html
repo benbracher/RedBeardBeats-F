@@ -4,16 +4,14 @@
 <hr>
 
 <div>
-<form #f="ngForm" (ngSubmit)="onSubmit(f)" [formGroup]="playlistForm">
-  <div>
+  <form #f="ngForm" (ngSubmit)="onSubmit(f)" [formGroup]="playlistForm">
     <div>
-      <mat-form-field>
-        <input matInput placeholder="Playlist Name" formControlName="PlaylistName" type="PlaylistName" required />
-      </mat-form-field>
+      <div>
+        <mat-form-field>
+          <input matInput placeholder="Playlist Name" formControlName="PlaylistName" type="PlaylistName" required />
+        </mat-form-field>
+      </div>
     </div>
-  </div>
-  <button class="buttons" mat-raised-button class="nav-btn"type="submit">Create Playlist</button>
-</form>
-
-<a mat-button routerLink="/playlist/index">Back to List</a>
+    <button class="buttons" mat-raised-button class="nav-btn" type="submit">Create Playlist</button>
+  </form>
 </div>
