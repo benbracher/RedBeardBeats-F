@@ -6,11 +6,12 @@ h1 {
     opacity: 1;
 }
 
-.row {
+.row1 {
     text-align: center;
 }
 
 .mainContent {
+    margin-top: .5vw;
     margin-right: 2vw;
     text-align: center;
 }

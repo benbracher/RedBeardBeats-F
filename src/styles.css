@@ -7,7 +7,7 @@ body {
 }
 body {
   margin: 0;
-  font-family: 'Pirata One', cursive;
+  font-family: 'Pirata One', cursive !important;
 }
 
 .mainContent {
