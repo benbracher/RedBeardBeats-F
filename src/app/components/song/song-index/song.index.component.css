@@ -6,8 +6,11 @@
     margin-left: 1%;
 }
 
-.mainContent {
-    margin-right: 2vw;
+.header {
+    padding: .5vw;
+    text-align: center !important;
+}
+.row1{
     text-align: center;
 }
 #button1{

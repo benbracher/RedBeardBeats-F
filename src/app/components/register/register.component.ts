@@ -9,7 +9,7 @@ import { AuthService } from 'src/app/services/auth.service';
 })
 export class RegistrationComponent implements OnInit {
 
-  private _registerForm: FormGroup;
+  _registerForm: FormGroup;
 
   constructor(private _form: FormBuilder, private _authService: AuthService) { 
     this.createForm();
@@ -31,7 +31,6 @@ export class RegistrationComponent implements OnInit {
     console.log(this._registerForm.value);
     this._authService
     .register(this._registerForm.value)
-    .subscribe( ( ) => console.log('you did it!'));
   }
 
 }

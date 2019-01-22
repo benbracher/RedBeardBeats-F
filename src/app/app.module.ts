@@ -42,12 +42,14 @@ import { SongDeleteComponent } from './components/song/song-delete/song-delete.c
 import { SongUpdateComponent } from './components/song/song-update/song-update.component';
 import { AuthService } from './services/auth.service';
 import { PlaylistService } from './services/playlist.service';
+
 import { PlayControlsService } from './services/play-controls.service';
 import { PlaylistCollectionService } from './services/playlist-collection.service';
 import { SongService } from './services/song.service';
 import { PlaylistEditComponent } from './components/playlist/playlist-edit/playlist-edit.component';
 import { PlaylistDeleteComponent } from './components/playlist/playlist-delete/playlist-delete.component';
 import { PlaylistDetailComponent } from './components/playlist/playlist-detail/playlist-detail.component';
+import { AuthGuard } from './guards/auth.guard';
 
   
 @NgModule({
@@ -102,6 +104,7 @@ import { PlaylistDetailComponent } from './components/playlist/playlist-detail/p
   ],
   providers: [
     AuthService,
+    AuthGuard,
     PlaylistService,
     PlaylistCollectionService,
     PlayControlsService,
