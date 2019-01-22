@@ -13,7 +13,7 @@ import { AuthService } from 'src/app/services/auth.service';
 export class LoginComponent implements OnInit {
 
   _loginForm: FormGroup;
-  constructor(private _form: FormBuilder, private _authService: AuthService, private dialogRef: MatDialogRef<SideNavComponent>) { 
+  constructor(private _form: FormBuilder, private _authService: AuthService, private loginDialog: MatDialogRef<SideNavComponent>) { 
     this.createForm();
 
   }
@@ -30,8 +30,11 @@ export class LoginComponent implements OnInit {
   onSubmit(){
 
     console.log(this._loginForm.value);
-    this._authService.login(this._loginForm.value);
-    this.dialogRef.close();
+    this._authService.login(this._loginForm.value, () => {
+      this.loginDialog.close();
+      console.log("HIT THE CALLBACK");
+    });
+    
 
   }
 }

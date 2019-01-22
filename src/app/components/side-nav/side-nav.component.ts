@@ -34,7 +34,7 @@ export class SideNavComponent {
     .pipe(
       map(result => result.matches)
     );
-    authed: any;
+  authed: any;
 
   dataSource: MatTableDataSource<Song>;
 
@@ -47,31 +47,28 @@ export class SideNavComponent {
     }
     console.log(this.authed);
   }
-  openLoginDialog(){
+  openLoginDialog() {
     const loginDialog = this.dialog.open(LoginComponent)
     loginDialog.afterClosed().subscribe(result => {
-      if(result == 1){
-        console.log(result)
-        if (sessionStorage.getItem('pirate_ship') !== null) {
-          this.authed = true;
-        }
-        else {
-          this.authed = false;
-        }
+      console.log('Hit Auth Check')
+      console.log(result)
+      if (sessionStorage.getItem('pirate_ship') !== null) {
+        this.authed = true;
+      }
+      else {
+        this.authed = false;
       }
     })
   }
-  openRegisterDialog(){
+  openRegisterDialog() {
     const registerDialog = this.dialog.open(RegistrationComponent)
     registerDialog.afterClosed().subscribe(result => {
-      if(result == 1){
-        console.log(result)
-        if (sessionStorage.getItem('pirate_ship') !== null) {
-          this.authed = true;
-        }
-        else {
-          this.authed = false;
-        }
+      console.log(result)
+      if (sessionStorage.getItem('pirate_ship') !== null) {
+        this.authed = true;
+      }
+      else {
+        this.authed = false;
       }
     })
   }
@@ -89,9 +86,9 @@ export class SideNavComponent {
     })
   }
 
-  openPlaylistCreate(){
+  openPlaylistCreate() {
     const dialogRef = this.dialog.open(PlaylistCreateComponent)
-    dialogRef.afterClosed().subscribe( result => { 
+    dialogRef.afterClosed().subscribe(result => {
     })
   }
 
