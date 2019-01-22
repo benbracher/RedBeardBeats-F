@@ -28,7 +28,7 @@ const routes: Routes = [
   { path: 'admin', component: AdminPortalComponent},
   
   
-  {path: 'song', children: [
+  {path: 'song', canActivate: [AuthGuard], children: [
     {path: 'index', component: SongIndexComponent}, 
     {path: 'create', component: SongCreateComponent},
     {path: 'detail/:id', component: SongDetailComponent},
