@@ -14,7 +14,6 @@ import { PlaylistCollectionCreateComponent } from '../pc-create/playlist-collect
   templateUrl: './pc-detail.component.html',
   styleUrls: ['./pc-detail.component.css']
 })
-
 export class PlaylistCollectionDetailComponent implements OnInit {
   columnNames = [
     'PlaySong',
