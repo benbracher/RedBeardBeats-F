@@ -1,12 +1,11 @@
 .head{
-  background-color: red;
+  background-color: slategray;
   font-family: 'Pirata One', cursive;
   font-size: 3vw;
 }
-
 .homeBody{
   text-align: center;
-  font-size: 5vw;
+  font-size: 3vw;
   color: black;
   font-family: 'Pirata One', cursive;
 
@@ -20,7 +19,6 @@
     margin-right: 0.5em;
     background-color: rgb(45, 175, 231);
 }
-
 /* Three image containers (use 25% for four, and 50% for two, etc) */
 *{
   background-color:none;
@@ -96,5 +94,3 @@ button{
 label{
   font-size: 0.2em;
 }
-
-

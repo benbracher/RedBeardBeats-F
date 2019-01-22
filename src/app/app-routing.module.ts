@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { PlaylistCollectionIndexComponent } from './components/playlist-collection/pc-index/playlist-collection-index.component';
 
+import { AdminPortalComponent } from './components/admin-portal/admin-portal.component';
 import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component'
 import { RegistrationComponent } from './components/register/register.component';
@@ -18,12 +19,15 @@ import { SongCreateComponent } from './components/song/song-create/song.create.c
 import { SongDetailComponent } from './components/song/song-detail/song-detail.component';
 import { SongUpdateComponent } from './components/song/song-update/song-update.component';
 import { SongDeleteComponent } from './components/song/song-delete/song-delete.component';
+import { AuthGuard } from './guards/auth.guard';
 
 const routes: Routes = [
   { path: 'register', component: RegistrationComponent },
   { path: 'login', component: LoginComponent },
   { path: 'home', component:HomeComponent},
-
+  { path: 'admin', component: AdminPortalComponent},
+  
+  
   {path: 'song', children: [
     {path: 'index', component: SongIndexComponent}, 
     {path: 'create', component: SongCreateComponent},
@@ -31,7 +35,7 @@ const routes: Routes = [
     {path: 'delete/:id', component:SongDeleteComponent},
     {path: 'edit/:id', component: SongUpdateComponent}  
   ]},
-  {path: 'newplaylist', children: [
+  {path: 'newplaylist', canActivate: [AuthGuard], children: [
     {path: 'index', component: PlaylistCollectionIndexComponent},
     {path: 'assign', component: PlaylistCreateComponent},
     {path: 'detail/:id', component: PlaylistDetailComponent},    
@@ -39,8 +43,8 @@ const routes: Routes = [
     {path: 'create', component: PlaylistCreateComponent},    
     {path: 'edit/:id', component: PlaylistEditComponent}
   ]},
-
-  {path: 'playlist', children: [
+  
+  {path: 'playlist', canActivate: [AuthGuard], children: [
     {path: 'index', component: PlaylistIndexComponent},
     {path: 'assign', component: PlaylistCollectionCreateComponent},
     {path: 'detail/:id', component: PlaylistCollectionDetailComponent}, 

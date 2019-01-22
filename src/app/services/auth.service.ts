@@ -1,5 +1,5 @@
 import { ReloadService } from './reload.service';
-import { environment } from './../../environments/environment';
+import { environment } from '../../environments/environment.prod';
 import { SideNavComponent } from './../components/side-nav/side-nav.component';
 import { Injectable } from '@angular/core';
 import { RegisterUser } from '../models/RegisterUser';

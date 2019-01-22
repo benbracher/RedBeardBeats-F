@@ -1,45 +1,46 @@
-<div class="mainContent">
-  <h1>Song Upload</h1>
-</div>
-<hr>
-<div class="mainContent">
-<form #f="ngForm" (ngSubmit)="onSubmit(f)" [formGroup]="songForm">
+<div class="container">
   <div>
+    <h1>Song Upload</h1>
+  </div>
+  <hr>
+  <div>
+    <form #f="ngForm" (ngSubmit)="onSubmit()" [formGroup]="songForm">
       <div>
+        <div>
           <mat-form-field>
-            <input matInput placeholder="Artist" formControlName="SongArtist" type="SongArtist" required/>
+            <input matInput placeholder="Artist" formControlName="SongArtist" type="SongArtist" required />
           </mat-form-field>
+        </div>
+        <div>
+          <mat-form-field>
+            <input matInput placeholder="Title" formControlName="SongTitle" type="SongTitle" required />
+          </mat-form-field>
+        </div>
+        <div>
+          <mat-form-field>
+            <input matInput placeholder="Genre" formControlName="SongGenre" type="SongGenre" required />
+          </mat-form-field>
+        </div>
+        <div>
+          <mat-form-field>
+            <input matInput placeholder="Length" formControlName="SongLength" type="SongLength" required />
+          </mat-form-field>
+        </div>
+        <div>
+          <mat-form-field>
+            <input matInput placeholder="Album" formControlName="SongAlbum" type="SongAlbum" required />
+          </mat-form-field>
+        </div>
+
+        <button type="button" md-button (click)="mp3FileInput.click()">Upload MP3</button>
+        <input hidden type="file" #mp3FileInput (change)="onFileChanged($event)">
+
       </div>
-    <div>
-      <mat-form-field>
-        <input matInput placeholder="Title" formControlName="SongTitle" type="SongTitle" required/>
-      </mat-form-field>
-    </div>
-    <div>
-      <mat-form-field>
-        <input matInput placeholder="Genre" formControlName="SongGenre" type="SongGenre" required/>
-      </mat-form-field>
-    </div>
-    <div>
-        <mat-form-field>
-          <input matInput placeholder="Length" formControlName="SongLength" type="SongLength" required/>
-        </mat-form-field>
-    </div>
-    <div>
-        <mat-form-field>
-          <input matInput placeholder="Album" formControlName="SongAlbum" type="SongAlbum" required/>
-        </mat-form-field>
-    </div>
-
-    <button type="button" md-button (click)="mp3FileInput.click()">Upload MP3</button>
-    <input hidden type="file" #mp3FileInput (change)="onFileChanged($event)">
-
-    </div>
-    <button mat-raised-button class="nav-btn" color="accent" type="submit">Done</button>
-    <div *ngIf = "progressBar">
-      <p>Uploading... Please Wait</p>
-      <mat-progress-bar mode="indeterminate" value="100"></mat-progress-bar>
-    </div>
-  </form>
-<a mat-button routerLink="/song/index">Back to list</a>
+      <button class="buttons" mat-raised-button class="nav-btn" type="submit" [disabled]="progressBar">Done</button>
+      <div *ngIf="progressBar">
+        <p>Uploading... Please Wait</p>
+        <mat-progress-bar mode="indeterminate" value="100"></mat-progress-bar>
+      </div>
+    </form>
+  </div>
 </div>

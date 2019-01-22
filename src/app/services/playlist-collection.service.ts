@@ -1,7 +1,7 @@
-import { environment } from './../../environments/environment';
+import { environment } from '../../environments/environment.prod';
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { PlaylistIndex } from '../models/pc-index';
+import { PlaylistIndex } from '../models/PlaylistCollection-Index';
 
 @Injectable()
 export class PlaylistCollectionService {

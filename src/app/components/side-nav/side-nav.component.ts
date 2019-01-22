@@ -36,7 +36,13 @@ export class SideNavComponent {
     const dialogRef = this.dialog.open(LoginComponent)
     dialogRef.afterClosed().subscribe(result => {
       if(result == 1){
-        this.authed = true;
+        console.log(result)
+        if (sessionStorage.getItem('pirate_ship') !== null) {
+          this.authed = true;
+        }
+        else {
+          this.authed = false;
+        }
       }
     })
   }

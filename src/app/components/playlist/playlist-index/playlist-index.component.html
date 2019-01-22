@@ -1,8 +1,8 @@
 <div class="head">
-  <h1>Playlist Index</h1>
+  <h1>Playlist Library</h1>
   <div class="row">
-    <a class="buttons" mat-raised-button routerLink="/newplaylist/create">Create New Playlist</a>
-    <a class="buttons" id="button1" mat-raised-button routerLink="/playlist/assign">Assign Song to Playlist</a>
+    <a class="buttons" mat-raised-button (click)="openPlaylistCreate()">Create New Playlist</a>
+    <a class="buttons" id="button1" mat-raised-button (click)="openSongToPlaylistAssignment()">Assign Song to Playlist</a>
   </div>
 </div>
 <hr>
@@ -12,9 +12,9 @@
       <h1>{{playlist.playlistName}}</h1>
       <h3>Playlist Id: {{playlist.playlistEntityId}}</h3>
       <h3>Owner Id: {{playlist.ownerId}}</h3>
-      <i class="material-icons" routerLink="/newplaylist/delete/{{playlist.playlistEntityId}}">delete</i>
-      <i mat-icon class="material-icons" routerLink="/newplaylist/edit/{{playlist.playlistEntityId}}">edit</i>
-      <i class="material-icons" routerLink="/playlist/delete/{{playlist.playlistEntityId}}">delete</i>
+      <i class="material-icons" (click)="openPlaylistDelete(playlist.playlistEntityId)">delete</i>
+      <i mat-icon class="material-icons" (click)="openPlaylistUpdate(playlist.playlistEntityId)">edit</i>
+      <i class="material-icons" (click)="openPlaylistCollectionDelete(playlist.playlistEntityId)">remove_circle</i>
     </div>
   </div>
 </div>
