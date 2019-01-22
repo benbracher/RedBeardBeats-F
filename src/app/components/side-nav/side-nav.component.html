@@ -1,42 +1,38 @@
 <mat-sidenav-container class="sidenav-container">
   <mat-sidenav #drawer class="sidenav" fixedInViewport="true" [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
     [mode]="(isHandset$ | async) ? 'over' : 'side'" [opened]="!(isHandset$ | async)">
+    <mat-toolbar>
+      <p class="home" routerLink="home">Home</p>
+    </mat-toolbar>
     <mat-nav-list>
-      <div *ngIf="authed; else pleaseAuth">
-        <mat-toolbar>
-          <p class="home" routerLink="home">Home</p>
-        </mat-toolbar>
-        <p class="title">Your Treasure</p>
-        <a mat-list-item routerLink="playlist/index">Playlist</a>
-        <a mat-list-item routerLink="song/index">Song</a>
+      <div class="topNavBar">
+        <div *ngIf="authed; else pleaseAuth">
+          <p class="title">Your Treasure</p>
+          <a mat-list-item routerLink="playlist/index">Playlist</a>
+          <a mat-list-item routerLink="song/index">Song</a>
+        </div>
+        <ng-template #pleaseAuth>
+          <h1>Ahoy Matey!</h1>
+          <p>Welcome to Red Beard Beats!</p>
+          <p>Seems like ye new round here, or perhaps ye ain't logged in.</p>
+          <p>How bout ya go on down an register or sign on in!</p>
+        </ng-template>
       </div>
-      <ng-template #pleaseAuth>
-        <h1>Ahoy Matey!</h1>
-        <p>Welcome to Red Beard Beats!</p>
-        <p>Seems like ye new round here, or perhaps ye ain't logged in.</p>
-        <p>How bout ya go on down an register or sign on in!</p>
-      </ng-template>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <hr />
-      <div *ngIf="authed; else signUp">
-        <a mat-list-item routerLink="newplaylist/create">Add New Playlist</a>
-        <a mat-list-item routerLink="song/create">Add New Song</a>
-        <a mat-list-item routerLink="playlist/assign">Add Song to Playlist</a>
-        <a mat-list-item (click)="this.logout()" routerLink="/">Logout</a>
+
+      <div class="bottomNavBar">
+        <hr />
+        <div *ngIf="authed; else signUp">
+          <a mat-list-item (click)="openPlaylistCreate()">Add New Playlist</a>
+          <a mat-list-item (click)="openSongCreate()">Add New Song</a>
+          <a mat-list-item (click)="openSongToPlaylistAssignment()">Add Song to Playlist</a>
+          <a mat-list-item (click)="this.logout()" routerLink="/">Logout</a>
+        </div>
+        <ng-template #signUp>
+          <a mat-list-item (click)="openDialog()">Login</a>
+          <a mat-list-item routerLink="register">Sign Up</a>
+        </ng-template>
+        <br>
+        <br>
       </div>
       <ng-template #signUp>
         <a mat-list-item (click)="openLoginDialog()">Login</a>

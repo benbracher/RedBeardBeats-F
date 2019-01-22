@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { PlaylistService } from '../../../services/playlist.service';
 import { FormBuilder, FormGroup, FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
+import { MatDialogRef } from '@angular/material';
 
 @Component({
   selector: 'app-playlist-create',
@@ -12,7 +13,7 @@ export class PlaylistCreateComponent implements OnInit {
 
   playlistForm: FormGroup;
 
-  constructor(private _playlistService: PlaylistService, private _form: FormBuilder, private _router: Router) {
+  constructor(private _playlistService: PlaylistService, private _form: FormBuilder, private _router: Router, private dialogRef: MatDialogRef<PlaylistCreateComponent>) {
     this.createForm();
    }
 
@@ -27,6 +28,7 @@ export class PlaylistCreateComponent implements OnInit {
 
   onSubmit() {
     this._playlistService.createPlaylist(this.playlistForm.value).subscribe(data => {
+      this.dialogRef.close();
       this._router.navigate(['/playlist/index']);
     });
   }
