@@ -19,3 +19,7 @@ body {
   background-color: #50473D;
   color: white;
 }
+
+.mat-dialog-container {
+  margin-left: 12vw;
+}
