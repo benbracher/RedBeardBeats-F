@@ -11,5 +11,9 @@ body {
 
 .mainContent {
   margin-left: 2vw;
-  opacity: .85;
+}
+
+.mat-raised-button {
+  background-color: slategray;
+  color: white;
 }
