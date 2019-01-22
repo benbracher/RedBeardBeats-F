@@ -37,3 +37,8 @@
   background-repeat: no-repeat;
   background-size: 100vw 100vh;
 }
+
+.bottomNavBar {
+  position: fixed;
+  bottom: 0;
+}

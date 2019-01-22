@@ -45,7 +45,7 @@ export class PlaylistCollectionCreateComponent implements OnInit {
   onSubmit() {
     console.log(this.playlistForm.value)
     this._playlistService.createPlaylistCollection(this.playlistForm.value).subscribe(data => {
-      this._router.navigate(['/playlist/index'])
+      this._router.navigate(['/playlist/detail/' + this.playlistForm.value.PlaylistEntityId])
     })
   }
 
