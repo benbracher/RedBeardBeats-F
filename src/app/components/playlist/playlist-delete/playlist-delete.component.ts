@@ -1,7 +1,7 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { PlaylistService } from 'src/app/services/playlist.service';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Playlist } from 'src/app/models/Playlist';
+import { Playlist } from '../../../models/Playlist';
 import { INJECTOR } from '@angular/core/src/render3/interfaces/view';
 import { MAT_DIALOG_DATA } from '@angular/material';
 

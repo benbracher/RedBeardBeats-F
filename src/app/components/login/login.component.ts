@@ -1,3 +1,5 @@
+import { SideNavComponent } from './../side-nav/side-nav.component';
+import { MatDialogRef } from '@angular/material';
 import { ReloadService } from './../../services/reload.service';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, FormControl } from '@angular/forms';
@@ -10,8 +12,8 @@ import { AuthService } from 'src/app/services/auth.service';
 })
 export class LoginComponent implements OnInit {
 
-  private _loginForm: FormGroup;
-  constructor(private _form: FormBuilder, private _authService: AuthService) { 
+  _loginForm: FormGroup;
+  constructor(private _form: FormBuilder, private _authService: AuthService, private dialogRef: MatDialogRef<SideNavComponent>) { 
     this.createForm();
 
   }
@@ -29,6 +31,7 @@ export class LoginComponent implements OnInit {
 
     console.log(this._loginForm.value);
     this._authService.login(this._loginForm.value);
+    this.dialogRef.close();
 
   }
 }

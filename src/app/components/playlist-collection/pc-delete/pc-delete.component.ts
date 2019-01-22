@@ -1,7 +1,7 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { PlaylistCollectionService } from 'src/app/services/playlist-collection.service';
 import { ActivatedRoute, Router } from '@angular/router';
-import { PlaylistIndex } from 'src/app/models/pc-index';
+import { PlaylistIndex } from '../../../models/PlaylistCollection-Index';
 import { MAT_DIALOG_DATA } from '@angular/material';
 
 @Component({
