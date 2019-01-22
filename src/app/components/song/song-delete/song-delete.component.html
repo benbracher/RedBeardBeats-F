@@ -1,34 +1,8 @@
-<div class="mainContent">
-    <h1>Delete</h1>
-    <h4>Are you sure you want to delete this?</h4>
-  </div>
-  <hr>
-  <div class="mainContent" *ngIf="song">
-    <div>
-      <label for="">Song Id: </label>
-      <span>{{song.songEntityId}}</span>
-    </div>
-    <div>
-      <label for="">Title: </label>
-      <span>{{song.songTitle}}</span>
-    </div>
-    <div>
-      <label for="">Artist: </label>
-      <span>{{song.songArtist}}</span>
-    </div>
-    <div>
-      <label for="">Album: </label>
-      <span>{{song.songAlbum}}</span>
-    </div>
-    <div>
-      <label for="">Genre: </label>
-      <span>{{song.songGenre}}</span>
-    </div>
-    <div>
-      <label for="">Length: </label>
-      <span>{{song.songLength}}</span>
-    </div>
-  
-  <button mat-button color="warn" (click)="onDelete()">Delete</button>
-  <button mat-button color="primary" routerLink="/song/index">Back to List</button>
-  </div>
+<div>
+  <h3>Are you sure you want to delete this?</h3>
+</div>
+<hr>
+<div *ngIf="song">
+  <button mat-button color="warn" (click)="onDelete()" [mat-dialog-close]="1">Yes</button>
+  <button mat-button color="primary" routerLink="/song/index">No</button>
+</div>

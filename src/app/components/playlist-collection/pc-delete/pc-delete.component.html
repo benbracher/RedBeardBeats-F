@@ -1,11 +1,11 @@
-<div class="mainContent">
+<div>
   <h1>Clear Playlist Content</h1>
   <h4>Are you sure you want to delete all songs from this playlist?</h4>
 </div>
 <hr />
 
-<div class="mainContent" *ngIf="playlist">
-  <div>
+<div *ngIf="playlist">
+  <div hidden>
     <label for="">Owner Id: </label>
     <span>{{playlist.ownerId}}</span>
   </div>

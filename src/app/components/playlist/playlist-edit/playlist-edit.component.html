@@ -1,9 +1,9 @@
-<div class="mainContent">
+<div>
   <h1>Edit Playlist</h1>
 </div>
 <hr>
 
-<div *ngIf="playlist" class="mainContent">
+<div *ngIf="playlist">
   <form #f="ngForm" (ngSubmit)="onSubmit(f)" [formGroup]="editPlaylistForm">
     <div>
       <div hidden>
@@ -19,7 +19,7 @@
         </mat-form-field>
       </div>
     </div>
-    <button mat-raised-button class="nav-btn" color="primary" type="submit">Save</button>
+    <button class="buttons" mat-raised-button class="nav-btn" type="submit">Save</button>
   </form>
 </div>
 

@@ -20,16 +20,18 @@ mat-table {
     margin-left: auto;
     margin-right: auto;
     display: block;
-    background-color: lightslategrey;
-    opacity: .75;
-    color: black;
+    background-color: #50473D;
+    opacity: .9;
+    color: white;
     font-weight: bold;
 }
 
 mat-header-cell {
     text-align: center;
+    color: white;
 }
 
 mat-cell {
     text-align: center;
+    color: white;
 }
