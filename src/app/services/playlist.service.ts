@@ -1,6 +1,6 @@
 import { environment } from '../../environments/environment.prod';
 import { Injectable } from '@angular/core';
-import { Playlist } from '../models/PPlaylist';
+import { Playlist } from '../models/Playlist';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 @Injectable({
