@@ -3,7 +3,6 @@ import { ActivatedRoute } from '@angular/router';
 import { PlaylistCollectionService } from 'src/app/services/playlist-collection.service';
 import { PlayControlsService } from 'src/app/services/play-controls.service';
 import { PlaylistDetail } from '../../../models/PlaylistCollection-Detail';
-import { NgControlStatus } from '@angular/forms';
 import { MatTableDataSource } from '@angular/material';
 import { Playlist } from '../../../models/Playlist';
 import { PlaylistIndex } from '../../../models/PlaylistCollection-Index';
@@ -32,15 +31,6 @@ export class PlaylistCollectionDetailComponent implements OnInit {
   constructor(private _activatedRoute: ActivatedRoute, private _playlistService: PlaylistCollectionService, private _playControlsService: PlayControlsService) { }
 
   ngOnInit() {
-
-    // this._activatedRoute.paramMap.subscribe(routeData => {
-    //   console.log(routeData.get('id'))
-    //   this._playlistService.getPlaylist(routeData.get('id')).subscribe((singlePlaylist: PlaylistDetail) => {
-    //     this.playlist = singlePlaylist;
-    //     console.log(this.playlist)
-    //   });
-    // });
-
     this._activatedRoute.paramMap.subscribe(routeData => {
       console.log(routeData.get('id'))
       this._playlistService
