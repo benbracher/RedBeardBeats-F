@@ -21,7 +21,11 @@ export class AuthService {
 
   register(regUserData: RegisterUser){
     
-    return this._http.post(`${environment.serverUrl}/api/Auth/Register`, regUserData);
+    return this._http.post(`${environment.serverUrl}/api/Auth/Register`, regUserData).subscribe((token: any) => {
+      sessionStorage.setItem('pirate_ship', token.token);
+      this._reload.updateStatus(true);
+      this._router.navigate(['/']);
+    });
   }
 
   login(loginInfo: LoginUser){
