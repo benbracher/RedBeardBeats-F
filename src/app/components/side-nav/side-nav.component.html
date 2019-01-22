@@ -3,7 +3,7 @@
       [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
       [mode]="(isHandset$ | async) ? 'over' : 'side'"
       [opened]="!(isHandset$ | async)">
-    <mat-toolbar><p class="home" routerLink="home">Home</p></mat-toolbar>
+    <mat-toolbar><img src="../../../assets/images/RBBLogo.png" alt="HomeLogo"></mat-toolbar>
      <mat-nav-list>
       <div *ngIf="authed; else pleaseAuth">
       <p class="title">Your Treasure</p>
@@ -13,8 +13,8 @@
     <ng-template #pleaseAuth>
       <h1>Ahoy Matey!</h1>
       <p>Welcome to Red Beard Beats!</p>
-      <p>Seems like ye new round here, or perhaps ye ain't logged in.</p>
-      <p>How bout ya go on down an register or sign on in!</p>
+      <p>Seems like ye' new round here, or perhaps ye' ain't logged in.</p>
+      <p>How bout' ya' go on down an' register or sign on in!</p>
     </ng-template>
       <br>
       <br>

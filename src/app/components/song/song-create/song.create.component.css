@@ -1,12 +1,7 @@
-.create{
-    margin-left: 12vw;
+div {
+    text-align: center;
 }
 
-.nav-btn{
-    background-color: slategrey;
-}
-
-.mainContent{
-    opacity: .9;
-    background-color:grey;
+body {
+    background: purple;
 }
