@@ -16,6 +16,7 @@
 
 mat-header-cell {
     font-weight: bold;
+    color: white;
 }
 
 mat-table {
@@ -26,7 +27,7 @@ mat-table {
     background-color: #50473D;
     opacity: .9;
     font-weight: bold;
-    color: black;
+    color: white;
 }
 
 mat-row:hover {
@@ -40,12 +41,12 @@ mat-row:focus {
 .mainContentBody, mat-header-row {
     font-family: 'Lustria', serif;
     margin-left: 2vw;
-    color: black;
+    color: white;
 }
 
 .mainContentBody, mat-cell{
     font-family: 'Lustria', serif;
-    color: black;
+    color: white;
 }
 
 #owner mat-cell{

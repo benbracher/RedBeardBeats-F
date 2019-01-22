@@ -20,7 +20,7 @@
 
 .card:hover{
     box-shadow: 0.5 0.5em 1em rgba(0,0,0,0.2);
-    background-color: lightgrey;
+    background-color: #6C6965;
 }
 
 .cardContainer {
@@ -39,4 +39,8 @@
 i {
     position: inherit;
     z-index: 3 !important;
+}
+
+.deck {
+    color: white;
 }

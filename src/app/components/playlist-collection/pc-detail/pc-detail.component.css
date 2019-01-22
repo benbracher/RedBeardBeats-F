@@ -22,14 +22,16 @@ mat-table {
     display: block;
     background-color: #50473D;
     opacity: .9;
-    color: black;
+    color: white;
     font-weight: bold;
 }
 
 mat-header-cell {
     text-align: center;
+    color: white;
 }
 
 mat-cell {
     text-align: center;
+    color: white;
 }

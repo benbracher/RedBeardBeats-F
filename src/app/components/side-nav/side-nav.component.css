@@ -9,6 +9,7 @@
   width: 12vw;
   box-shadow: 3px 0 6px black;
   background: #50473D;
+  color: white;
 }
 .title {
   padding-left: 5%;
@@ -22,6 +23,7 @@
 .sidenav a{
   font-family: 'Pirata One', cursive;
   font-size: 1.2vw;
+  color: white;
 }
 
 .mat-toolbar.mat-primary {
