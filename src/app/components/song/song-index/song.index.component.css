@@ -19,14 +19,29 @@ mat-table {
     margin-left: auto;
     margin-right: auto;
     display: block;
+    background-color: slategrey;
+    opacity: .9;
+    font-weight: bold;
+    color: black;
 }
+
+mat-row:hover {
+    background: lightslategray;
+}
+
+mat-row:focus {
+    background: black;
+}
+
 .mainContentBody, mat-header-row {
     font-family: 'Lustria', serif;
     margin-left: 2vw;
+    color: black;
 }
 
 .mainContentBody, mat-cell{
     font-family: 'Lustria', serif;
+    color: black;
 }
 
 #owner mat-cell{
