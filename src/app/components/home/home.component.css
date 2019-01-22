@@ -24,25 +24,15 @@ body {
     margin-right: 0.5em;
     background-color: rgb(45, 175, 231);
 }
-/* Three image containers (use 25% for four, and 50% for two, etc) */
-*{
-  /* background-color:none; */
-}
-.mainsection{
-  /* background-color: none; */
-}
-
 
 .row{
   text-align: center;
   justify-content: center;
   align-items: middle;
-  place-items: center;
 }
 
 p{
   font-size: 0.3em;
-  place-items: center;
 }
  .carouselContainer{
   width: 40%;
@@ -71,7 +61,6 @@ ul{
   grid-template-columns: repeat(3, auto);
   justify-content: center;
   align-items: middle;
-  place-items: center;
   height: 100vh;
 }
 li{
@@ -85,16 +74,13 @@ li{
 h1{
   justify-content: center;
   align-items: middle;
-  place-items: center;
 }
 button{
   justify-content: center;
   align-items: middle;
-  place-items: center;
 } 
 .btn{
   text-align: center;
-  place-items: center;
 }
 label{
   font-size: 0.2em;
