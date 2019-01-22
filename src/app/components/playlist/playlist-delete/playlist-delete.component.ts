@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { PlaylistService } from 'src/app/services/playlist.service';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Playlist } from 'src/app/models/Playlist';
+import { Playlist } from '../../../models/Playlist';
 
 @Component({
   selector: 'app-playlist-delete',

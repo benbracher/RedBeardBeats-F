@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { PlaylistCollectionService } from '../../../services/playlist-collection.service';
 import { FormBuilder, FormGroup, FormControl } from '@angular/forms';
 import { Router, ActivatedRoute } from '@angular/router';
-import { Playlist } from 'src/app/models/Playlist';
+import { Playlist } from '../../../models/Playlist';
 import { PlaylistService } from 'src/app/services/playlist.service';
 import { MatTableDataSource } from '@angular/material';
 import { Song } from 'src/app/models/Song';

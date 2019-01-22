@@ -2,11 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { PlaylistCollectionService } from 'src/app/services/playlist-collection.service';
 import { PlayControlsService } from 'src/app/services/play-controls.service';
-import { PlaylistDetail } from 'src/app/models/pc-detail';
+import { PlaylistDetail } from '../../../models/PlaylistCollection-Detail';
 import { NgControlStatus } from '@angular/forms';
 import { MatTableDataSource } from '@angular/material';
-import { Playlist } from 'src/app/models/Playlist';
-import { PlaylistIndex } from 'src/app/models/pc-index';
+import { Playlist } from '../../../models/Playlist';
+import { PlaylistIndex } from '../../../models/PlaylistCollection-Index';
 
 @Component({
   selector: 'app-pc-detail',
