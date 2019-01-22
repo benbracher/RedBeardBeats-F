@@ -1,8 +1,8 @@
-<div class="mainContent">
+<div>
   <h1>Assign Song to Playlist</h1>
 </div>
 <hr>
-<div class="mainContent">
+<div>
   <form #f="ngForm" (ngSubmit)="onSubmit(f)" [formGroup]="playlistForm">
     <div>
       <div>
@@ -25,7 +25,7 @@
         </mat-form-field>
       </div>
     </div>
-    <button mat-raised-button class="nav-btn" color="primary" type="submit">Add Song to Playlist</button>
+    <button class="buttons" mat-raised-button class="nav-btn" type="submit">Add Song to Playlist</button>
   </form>
 
   <a mat-button routerLink="/playlist/index">Back to List</a>

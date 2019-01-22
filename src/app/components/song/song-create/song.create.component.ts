@@ -2,12 +2,13 @@ import { Component, OnInit } from '@angular/core';
 import { SongService } from '../../../services/song.service';
 import { FormBuilder, FormGroup, FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
+import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material';
 
 
 @Component({
   selector: 'app-song-create',
-  templateUrl: './song.create.component.html'
-  //styleUrls: ['./song-create.component.css']
+  templateUrl: './song.create.component.html',
+  styleUrls: ['./song.create.component.css']
 })
 export class SongCreateComponent implements OnInit {
 
@@ -15,12 +16,13 @@ export class SongCreateComponent implements OnInit {
   songForm: FormGroup;
   file: any;
 
-  constructor(private _songService: SongService, private _form: FormBuilder, private _router: Router) {
+  constructor(private _songService: SongService, private _form: FormBuilder, private _router: Router, private dialogRef: MatDialogRef<SongCreateComponent>) {
     this.createForm();
     this.file = [];
    }
 
   ngOnInit() {
+    this.progressBar = false;
   }
 
   createForm() {
@@ -50,7 +52,7 @@ export class SongCreateComponent implements OnInit {
 
     console.log(formData.get("Song"))
     this._songService.createSong(formData).subscribe(data => {
-
+      this.dialogRef.close(1);
       this._router.navigate(['/song/index']);
     });
   }
