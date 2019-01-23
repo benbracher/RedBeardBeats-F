@@ -1,4 +1,5 @@
 export interface Song {
+    ownerId?: number;
     songEntityId: number;
     songArtist: string;
     songTitle: string;

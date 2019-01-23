@@ -43,10 +43,14 @@ p{
   width: 40%;
   margin: auto;
   padding-top: 1em;
+  background-image:url(../../../assets/images/RBBLogo.png);
+  background-repeat: no-repeat;
+  background-position-x: left;
+  background-position-y: bottom;
+  background-size: 60%;
  
 }
 .carousel-inner > .carousel-item > img {
-          border: 50px solid rgba(237, 237, 245, 0.692);
           width: 80%;
           height: 80%;
           margin: auto;

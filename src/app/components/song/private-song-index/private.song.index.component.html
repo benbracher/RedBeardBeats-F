@@ -1,9 +1,9 @@
 <div class="header">
-  <h1>Public Song Library</h1>
-  <h2>All Songs  <i mat-icon class="material-icons" routerLink="/song/private-index">check_box</i></h2>
+  <h1>Ye Own Song Library</h1>
+  <h2>All Songs  <i mat-icon class="material-icons" routerLink="/song/index">check_box_outline_blank</i></h2>
   
   <div class="row1">
-    <a class="buttons" mat-raised-button (click)="openSongCreate()">Add New Song</a>
+    <a class="buttons" mat-raised-button (click)="openSongCreate()">Add Song</a>
     <a class="buttons" id="button1" mat-raised-button (click)="openSongToPlaylistAssignment()">Assign Song to Playlist</a>
   </div>
 </div>
@@ -44,6 +44,14 @@
       <mat-header-cell *matHeaderCellDef>Length</mat-header-cell>
       <mat-cell *matCellDef="let song">{{song.songLength}}</mat-cell>
     </ng-container>
+
+    <ng-container matColumnDef="buttons">
+        <mat-header-cell *matHeaderCellDef></mat-header-cell>
+        <mat-cell *matCellDef="let song">
+          <i mat-icon class="material-icons" (click)="openSongUpdate(song.songEntityId)">edit</i>
+          <i class="material-icons" (click)="openSongDelete(song.songEntityId)">delete</i>
+        </mat-cell>
+      </ng-container>
 
   </mat-table>
 </div>

@@ -1,3 +1,4 @@
+import { PrivateSongIndexComponent } from './components/song/private-song-index/private.song.index.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { PlaylistCollectionIndexComponent } from './components/playlist-collection/pc-index/playlist-collection-index.component';
@@ -29,7 +30,8 @@ const routes: Routes = [
   
   
   {path: 'song', canActivate: [AuthGuard], children: [
-    {path: 'index', component: SongIndexComponent}, 
+    {path: 'index', component: SongIndexComponent},
+    {path: 'private-index', component: PrivateSongIndexComponent}, 
     {path: 'create', component: SongCreateComponent},
     {path: 'detail/:id', component: SongDetailComponent},
     {path: 'delete/:id', component:SongDeleteComponent},

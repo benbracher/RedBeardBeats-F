@@ -13,11 +13,13 @@ import { PlaylistCollectionCreateComponent } from '../../playlist-collection/pc-
 
 @Component({
   selector: 'app-song',
-  templateUrl: './song.index.component.html',
-  styleUrls: ['./song.index.component.css']
+  templateUrl: './private.song.index.component.html',
+  styleUrls: ['./private.song.index.component.css']
 })
 
-export class SongIndexComponent implements OnInit {
+export class PrivateSongIndexComponent implements OnInit {
+
+  userid = parseInt(sessionStorage.getItem('freebooter'), 10);
 
   songDetailComponentDialogRef: MatDialogRef<SongDetailComponent>;
 
@@ -27,11 +29,13 @@ export class SongIndexComponent implements OnInit {
     'SongArtist',
     'SongAlbum',
     'SongGenre',
-    'SongLength'
+    'SongLength',
+    'buttons'
   ]
   dataSource: MatTableDataSource<Song>;
   songSelect: Song[];
   song: Song;
+  privateSongs = [];
 
   constructor(private _songService: SongService, private _playControlsService: PlayControlsService, private dialog: MatDialog, private _activatedRoute: ActivatedRoute) { }
 
@@ -39,7 +43,14 @@ export class SongIndexComponent implements OnInit {
     this._songService
       .getSongs()
       .subscribe((songs: Song[]) => {
-        this.dataSource = new MatTableDataSource<Song>(songs);
+        console.log(songs)
+        for(let item of songs){
+          if(item.ownerId == this.userid){
+            this.privateSongs.push(item)
+          }
+        }
+        console.log(this.privateSongs)
+        this.dataSource = new MatTableDataSource<Song>(this.privateSongs);
       });
   }
 

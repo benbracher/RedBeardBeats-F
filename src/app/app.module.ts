@@ -1,3 +1,4 @@
+import { PrivateSongIndexComponent } from './components/song/private-song-index/private.song.index.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
@@ -75,7 +76,8 @@ import { AuthGuard } from './guards/auth.guard';
     SongDeleteComponent,
     SongUpdateComponent,
     PlaylistDeleteComponent,
-    PlaylistDetailComponent
+    PlaylistDetailComponent,
+    PrivateSongIndexComponent
   ],
   imports: [
     BrowserModule,
