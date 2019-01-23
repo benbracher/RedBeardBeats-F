@@ -10,18 +10,29 @@ import { PlaylistCollectionDeleteComponent } from '../../playlist-collection/pc-
 
 @Component({
   selector: 'app-playlist-index',
-  templateUrl: './playlist-index.component.html',
-  styleUrls: ['./playlist-index.component.css']
+  templateUrl: './private-playlist-index.component.html',
+  styleUrls: ['./private-playlist-index.component.css']
 })
-export class PlaylistIndexComponent implements OnInit {
+export class PrivatePlaylistIndexComponent implements OnInit {
 
-  playlists: any;
+  userid = parseInt(sessionStorage.getItem('freebooter'), 10);
+
+  playlists = [];
+  playlist: any;
   dataSource: MatTableDataSource<Playlist>;
 
   constructor(private _playlistService: PlaylistService, private dialog: MatDialog){}
 
   ngOnInit(){
-    this._playlistService.getPlaylists().subscribe(p => this.playlists = p)
+    this._playlistService.getPlaylists().subscribe(p => {
+      this.playlist = p
+      for(let item of this.playlist){
+        if(item.ownerId == this.userid){
+          this.playlists.push(item)
+          console.log(item)
+        }
+      }
+    })
   }
 
   openPlaylistCreate(){

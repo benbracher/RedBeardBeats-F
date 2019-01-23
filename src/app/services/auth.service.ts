@@ -23,6 +23,7 @@ export class AuthService {
     return this._http.post(`${environment.serverUrl}/api/Auth/Register`, regUserData).subscribe((token: any) => {
       sessionStorage.setItem('pirate_ship', token.token);
       cb();
+      sessionStorage.setItem('freebooter', token.user.id);
       this._router.navigate(['home']);
     });
   }
@@ -31,6 +32,8 @@ export class AuthService {
     return this._http.post(`${environment.serverUrl}/api/Auth/Login`, loginInfo).subscribe( (token: any) => {
       sessionStorage.setItem('pirate_ship', token.token);
       cb();
+      console.log(token.user.id)
+      sessionStorage.setItem('freebooter', token.user.id);
       this._router.navigate(['home']);
     });
   }
