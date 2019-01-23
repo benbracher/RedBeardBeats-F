@@ -1,0 +1,50 @@
+.deck{
+    text-align:center;
+}
+.card{
+    box-shadow: 0 0.5em 1em rgba(0,0,0,0.2);
+    transition: 0.3s;
+    width: 25vw;
+    text-align: center;
+    font-size: 100%;
+    display: inline-block;
+    background-color: #50473D;
+    border: 2px solid black;
+    border-radius: 3px;
+    margin: 0 1vw 1vw 1vw;
+    font-family: 'Lustria', serif;
+    opacity: .9;
+    position: inherit;
+    z-index: 0;
+}
+
+.card:hover{
+    box-shadow: 0.5 0.5em 1em rgba(0,0,0,0.2);
+    background-color: #6C6965;
+}
+
+.cardContainer {
+    padding: 1em 2em;
+}
+
+#button1 {
+    margin: 0 0 0 1%;
+}
+
+.head{
+    text-align: center;
+    padding: 0.5vw 0 1vw 0;
+}
+
+i {
+    position: inherit;
+    z-index: 3 !important;
+}
+
+.deck {
+    color: white;
+}
+
+.row1 {
+    text-align: center;
+}

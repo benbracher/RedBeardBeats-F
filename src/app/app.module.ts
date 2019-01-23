@@ -1,3 +1,4 @@
+import { PrivatePlaylistIndexComponent } from './components/playlist/private-playlist-index/private-playlist-index.component';
 import { PrivateSongIndexComponent } from './components/song/private-song-index/private.song.index.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule} from '@angular/platform-browser/animations';
@@ -57,6 +58,7 @@ import { AuthGuard } from './guards/auth.guard';
   declarations: [
     AppComponent,
     SideNavComponent,
+    PrivatePlaylistIndexComponent,
     HomeComponent,
     LoginComponent,
     SongIndexComponent,
