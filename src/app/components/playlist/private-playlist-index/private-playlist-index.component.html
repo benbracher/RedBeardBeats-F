@@ -11,8 +11,6 @@
   <div class="card" *ngFor="let playlist of playlists">
     <div class="cardContainer" routerLink="/playlist/detail/{{playlist.playlistEntityId}}">
       <h1>{{playlist.playlistName}}</h1>
-      <h3>Playlist Id: {{playlist.playlistEntityId}}</h3>
-      <h3>Owner Id: {{playlist.ownerId}}</h3>
       <i class="material-icons" (click)="openPlaylistDelete(playlist.playlistEntityId)">delete</i>
       <i mat-icon class="material-icons" (click)="openPlaylistUpdate(playlist.playlistEntityId)">edit</i>
       <i class="material-icons" (click)="openPlaylistCollectionDelete(playlist.playlistEntityId)">remove_circle</i>

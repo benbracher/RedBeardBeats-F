@@ -38,6 +38,7 @@ export class PlaylistCollectionDetailComponent implements OnInit {
       this._playlistService
         .getPlaylist(routeData.get('id'))
         .subscribe((playlist: Playlist[]) => {
+          console.log(playlist)
           this.dataSource = new MatTableDataSource<Playlist>(playlist);
         });
     });
